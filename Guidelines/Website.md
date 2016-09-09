@@ -15,7 +15,7 @@
   * [Hosting](#hosting)
   * [Access statistics](#access-statistics)
   * [Releases download statistics](#releases-download-statistics)
-* [`firstname.lastname@cgal.org`](#firstnamelastname@cgalorg)
+* [`firstname.lastname@cgal.org`](#firstnamelastnamecgalorg)
 * [Wiki](#wiki)
 
 <!--TOC-->
