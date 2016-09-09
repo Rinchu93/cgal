@@ -8,7 +8,7 @@
 
 <!--TOC-->
 
-Once your mentor has introduced you on the [CGAL Editorial Board mailing list](Mailing-Lists), and once the [CGAL Editorial Board](http://www.cgal.org/people.html) has approved your participation in the CGAL project as a [CGAL developer](http://www.cgal.org/project_rules.html#developers), then you should follow the following guidelines. 
+Once your mentor has introduced you on the [CGAL Editorial Board mailing list](Mailing-Lists), and once the [CGAL Editorial Board](http://www.cgal.org/people.html) has approved your participation in the CGAL project as a [CGAL developer](http://www.cgal.org/project_rules.html#developers), then you should follow these guidelines. 
 
 ## Creating a GitHub account
 
