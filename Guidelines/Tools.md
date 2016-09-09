@@ -281,7 +281,7 @@ English).*
 
 ## Wiki
 
-The wiki is hosted at
+The internal wiki is hosted at
 <http://cgal.geometryfactory.com/CGAL/Members/wiki/> .
 
 It is administrated at GF by [@lrineau](https://github.com/lrineau).
