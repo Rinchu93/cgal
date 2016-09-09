@@ -2,7 +2,7 @@ Here is a list of our servers:
 
 ## Web server `www.cgal.org`
 
-See [Website](Website)
+See [Website](Tools#website)
 
 
 ## `cgal.geometryfactory.com` - GeometryFactory

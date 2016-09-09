@@ -27,7 +27,7 @@ and the [public developer manual](http://doc.cgal.org/latest/Manual/dev_manual.h
 8.  [ Scripts](Scripts) (for performing routine tasks)
 9.  [ Examples and Demo Programs](Examples-and-Demo-Programs)
 10. [ Submitting new features](Submission)
-11. [ The CGAL web site](Website)
+11. [ The CGAL web site](Tools#website)
 
 ## Technical background information
 

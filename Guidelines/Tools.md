@@ -20,7 +20,7 @@
 
 <!--TOC-->
 
-## Web site
+## Website
 
 ### Content
 
