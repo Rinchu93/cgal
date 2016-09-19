@@ -240,8 +240,8 @@ In general, <http://jekyllrb.com> contains a lot of helpful information.
 
 ### Hosting
 
-**Update:** this has changed. See [Staging Area/Servers/Migration to
-OVH](Staging Area/Servers/Migration to OVH). [@lrineau](https://github.com/lrineau) is responsible for the web site,
+**Update:** this has changed. See [`Staging Area/Servers/Migration to
+OVH` *on the private wiki*](https://cgal.geometryfactory.com/CGAL/Members/wiki/Staging_Area/Servers/Migration_to_OVH). [@lrineau](https://github.com/lrineau) is responsible for the web site,
 now, with [@sloriot](https://github.com/sloriot) as backup.
 
 
