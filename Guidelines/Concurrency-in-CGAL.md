@@ -332,14 +332,16 @@ exits. Instead, an instance of task\_scheduler\_init might be manually
 created by the user to control, among other things, the number of
 threads used by the task scheduler. Here is an example:
 
-` {`\
-`   tbb::task_scheduler_init tsi(6); // 6 threads`\
-`   run_parallel_algo1(); // Uses 6 threads`\
-` }`\
-` {`\
-`   tbb::task_scheduler_init tsi(12); // 12 threads`\
-`   run_parallel_algo2(); // Uses 12 threads`\
-` }`
+```
+{
+  tbb::task_scheduler_init tsi(6); // 6 threads
+  run_parallel_algo1(); // Uses 6 threads
+}
+{
+  tbb::task_scheduler_init tsi(12); // 12 threads
+  run_parallel_algo2(); // Uses 12 threads
+}
+```
 
 See [Intel documentation](https://software.intel.com/en-us/node/506294)
 for more information.
