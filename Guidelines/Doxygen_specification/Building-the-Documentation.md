@@ -93,7 +93,7 @@ cmake -DBUILD_DOC:BOOL=ON /path/to/cgal/ # if not already done
 make doc
 ```
 
-Alternatively, if you branch is fresh enough and contains commit [`96c64d48`](https://github.com/CGAL/cgal/commit/96c64d4866546c7a843a41485eb25e877f931bd6)
+Alternatively, if your branch is fresh enough and contains commit [`96c64d48`](https://github.com/CGAL/cgal/commit/96c64d4866546c7a843a41485eb25e877f931bd6)
 (merge of PR [`#1444`](https://github.com/CGAL/cgal/pull/1444)), you can directly call cmake on the doc `CMakeLists.txt`
 which will skip the `CGAL` configuration steps
 
