@@ -183,10 +183,8 @@ package name.
     [here](Scripts#create_cgal_test_with_cmake)).
 -   `CMakeLists.txt`
      is the CMake configuration file for the test programs. It is
-    created automatically, just like `cgal_test`. Submitting it is
-    **strongly discouraged**, and the only reason for submitting one is
-    when the automatic generation script cannot produce a working CMake
-    configuration file. Such a `CMakeLists.txt` can be created using the
+    created automatically, just like `cgal_test`.
+    Such a `CMakeLists.txt` can be created using the
     script `cgal_create_cmake_script` with the argument `-t` (see
     [here](Scripts#cgal_create_cmake_script-same-as-cgal_create_cmakelists)).
 
