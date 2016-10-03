@@ -745,23 +745,23 @@ typedef unspecified_type type;
 
 #### Examples and Figures (User Manual)
 
-- `\cgalExample{1}`: The argument is an example file prefixed with the package path (`Triangulation_2/example1.cpp` for example) that is verbatim pasted onto the page.\
-- `\cgalFigureRef{1}`: The argument is an anchor. It creates a link with the text "Figure" followed by the automatically generated number. This one can also be used in the reference manual.\
-- `\cgalFigureBegin{2}`\
-- `\cgalFigureBegin{3}`\
+- `\cgalExample{1}`: The argument is an example file prefixed with the package path (`Triangulation_2/example1.cpp` for example) that is verbatim pasted onto the page.
+- `\cgalFigureRef{1}`: The argument is an anchor. It creates a link with the text "Figure" followed by the automatically generated number. This one can also be used in the reference manual.
+- `\cgalFigureBegin{2}`
+- `\cgalFigureBegin{3}`
 - `...`
 - `\cgalFigureBegin{10}`
 :   The first argument is an anchor. Each extra argument is the filename
     of an image to be added to the figure. The text on the next line is
     the beginning of the caption of the figure.
-- `\cgalFigureEnd`: Indicates the end of the caption of the figure.\
-- `\cgalFigureAnchor{1}`: The argument is an anchor. Only use this if `cgalFigureBegin/End` are not general enough.\
-- `\cgalFigureCaptionBegin{1}` : The argument is the anchor used in `\cgalFigureAnchor{1}`. Begin marker for the caption. Only use this if `cgalFigureBegin/End` are not general enough.\
+- `\cgalFigureEnd`: Indicates the end of the caption of the figure.
+- `\cgalFigureAnchor{1}`: The argument is an anchor. Only use this if `cgalFigureBegin/End` are not general enough.
+- `\cgalFigureCaptionBegin{1}` : The argument is the anchor used in `\cgalFigureAnchor{1}`. Begin marker for the caption. Only use this if `cgalFigureBegin/End` are not general enough.
 - `\cgalFigureCaptionEnd` : End marker for the caption. Only use this if `cgalFigureBegin/End` are not general enough.
 
 #### Concepts and Models (Reference Manual)
 
-- `\cgalConcept` : Must be put in the comment of a concept, as doxygen does not natively support concepts.\
+- `\cgalConcept` : Must be put in the comment of a concept, as doxygen does not natively support concepts.
 - `\cgalConceptNamespace` : Use to indicate a concept namespace. It must precede the concept namespace declaration in `PackageDescription.txt`.
 
 example:
@@ -770,53 +770,53 @@ example:
 ` namespace Kernel{}`
 ```
 
-- `\cgalRefines` : Name a concept that this concept refines. Adjacent commands will be merged under one heading.\
-- `\cgalModels` : Name a concept that is modeled by this class. Adjacent commands will be merged under one heading.\
-- `\cgalGeneralizes` : Name a concept that this concept generalizes. Adjacent commands will be merged under one heading.\
+- `\cgalRefines` : Name a concept that this concept refines. Adjacent commands will be merged under one heading.
+- `\cgalModels` : Name a concept that is modeled by this class. Adjacent commands will be merged under one heading.
+- `\cgalGeneralizes` : Name a concept that this concept generalizes. Adjacent commands will be merged under one heading.
 - `\cgalHasModel` : Name a model of this concept. Adjacent commands will be merged under one heading.
 
-- `\cgalRequires` : Name a requirement. Adjacent commands will be merged under one heading. In the old manual tool ccRequires was often used to express that a template argument must be model of a certain concept. With doxygen it is usually better to use `\tparam` or `\param` for this purpose.\
-- `\cgalDebugFunction` : This adds a brief description to tell that this function is for debugging purpose. This is needed if the description of your function only contains a paragraph enclosed by `\cgalDebugBegin` and `\cgalDebugEnd`.\
-- `\cgalDebugBegin` : Starts a debugging related documentation part.\
+- `\cgalRequires` : Name a requirement. Adjacent commands will be merged under one heading. In the old manual tool ccRequires was often used to express that a template argument must be model of a certain concept. With doxygen it is usually better to use `\tparam` or `\param` for this purpose.
+- `\cgalDebugFunction` : This adds a brief description to tell that this function is for debugging purpose. This is needed if the description of your function only contains a paragraph enclosed by `\cgalDebugBegin` and `\cgalDebugEnd`.
+- `\cgalDebugBegin` : Starts a debugging related documentation part.
 - `\cgalDebugEnd` : Ends a debugging related documentation part.
 
-- `\cgalAdvancedFunction` : This adds a brief description to tell that this function is for advanced uses. This is needed if the description of your function only contains a paragraph enclosed by `\cgalAdvancedBegin` and `\cgalAdvancedEnd`.\
-- `\cgalAdvancedClass` : Same as previous but for a class.\
-- `\cgalAdvancedBegin` : Starts an advanced feature documentation part.\
+- `\cgalAdvancedFunction` : This adds a brief description to tell that this function is for advanced uses. This is needed if the description of your function only contains a paragraph enclosed by `\cgalAdvancedBegin` and `\cgalAdvancedEnd`.
+- `\cgalAdvancedClass` : Same as previous but for a class.
+- `\cgalAdvancedBegin` : Starts an advanced feature documentation part.
 - `\cgalAdvancedEnd` : Ends an advanced feature documentation part.
 
 #### Package Descriptions (used in PackageDescription.txt)
 
 The following commands should be used in the order presented here.
 
-- `\cgalPkgDescriptionBegin` : Begin of the package description\
-- `\cgalPkgPicture{1}` : Figure for the package description.\
-- `\cgalPkgSummaryBegin` : Begin of the summary\
-- `\cgalPkgAuthors{1}` : The argument is a comma separated list of first name and name.\
-- `\cgalPkgAuthor{1}` : The argument is a first name and a name.\
-- `\cgalPkgDesc{1}` : The argument is the textblock of a package description.\
-- `\cgalPkgSummaryEnd` : End of the summary.\
-- `\cgalPkgShortInfoBegin` : Begin of the short info section.\
-- `\cgalPkgSince{1}` : The argument is the release number when the package was introduced.\
-- `\cgalPkgDependsOn{1}` : The argument is a sentence with references to other packages.\
-- `\cgalPkgLicense{1}` : The argument is a text and a reference to the license.\
-- `\cgalPkgBib` : The argument is the bibtex entry for this package.\
-- `\cgalPkgDemo{2}` : (optional) The two arguments are the text and the zip file containing the demo.\
-- `\cgalPkgDemo{4}` : (optional) Same as the 2 argument version but when 2 demos are available\
-- `\cgalPkgDemo{6}` : (optional) Same as the 2 argument version but when 3 demos are available\
-- `\cgalPkgShortInfoEnd` : End of the short info section.\
-- `\cgalPkgDescriptionEnd` : End of the package description\
+- `\cgalPkgDescriptionBegin` : Begin of the package description
+- `\cgalPkgPicture{1}` : Figure for the package description.
+- `\cgalPkgSummaryBegin` : Begin of the summary
+- `\cgalPkgAuthors{1}` : The argument is a comma separated list of first name and name.
+- `\cgalPkgAuthor{1}` : The argument is a first name and a name.
+- `\cgalPkgDesc{1}` : The argument is the textblock of a package description.
+- `\cgalPkgSummaryEnd` : End of the summary.
+- `\cgalPkgShortInfoBegin` : Begin of the short info section.
+- `\cgalPkgSince{1}` : The argument is the release number when the package was introduced.
+- `\cgalPkgDependsOn{1}` : The argument is a sentence with references to other packages.
+- `\cgalPkgLicense{1}` : The argument is a text and a reference to the license.
+- `\cgalPkgBib` : The argument is the bibtex entry for this package.
+- `\cgalPkgDemo{2}` : (optional) The two arguments are the text and the zip file containing the demo.
+- `\cgalPkgDemo{4}` : (optional) Same as the 2 argument version but when 2 demos are available
+- `\cgalPkgDemo{6}` : (optional) Same as the 2 argument version but when 3 demos are available
+- `\cgalPkgShortInfoEnd` : End of the short info section.
+- `\cgalPkgDescriptionEnd` : End of the package description
 - `\cgalPkgManuals{2}` : The arguments are the anchors of the user and reference manual.
 
 #### Miscellaneous Macros
 
-- `\cgalFootnote{1}` : The argument is the footnote text.\
-- `\cgalAutoToc` : Create a full (all levels) table of contents.\
-- `\cgalTagTrue` : Creates a link for `TagTrue`.\
-- `\cgalTagFalse` : Creates a link for `TagFalse`.\
-- `\cgalHeading{1}`: Create a heading for a section in the user manual of a function or a class (same formatting as specific doxygen macros such as - `\pre, \param, ...- `\
-- `\cgalModifBegin` : Begin of a paragraph modified (used only during the submission/reviewing process).\
-- `\cgalModifEnd` : End of a paragraph modified.\
+- `\cgalFootnote{1}` : The argument is the footnote text.
+- `\cgalAutoToc` : Create a full (all levels) table of contents.
+- `\cgalTagTrue` : Creates a link for `TagTrue`.
+- `\cgalTagFalse` : Creates a link for `TagFalse`.
+- `\cgalHeading{1}`: Create a heading for a section in the user manual of a function or a class (same formatting as specific doxygen macros such as - `\pre, \param, ...- `
+- `\cgalModifBegin` : Begin of a paragraph modified (used only during the submission/reviewing process).
+- `\cgalModifEnd` : End of a paragraph modified.
 - `\cgalReleaseNumber` : The release version (available only in the `Documentation` package)
 
 ### New Packages and Doxygen Configuration
