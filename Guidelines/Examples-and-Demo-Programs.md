@@ -5,6 +5,7 @@
 * [Coding conventions](#coding-conventions)
 * [The Programs](#the-programs)
 * [Create `CMakeLists.txt`](#create-cmakeliststxt)
+* [Allow the use of C++11 feature (or later version of C++](#allow-the-use-of-c11-features-or-later-version-of-c)
 * [Including programs in documentation](#including-programs-in-documentation)
 * [Demo programs on the web](#demo-programs-on-the-web)
 
@@ -137,6 +138,36 @@ tests); in particular for components (like MPFI/RS) that activate
 additional code in CGAL's header files, and thus must be (pre)configured
 with CGAL (i.e. when and where are `CGAL_USE_<lib>` flags set - config
 of CGAL, config of example?).
+
+## Allow the use of C++11 features (or later version of C++)
+
+### For a given example
+
+The CMake function `create_single_source_cgal_program` allows the following syntax:
+```CMake
+create_single_source_cgal_program( "compute_normals_example.cpp"
+                                   CXX_FEATURES cxx_range_for cxx_auto_type )
+```
+where keywords after the optional `CXX_FEATURES` are [CMake compile features], among the [list of know features].
+
+A user can also opt for all C++11 features, that way:
+```CMake
+create_single_source_cgal_program( "compute_normals_example.cpp" 
+                                   CXX_FEATURES ${CMAKE_CXX11_COMPILE_FEATURES} )
+```
+but that is discouraged because variables like `CMAKE_CXX11_COMPILE_FEATURES` are [explicitly not documented](https://cmake.org/cmake/help/v3.6/manual/cmake-developer.7.html#adding-compile-features).
+
+[CMake compile features]: https://cmake.org/cmake/help/v3.1/manual/cmake-compile-features.7.html
+[list of know features]: https://cmake.org/cmake/help/v3.6/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.html#prop_gbl:CMAKE_CXX_KNOWN_FEATURES
+
+This requires CMake 3.1 or later, but there is a compatibility mode: the example will not be configured, with a warning, iif an older version of CMake is used.
+
+### For a whole directory (of examples or of a demo)
+To modify the CMakeLists.txt of a demo, to make it use C++11 or C++14, that is even easier: add that line before the definition of any target:
+```CMake
+set(CMAKE_CXX_STANDARD 14)
+```
+[This requires CMake version 3.1 or later](https://cmake.org/cmake/help/v3.1/variable/CMAKE_CXX_STANDARD.html?highlight=cmake_cxx_standard).
 
 ## Including programs in documentation
 
