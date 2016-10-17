@@ -5,7 +5,7 @@
 * [Coding conventions](#coding-conventions)
 * [The Programs](#the-programs)
 * [Create `CMakeLists.txt`](#create-cmakeliststxt)
-* [Allow the use of C++11 feature (or later version of C++)](#allow-the-use-of-c11-features-or-later-version-of-c)
+* [Allow the use of C++11 features (or later version of C++)](#allow-the-use-of-c11-features-or-later-version-of-c)
 * [Including programs in documentation](#including-programs-in-documentation)
 * [Demo programs on the web](#demo-programs-on-the-web)
 
