@@ -195,6 +195,6 @@ If a specific package has a demo that should be linked in the [package overview]
 web page, then the header in `<package>/doc/<package>/PackageDescription.txt` should be updated to include a `\cgalPkgDemo{}` line.
 For details see [this page](Writing-Documentation#packagedescriptiontxt).
 
-for each demo of the package. Please discuss with [@lrineau](https://github.com/lrineau) to agree on the name
+For each demo of the package, please discuss with [@lrineau](https://github.com/lrineau) to agree on the name
 `<name_of_the_demo>.zip` of the zip file, so that the automatic scripts
 that create the zip files are updated.
