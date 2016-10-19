@@ -22,11 +22,11 @@ In order to compile and build CGAL's libraries
 `CGAL, CGAL_Core, CGAL_ImageIO, CGAL_Qt5` from the packages of
 a branch, the branch-build collects all sources that are required to
 build by calling
-
-` ls */src/CGAL<name-of-the-library>/*.cpp`
-
+``` {.bash}
+> ls */src/CGAL<name-of-the-library>/*.cpp
+```
 on the parent of the branch. That is, `*` is replaced by all packages
-contained in branch. More detailed: The source files of a library can
+contained in branch. More detailed: the source files of a library can
 spread over various packages. Though, for most libraries, only a single
 package collects all source files.
 
@@ -38,17 +38,17 @@ then the `CMakeLists.txt` of the library (located in a package as
 
 ### Remark for Qt5
 
-Building the Qt5 library also needs to call `qtmoc` for some
-files. Also this task is half-automated: To support the 'qtmoc', Jenny
+Building the Qt5 library also requires to call `qtmoc` for some
+files. This task is half-automated: to support the 'qtmoc', Jenny
 is required to add a file to each package that contributes sources to
 `CGAL_Qt5`, respectively. Such a file should be located in
 `<whateverpackage>/src/CGALQt5/` and needs to a have unique filename
 over all packages, because of flattening of packages during release
 creation. A recommended choice is `<name-of-package>.qtmoc.cmake`. The
 file's content gives commands needed to run `qtmoc` for files related to
-the package. For instance, the file `GraphicsView.qtmoc.cmake` looks:
+the package. For instance, the file `GraphicsView.qtmoc.cmake` looks like:
 
-```
+``` {.cmake}
 # moc files that are compiled directly as cpp files
 qt5_wrap_cpp(mocfiles ../../include/CGAL/Qt/GraphicsViewNavigation.h
                       ../../include/CGAL/Qt/DemosMainWindow.h
@@ -62,11 +62,11 @@ Modifying this example should suffice for most of Jenny's use cases.
 
 ## Adding a library
 
-<span style="color:orange">Disclaimer: This is an initial version of
+**Disclaimer**: *This is an initial version of
 this section. There are plans to improve the handling of libraries in
 CGAL in a more automatic way with CMake. For now the following steps are
-known, though slight modifications of the steps should be expected. Note
-that adding a library is a very seldom task as a CGAL developer.</span>
+known, although slight modifications of the steps should be expected. Note
+that adding a library is a very seldom task as a CGAL developer.*
 
 ### Layout of directories and files
 
@@ -75,7 +75,7 @@ speed up parallel computations. She chooses the new library to be called
 `CGAL_Parallel`. The new development takes place in a new package (with
 some subdirectories)
 
-```
+``` {.bash}
 > mkdir Parallel
 > mkdir -p Parallel/package_info/Parallel
 > mkdir -p Parallel/src/CGALParallel
@@ -90,17 +90,18 @@ be put under `Parallel/src/CGALParallel`. The naming of this directory
 
 ### The `CMakeLists.txt` of the new library
 
-In order to include the new library to the build-process she adds a
-`CMakeLists.txt` file the same directory.
+In order to include the new library to the build-process, she adds a
+`CMakeLists.txt` file to the same directory.
 
 The simplest `CMakeLists.txt` is a single call to the CMake macro
 **`build_cgal_library`**:
-
-` build_cgal_library(CGAL_Parallel CGALParallel "")`
+``` {CMakeLists.txt}
+build_cgal_library(CGAL_Parallel CGALParallel "")
+```
 
 The macro `build_cgal_library` declares a new library to CMake, using
 `add_library`. It does extra work for name-mangling support on Windows,
-and set the VERSION and SOVERSION properties of the library. Here are
+and sets the VERSION and SOVERSION properties of the library. Here are
 the arguments of the macro:
 
 -   The first argument is the name of the library.
@@ -110,16 +111,15 @@ the arguments of the macro:
     here an empty list.
 
 Usually, the new library needs third-party libraries, and for that
-reason the
-`CMakeLists.txt<code> is usually more complicated. See e.g. <code>CGALimageIO/src/CGALImageIO/CMakeLists.txt`.
+reason the `CMakeLists.txt` is usually more complicated. See e.g. `CGALimageIO/src/CGALImageIO/CMakeLists.txt`.
 
 ### Additions to `CGALConfig.cmake`
 
 Jenny also has to announce the new library with the help of CGAL's
-configurations file. To do so she alters two template files: First she
+configurations file. To do so, she alters two template files: first, she
 adds to `Installation/cmake/modules/CGALConfig_binary.cmake.in` (for the
 CGAL in out-of-source-build):
-```
+``` {.cmake}
 set(WITH_CGAL_Parallel "@WITH_CGAL_Parallel@")
  
 set(CGAL_Parallel_LIBRARY "@CGAL_Parallel_LIBRARY@")
@@ -132,7 +132,7 @@ set(CGAL_Parallel_3RD_PARTY_LIBRARIES      "@CGAL_Parallel_3RD_PARTY_LIBRA
 and similarly adds the following lines to
 ` Installation/cmake/modules/CGALConfig_install.cmake.in` (for installed
 CGAL):
-```
+``` {.cmake}
 set(WITH_CGAL_Parallel "@WITH_CGAL_Parallel@")
 set(CGAL_Parallel_LIBRARY "@CMAKE_INSTALL_PREFIX@/@CGAL_INSTALL_LIB_DIR@/@CGAL_Parallel_LIBRARY_NAME@")
 
@@ -142,15 +142,15 @@ set(CGAL_Parallel_3RD_PARTY_LIBRARIES_DIRS "@CGAL_Parallel_3RD_PARTY_LIBRARIES_
 set(CGAL_Parallel_3RD_PARTY_LIBRARIES      "@CGAL_Parallel_3RD_PARTY_LIBRARIES@" )`
 ```
 Lines like:
-```
+``` {.cmake}
 set(CGAL_Parallel_USE_ZLIB                  "@CGAL_Parallel_USE_ZLIB@" )
 ```
-might be required, too. And if, then in both files.
+might be required, too. And if so, in both files.
 
 ### Build
 
 Then, after calling
-```
+``` {.bash}
 > cmake ~/CGAL/workingcopy
 > make
 ```
