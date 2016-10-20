@@ -8,29 +8,29 @@
 
 <!--TOC-->
 
-Once your mentor has introduced you on the [CGAL Editorial Board mailing list](Mailing-Lists), and once the [CGAL Editorial Board](http://www.cgal.org/people.html) has approved your participation in the CGAL project as a [CGAL developer](http://www.cgal.org/project_rules.html#developers), then you should follow these guidelines. 
+Once your mentor has introduced you on the [CGAL Editorial Board mailing list](Mailing-Lists), and once the [CGAL Editorial Board](http://www.cgal.org/people.html) has approved your participation in the CGAL project as a [CGAL developer](http://www.cgal.org/project_rules.html#developers), you should follow these guidelines. 
 
 ## Creating a GitHub account
 
--   Visit <https://github.com/join> and then, choose **Free** as the
-    personal plan (while you are free to pay if you want).
+-   Visit <https://github.com/join> and choose **Free** as the
+    personal plan (although you are free to pay if you want).
 -   You should receive an email to *verify* that the email address
     provided is valid.
 -   Add your first name and last name and complete your profile at
-    <https://github.com/settings/profile>
--   Add all email addresses you have ever used (for statistics) at
+    <https://github.com/settings/profile>.
+-   Add all email addresses that you have ever used (for statistics) at
     <https://github.com/settings/emails> and, optionally, check the box
     *Keep my email address private*.
 -   Set up your SSH keys: <https://github.com/settings/ssh> (see
-    [here](http://help.github.com/key-setup-redirect) for help)
+    [here](http://help.github.com/key-setup-redirect) for help).
 -   **Recommended** Set up the 2-factor authentication
-    <https://github.com/settings/security> (if you don't set it you'll
+    <https://github.com/settings/security> (if you do not set it you will
     be contacted by an admin of CGAL to ask you why).
 -   Configure notifications at
-    <https://github.com/settings/notifications>
+    <https://github.com/settings/notifications>.
 
-Once done, send an email with your Github ID to [@sloriot](https://github.com/sloriot) who will
-add you to the list of members of the CGAL organization, so that you can
+Once this is done, send an email with your Github ID to [@sloriot](https://github.com/sloriot), who will
+add you to the list of members of the CGAL organization so that you can
 see the private repositories.
 
 **<span style="color:red">Note that each developer with SCM access has
@@ -44,15 +44,15 @@ change anything under the version control system.</span>**
 **<span style="color: red; ">BEFORE YOU START ANY CODING BE SURE TO SET
 UP CGAL IN EXACTLY THIS WAY:</span>**
 
-- Uninstall any old CGAL Installation (if you installed CGAL through a package manager, use it to uninstall it again, if you installed CGAL from a tarball, you need to remove it manually)
+- Uninstall any old CGAL Installation (if you installed CGAL through a package manager, use it to uninstall it again; if you installed CGAL from a tarball, you need to remove it manually)
 - Install all dependencies
-  - on Arch Linux: `pacman -S cmake qt5 gmp mpfi mpfr boost zlib mesa glu eigen`, you can get `qglviewer` from AUR
-  - on Mac OS X, use brew (`brew install --only-dependencies cgal`) or macports
-  - on Windows things are more [delicate](https://www.cgal.org/windows_installation.html) (TODO other link?)
+  - on Arch Linux: `pacman -S cmake qt5 gmp mpfi mpfr boost zlib mesa glu eigen`, you can get `qglviewer` from AUR.
+  - on Mac OS X, use brew (`brew install --only-dependencies cgal`) or macports.
+  - on Windows, things are more [delicate](https://www.cgal.org/windows_installation.html). (TODO other link?)
 - Clone your repository (if you're CGAL *student* clone `cgal-public-dev`)
-  - cloning cgal-dev: ` git clone git@github.com:CGAL/cgal-dev.git`
-  - or cloning cgal-public-dev: ` git clone git@github.com:CGAL/cgal-public-dev.git`
-  - add read-only branches: ` git remote add cgal git@github.com:CGAL/cgal.git`
+  - cloning cgal-dev: ` git clone git@github.com:CGAL/cgal-dev.git`.
+  - or cloning cgal-public-dev: ` git clone git@github.com:CGAL/cgal-public-dev.git`.
+  - add read-only branches: ` git remote add cgal git@github.com:CGAL/cgal.git`.
 - Set `CGAL_DIR` persistently to a directory where you intend to build CGAL
   - UNIX environment: Add `export CGAL_DIR=path/to/cgal/build` to `~/.profile` or your shell configuration file. Refer to your systems documentation for more specific information.
 - [Build CGAL from the repository](Branch-Build#using-a-single-version-of-cgal)
@@ -82,7 +82,7 @@ developer should read are:
     access only for [CGAL developers](http://www.cgal.org/project_rules.html#developers)), but you might want to also
     subscribe to the public (high-traffic) *cgal-discuss* and/or
     (low-traffic) *cgal-announce*.
--   We meet in person on *CGAL developer meetings*, which take place roughly each six
+-   We meet in person at *CGAL developer meetings*, which take place roughly each six
     months. We try to distribute the meetings between several institutes
     affiliated to CGAL. They are announced via *cgal-develop* and on the internal
     wiki.
