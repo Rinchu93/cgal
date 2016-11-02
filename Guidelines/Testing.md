@@ -16,6 +16,7 @@
 * [Custom test script](#custom-test-script)
 * [Using the code coverage tool gcov](#using-the-code-coverage-tool-gcov)
   * [CMake](#cmake)
+* [Using the cgal/testsuite-docker](#cgal-docker)
 
 <!--TOC-->
 
@@ -448,3 +449,21 @@ gcov <executable>.cpp -o CMakeFiles/<executable>.dir/<executable>.cpp.gcno
 
 Within CGAL, it is often useful to pass the additional `-p` option to
 gcov to preserve the source files' full paths.
+
+## Using the cgal/testsuite-docker
+
+Many platforms used to run the daily test suite are now stored on different Docker images. The CGAL project provides many images where all the CGAL dependencies are provides (see https://hub.docker.com/r/cgal/testsuite-docker/tags/ for the list of images).
+
+In order to simplify the resolution of problems in a given platform, it could be useful to install a specific docker image and compile and debug some CGAL program on this image.
+
+For that you need first to install a Docker daemon (see https://www.docker.com/) and be able to run a docker image.
+
+Then let us suppose the CGAL root directory you want to test is `${HOME}/mycgal/` and you want to compile it on the `fedora-strict-ansi` docker image. This can be done by using the following command in a terminal:
+
+<code>docker run --rm -i -t -v ${HOME}/mycgal/:/mnt/CGAL/ cgal/testsuite-docker:fedora-strict-ansi /bin/bash</code>
+
+This will run an interactive bash shell, mounting the `${HOME}/mycgal/` directory as `/mnt/CGAL`, and downloading the given docker image.
+
+Then you can navigate in this directory and compile and run the different CGAL programs as in your local system.
+
+When finishing, use `Ctrl+D` to leave the interactive shell and go back to your local system.
