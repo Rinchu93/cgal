@@ -16,7 +16,7 @@
 * [Custom test script](#custom-test-script)
 * [Using the code coverage tool gcov](#using-the-code-coverage-tool-gcov)
   * [CMake](#cmake)
-* [Using the cgal/testsuite-docker](#cgal-docker)
+* [Using the CGAL Dockers](#using-the-cgal-dockers)
 
 <!--TOC-->
 
@@ -450,7 +450,7 @@ gcov <executable>.cpp -o CMakeFiles/<executable>.dir/<executable>.cpp.gcno
 Within CGAL, it is often useful to pass the additional `-p` option to
 gcov to preserve the source files' full paths.
 
-## Using the cgal/testsuite-docker
+## Using the CGAL Dockers
 
 Many platforms used to run the daily test suite are now stored on different Docker images. The CGAL project provides many images where all the CGAL dependencies are provides (see https://hub.docker.com/r/cgal/testsuite-docker/tags/ for the list of images).
 
