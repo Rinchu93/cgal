@@ -155,7 +155,7 @@ See that page: <https://git.wiki.kernel.org/index.php/Aliases>.
 ## My branch is really old. I would like to update it to get latest update from master.
 
 Assuming you are currently working on a branch called
-`my-ancient-feature`.
+`my-ancient-feature` and you have **not** created a pull request yet.
 
 ``` {.bash}
 > git branch -m my-ancient-feature my-ancient-feature-old 
