@@ -11,7 +11,7 @@
 * [How to create aliases for Git commands?](#how-to-create-aliases-for-git-commands)
 * [How to search for the commits of a certain author?](#how-to-search-for-the-commits-of-a-certain-author)
 * [My branch is really old. I would like to update it to get latest update from master.](#my-branch-is-really-old-i-would-like-to-update-it-to-get-latest-update-from-master)
-  * [Simpler alternative if you have not shared your branch with others](#simpler-alternative-if-your-have-not-shared-your-branch-with-others)
+  * [Simpler alternative if you have not shared your branch with others](#simpler-alternative-if-you-have-not-shared-your-branch-with-others)
 * [I want to rename a local branch, without renaming the upstream branch (in cgal-dev)](#i-want-to-rename-a-local-branch-without-renaming-the-upstream-branch-in-cgal-dev)
 * [I see remote branches in my repository that have been removed on the server. How do I update my local clone?](#i-see-remote-branches-in-my-repository-that-have-been-removed-on-the-server-how-do-i-update-my-local-clone)
 
