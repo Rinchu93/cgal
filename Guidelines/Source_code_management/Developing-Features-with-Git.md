@@ -423,9 +423,9 @@ copy either is switched from one branch to another or if the branch is
 simply updated.
 
 Remarks: 
-- In fact, rebuilding CGAL is '''only needed if a cpp file has
+- In fact, rebuilding CGAL is only needed if a cpp file has
 been added, removed or altered or include dirs have been added or
-deleted ''' during the switch/update 
+deleted during the switch/update 
 - As CGAL mainly consists of
 header files, actual rebuilds are often not needed. 
 - For the same
