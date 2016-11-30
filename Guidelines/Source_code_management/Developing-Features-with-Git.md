@@ -59,7 +59,7 @@ This page discusses the case of adding a package. The same steps
 similarly apply for adding a demo/example or non-trivial bug-fixes. At
 the beginning Jenny enters her local Git repository.
 ```
-> cd /path/to/my/cgal\_repository
+> cd /path/to/my/cgal_repository
 ```
 ## Opening a feature branch
 
