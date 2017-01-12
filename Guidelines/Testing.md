@@ -470,7 +470,7 @@ Then you can navigate in this directory and compile and run the different CGAL p
 When finishing, use `Ctrl+D` to leave the interactive shell and go back to your local system.
 
 ## Using CTest
-CTest is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel.
+CTest is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel. For the moment, our nightly test suites still use the old shell scripts, but in the future we plan to use CTest. Anyway, the support for CTest is already in CGAL, in te `master` branch.
 
 You can use ctest to test a specific example/test directory or the whole thing.
 First, you need a CGAL build with examples and tests.
