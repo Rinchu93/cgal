@@ -502,3 +502,12 @@ If you want to test the whole thing:
 [~/CGAL/build/test/] > ctest -j4
 ```
 *Note: the `-j4` options of both `make` and `ctest` set the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
+
+If you want run only one tests, you can use the `-R` option of CTest:
+```
+ctest -R <pattern>
+```
+will run all tests matching the regular expression `<pattern>`
+```
+
+If you pass the option `-V` (or `--verbose`), you will see the command lines used to run the tests, and the output of the tests. Otherwise, the output is only in the file `Testing/Temporary/LastTest.log` of your current build directory.
