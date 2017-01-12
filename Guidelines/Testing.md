@@ -470,22 +470,35 @@ Then you can navigate in this directory and compile and run the different CGAL p
 When finishing, use `Ctrl+D` to leave the interactive shell and go back to your local system.
 
 ## Using CTest
+CTest is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel.
+
 You can use ctest to test a specific example/test directory or the whole thing.
 First, you need a CGAL build with examples and tests.
 ```
 cd CGAL
-mkdir build/test -p
-cd build/test
+mkdir build
+cd build
+```
+*Note: if your `build` directory already existed before, it can be reused, without the need to erase its content. Even the current `CMakeCache.txt` can be used.*
+
+Then run CMake with the options:
+- to enable CTest: `BUILD_TESTING` set to `ON`,
+- to enable the building of examples and tests in the same build directory: `WITH_examples` and `WITH_tests` set to `ON`.
+With the command line tool `cmake` you can run the following command:
+```
 cmake -DBUILD_TESTING=ON -DWITH_examples=ON -DWITH_tests=ON ../..
 ```
-If you want to test a particular directory do:
+but you can also set those options using the CMake GUI.
+
+If you want to test a particular directory, do:
 ```
 cd test/Kernel_23
 make -j4 
 ctest -j4 # if you do not compile first, nothing will be tested
 ```
-If you want to test the whole thing
+If you want to test the whole thing:
 ```
 [~/CGAL/build/test/] > make examples tests -j4
 [~/CGAL/build/test/] > ctest -j4
 ```
+*Note: the `-j4` options of both `make` and `ctest` set the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
