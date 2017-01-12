@@ -17,6 +17,7 @@
 * [Using the code coverage tool gcov](#using-the-code-coverage-tool-gcov)
   * [CMake](#cmake)
 * [Using the CGAL Dockers](#using-the-cgal-dockers)
+* [Using CTest](#using-ctest)
 
 <!--TOC-->
 
@@ -467,3 +468,24 @@ This will run an interactive bash shell, mounting the `${HOME}/mycgal/` director
 Then you can navigate in this directory and compile and run the different CGAL programs as in your local system.
 
 When finishing, use `Ctrl+D` to leave the interactive shell and go back to your local system.
+
+## Using CTest
+You can use ctest to test a specific example/test directory or the whole thing.
+First, you need a CGAL build with examples and tests.
+```
+cd CGAL
+mkdir build/test -p
+cd build/test
+cmake -DBUILD_TESTING=ON -DWITH_examples=ON -DWITH_tests=ON ../..
+```
+If you want to test a particular directory do:
+```
+cd test/Kernel_23
+make -j4 
+ctest -j4 # if you do not compile first, nothing will be tested
+```
+If you want to test the whole thing
+```
+[~/CGAL/build/test/] > make examples tests -j4
+[~/CGAL/build/test/] > ctest -j4
+```
