@@ -37,7 +37,9 @@ try it, (but this is not needed to build a correct version of your
 documentation). See `https://github.com/CGAL/doxygen`. A windows
 executable is available [here](doxygen-1.8.4-patched.gz).
 
-
+- doxygen 1.8.13 works almost good. There is an issue with the navtree that is
+  fixed in [this branch](https://github.com/CGAL/doxygen/tree/release_1_8_13_patched).
+  It also contains the patch for having less output when `EXTRACT_ALL=ON`.
 - doxygen 1.8.11 (+1.8.12) generates an incomplete website: the treeview is missing.
 Maybe our hackery is incompatible? Also too many things are exported in
 tags. Only two consecutive runs doxygen can be done. After that the tag
