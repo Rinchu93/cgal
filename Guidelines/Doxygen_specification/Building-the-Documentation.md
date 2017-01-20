@@ -35,7 +35,7 @@ documentation is built with this patched version while all the
 patches are not integrated in the official release. If you want you can
 try it, (but this is not needed to build a correct version of your
 documentation). See `https://github.com/CGAL/doxygen`. A windows
-executable is available [here](doxygen-1.8.4-patched.gz)
+executable is available [here](doxygen-1.8.4-patched.gz).
 
 
 - doxygen 1.8.11 (+1.8.12) generates an incomplete website: the treeview is missing.
