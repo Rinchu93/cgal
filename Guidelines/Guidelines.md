@@ -13,7 +13,6 @@ and the [public developer manual](http://doc.cgal.org/latest/Manual/dev_manual.h
     -   [ Developing Features with Git](Developing-Features-with-Git)
     -   [ FAQ about Git](Git-FAQ)
     -   [ Migration from `scm.cgal.org` to GitHub](Migration-to-Github)
-
 2.  [ Building](Branch-Build) (libraries, demos, or executables based on CGAL)
 3.  [ Package Directory-Structure](Directory-Structure-for-Packages)
 4.  [ Libraries](Libraries) (how to add or modify a CGAL library)
@@ -22,7 +21,6 @@ and the [public developer manual](http://doc.cgal.org/latest/Manual/dev_manual.h
     -   [ Writing Documentation](Writing-Documentation)
     -   [ Building the Documentation](Building-the-Documentation)
     -   [ Doxygen FAQ](Doxygen-FAQ)
-
 7.  [ Testing](Testing)
 8.  [ Scripts](Scripts) (for performing routine tasks)
 9.  [ Examples and Demo Programs](Examples-and-Demo-Programs)
