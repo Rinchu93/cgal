@@ -17,9 +17,9 @@ what a new header file in an existing or new package must contain.
 
 ## Package License Headers
 For each package under GPL-3+, a license file is available in 
-`Installation/include/CGAL/license`. These files are automatically generated
+`Installation/include/CGAL/license/`. These files are automatically generated
 using the template `Installation/include/CGAL/license/gpl.h.in`. Calling
-`cmake -P generate_files.cmake` from `Installation/include/CGAL/license` will
+`cmake -P generate_files.cmake` from `Installation/include/CGAL/license/` will
 read the file `Installation/include/CGAL/license/gpl_package_list.txt` and will
 generate a license file for each entry in the file.
 An entry in `gpl_package_list.txt` is a line with the short name of the package
