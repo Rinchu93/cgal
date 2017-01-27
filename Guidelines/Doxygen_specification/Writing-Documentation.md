@@ -276,7 +276,7 @@ images are provided (more can be added into Documentation/Doxyfile, see
 `ALIASES` section). The caption must then follow and the end must be
 indicated by using the macro `\cgalFigureEnd`. `Figure i` will be added
 to your caption, `i` begin the number assigned to the figure in the
-page. To reference a figure, use the macro `\cgalFigureRef{ref_id}``.
+page. To reference a figure, use the macro `\cgalFigureRef{ref_id}`.
 This will be replaced by a link with name `Figure i` where `i` is the
 number assigned to the figure in the page.
 
@@ -294,7 +294,7 @@ In case you want to have more complex assembly or resizing of images,
 you need to directly use html code. The macro
 `\cgalFigureAnchor{ref_id}` that creates the anchor for the figure must
 be put before the html code for the image. The caption must be enclosed
-by `\cgalFigureCaptionBegin{ref_id}` and `\cgalFigureCaptionEnd`
+by `\cgalFigureCaptionBegin{ref_id}` and `\cgalFigureCaptionEnd`.
 
 ``` {.cpp}
 /*!
