@@ -324,29 +324,13 @@ file (`cgal_stylesheet.css`).
 
 Here is an example for the Nef\_S2 package:
 
-``` {.xml}
-<project>
-  <name>2D Boolean Operations on Nef Polygons Embedded on the Sphere</name>
-  <input>../Nef_S2/doc</input>
-  <doxygen>
-    <string name="STRIP_FROM_PATH">../Nef_S2/doc/Nef_S2/</string>
-    <string name="STRIP_FROM_INC_PATH">../Nef_S2/doc/Nef_S2/</string>
-    <string name="GENERATE_TAGFILE">./tags/Nef_S2.tag</string>
-    <string name="IMAGE_PATH">../Nef_S2/doc/Nef_S2/fig</string>
-    <list name="EXAMPLE_PATH" append="true">
-      <item>../Nef_S2/examples</item>
-      <item>../Nef_S2/demo</item>
-    </list>
-    <list name="HTML_EXTRA_FILES" append="true">
-      <item>../Nef_S2/doc/Nef_S2/fig/halfspace.gif</item>
-      <item>../Nef_S2/doc/Nef_S2/fig/complex.gif</item>
-    </list>
-    <list name="TAGFILES" append="true">
-      <item>./tags/STL_Extension.tag=../../CGAL.CGAL.STL-Extensions-for-CGAL/html</item>
-      <item>./tags/Nef_2.tag=../../CGAL.CGAL.2D-Boolean-Operations-on-Nef-Polygons/html</item>
-    </list>
-  </doxygen>
-</project>
+```
+@INCLUDE = ${CGAL_DOC_PACKAGE_DEFAULTS}
+
+PROJECT_NAME = "CGAL ${CGAL_DOC_VERSION} - 2D Boolean Operations on Nef Polygons Embedded on the Sphere"
+HTML_EXTRA_FILES           =  ${CGAL_PACKAGE_DOC_DIR}/fig/halfspace.png \
+                              ${CGAL_PACKAGE_DOC_DIR}/fig/complex.png
+
 ```
 
 #### Automatic Equation Numbering
