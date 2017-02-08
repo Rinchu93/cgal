@@ -255,6 +255,8 @@ demo/<demodir>/
 where `<demodir>` is a name that corresponds (at least in part) to the
 package for which it is a demo.
 
+Note that if 3D packages have their own `demo` directory, 2D packages have their located in GraphicsView/demo/.
+
 The file `README` should contain information about what the program
 does, and how to compile it (i.e., what graphical libraries are needed,
 etc...). Note that, in contrast to example and test programs, demo
