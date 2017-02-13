@@ -236,8 +236,12 @@ explanation of the other files and subdirectories.
 The `demo` directory (see [Examples and Demo
 Programs](Examples-and-Demo-Programs)) contains
 programs with graphical interfaces or programs requiring user input.
-These programs will be compiled but not run by the test suite. The
-structure of this directory should be as follows:
+These programs will be compiled but not run by the test suite. 
+
+Note that if 3D packages have their own `demo` directory, 2D packages 
+have theirs located in GraphicsView/demo/. 
+
+The structure of this directory should be as follows:
 
 ```
 demo/<demodir>/
@@ -254,8 +258,6 @@ demo/<demodir>/
 
 where `<demodir>` is a name that corresponds (at least in part) to the
 package for which it is a demo.
-
-Note that if 3D packages have their own `demo` directory, 2D packages have theirs located in GraphicsView/demo/.
 
 The file `README` should contain information about what the program
 does, and how to compile it (i.e., what graphical libraries are needed,
