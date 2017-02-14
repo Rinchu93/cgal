@@ -43,7 +43,7 @@ The directory structure of a package named Package should be as follows:
 |
 +--- examples/<exampledir>/
 |
-+--- demo/<demodir>/
++--- demo/<demodir>/ (Only for 3D Packages.)
 |
 +--- benchmark/<benchmarkdir>/
 |
