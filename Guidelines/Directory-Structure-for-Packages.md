@@ -43,7 +43,7 @@ The directory structure of a package named Package should be as follows:
 |
 +--- examples/<exampledir>/
 |
-+--- demo/<demodir>/ (Only for 3D Packages.)
++--- demo/<demodir>/
 |
 +--- benchmark/<benchmarkdir>/
 |
@@ -88,8 +88,9 @@ The directory structure of a package named Package should be as follows:
      contains the demo programs for the package. Contrary to example
     programs, demo programs are not expected to be usable on all
     platforms. Demo programs may depend on platform-specific software
-    and may require user interaction. They are compiled but not run in
-    the test suite. See Section [`demo` subdirectory](#demo-subdirectory) for a more detailed
+    and may require user interaction. They are compiled but not run in the test suite. 
+    Demo programs for 2D packages should instead be placed in the GraphicsView/ package. 
+    See Section [`demo` subdirectory](#demo-subdirectory) for a more detailed
     description of this subdirectory.
 -   `benchmark/`
      contains the benchmark programs for the package. See Section
