@@ -21,7 +21,7 @@ that provided graphical output (demos) and those that do not (examples).
 
 In this chapter we provide guidelines for the development of these
 programs and their inclusion in the documentation. See Sections
-sec:examples\_subdirectory 4.3 and sec:demo\_subdirectory 4.4 for a
+ [example subdirectory](https://github.com/CGAL/cgal/wiki/Directory-Structure-for-Packages#examples-subdirectory) and [demo subdirectory](https://github.com/CGAL/cgal/wiki/Directory-Structure-for-Packages#demo-subdirectory) for a
 description of the directory structure required for example and demo
 programs, respectively. Note in particular that each directory should
 contain a README file that explains what the programs do and how one
