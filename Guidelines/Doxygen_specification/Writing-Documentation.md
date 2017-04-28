@@ -855,8 +855,6 @@ directly inside header files:
 @INCLUDE = ${CGAL_DOC_PACKAGE_DEFAULTS}
 
 PROJECT_NAME =  "CGAL ${CGAL_CREATED_VERSION_NUM} - 3D Fast Intersection and Distance Computation (AABB Tree)"
-INPUT =  ${CMAKE_SOURCE_DIR}/AABB_tree/doc/AABB_tree/ \ 
-         ${CMAKE_SOURCE_DIR}/AABB_tree/include
 
 # custom options for this package
 EXTRACT_ALL                =  false
@@ -887,9 +885,32 @@ documentation is inside fake header files:
 @INCLUDE = ${CGAL_DOC_PACKAGE_DEFAULTS}
 
 PROJECT_NAME = "CGAL ${CGAL_CREATED_VERSION_NUM} - 2D Triangulation Data Structure"
-INPUT        = ${CMAKE_SOURCE_DIR}/Triangulation_2/doc/TDS_2/
 IMAGE_PATH  +=  ${CMAKE_SOURCE_DIR}/Triangulation_2/doc/Triangulation_2/fig # not the default image path
 ```
+
+`INPUT` is set automatically by cmake. If a `CGAL` directory does not exist
+in the `doc` directory, we assume that the doc is inline and the path to
+the include directory of the package is automatically appended to `INPUT`.
+
+In the case of mixed documented headers, you need to set `INPUT` by hand. You
+specify headers one by one like in the BGL package:
+```{.bash}
+INPUT += ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/Euler_operations.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/iterator.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/helpers.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/selection.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/split_graph_into_polylines.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/copy_face_graph.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/Graph_with_descriptor_with_graph.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/Dual.h \
+         ${CGAL_PACKAGE_INCLUDE_DIR}/CGAL/boost/graph/convert_nef_polyhedron_to_polygon_mesh.h
+```
+or simply
+```{.bash}
+INPUT += ${CGAL_PACKAGE_INCLUDE_DIR} 
+```
+if all headers must be considered.
+The `doc` directory is always added in `INPUT`.
 
 ##### Doxyfile.in defaults
 
@@ -897,7 +918,12 @@ The base configuration provides defaults that will work if the package
 sticks to normal CGAL conventions.
 
 * `IMAGE_PATH` : `My_package/doc/My_package/fig`
-* `EXAMPLE_PATH` : `My_package/examples`
+* `EXAMPLE_PATH` : `My_package/examples` 
+  * if you need to add the example path of another package you must use `CGAL_PKG_EXAMPLE_DIR` like in the BGL package:
+```
+EXAMPLE_PATH            =  ${CGAL_Surface_mesh_skeletonization_EXAMPLE_DIR} \
+                              ${CGAL_BGL_EXAMPLE_DIR}
+```
 * `STRIP_FROM_PATH` : `My_package/doc/My_package/` and `My_package/include`
 * `STRIP_FROM_INC_PATH` : `My_package/doc/My_package/` and `My_package/include`
 
