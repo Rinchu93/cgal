@@ -470,7 +470,7 @@ Then you can navigate in this directory and compile and run the different CGAL p
 When finishing, use `Ctrl+D` to leave the interactive shell and go back to your local system.
 
 ## Using CTest
-CTest is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel. For the moment, our nightly test suites still use the old shell scripts, but in the future we plan to use CTest. Anyway, the support for CTest is already in CGAL, in te `master` branch.
+CTest is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel. For the moment, our nightly test suites still use the old shell scripts, but in the future we plan to use CTest. CTest is already supported in CGAL, in the `master` branch.
 
 You can use ctest to test a specific example/test directory or the whole thing.
 First, you need a CGAL build with examples and tests.
@@ -479,12 +479,12 @@ cd CGAL
 mkdir build
 cd build
 ```
-*Note: if your `build` directory already existed before, it can be reused, without the need to erase its content. Even the current `CMakeCache.txt` can be used.*
+*Note: if your `build` directory already existed before, it can be reused without the need to erase its content. Even the current `CMakeCache.txt` can be used.*
 
 Then run CMake with the options:
 - to enable CTest: `BUILD_TESTING` set to `ON`,
 - to enable the building of examples and tests in the same build directory: `WITH_examples` and `WITH_tests` set to `ON`.
-With the command line tool `cmake` you can run the following command:
+With the command line tool `cmake`, you can run the following command:
 ```
 cmake -DBUILD_TESTING=ON -DWITH_examples=ON -DWITH_tests=ON ../..
 ```
@@ -501,7 +501,7 @@ If you want to test the whole thing:
 [~/CGAL/build/test/] > make examples tests -j4
 [~/CGAL/build/test/] > ctest -j4
 ```
-*Note: the `-j4` options of both `make` and `ctest` set the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
+*Note: the `-j4` option of both `make` and `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
 ### Run only specific tests
 If you want run only one test, or a selection of them, you can use the `-R` option of CTest:
@@ -510,10 +510,10 @@ ctest -R <pattern>
 ```
 will run all tests matching the regular expression `<pattern>`
 ```
-That option `-R <pattern>` can be used several times in the same ctest run.
+The option `-R <pattern>` can be used several times in the same CTest run.
 
 ### Verbose output
 If you pass the option `-V` (or `--verbose`), you will see the command lines used to run the tests, and the output of the tests. Otherwise, the output is only in the file `Testing/Temporary/LastTest.log` of your current build directory.
 
 ### Dry-run of CTest
-If you pass `-N` to the ctest command line, CTest will make a dry-run: it will *display* the list of all tests it will launch, instead of launching them. You can pass both the options `-N -V` to see at the same time the command lines CTest will use.
+If you pass `-N` to the ctest command line, CTest will make a dry-run: it will *display* the list of all tests that it will launch, instead of launching them. You can pass both the options `-N -V` to see at the same time the command lines CTest will use.
