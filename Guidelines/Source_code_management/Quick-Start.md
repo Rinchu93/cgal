@@ -71,8 +71,6 @@ Now Jenny is ready to get her own local repository by **cloning** the
 remote repository on our server:
 
 ``` {.bash}
-> git clone -o cgal-dev git@github.com:CGAL/cgal-dev.git my_cgal_folder  #If you are NOT a CGAL student
-> # or
 > git clone -o cgal-public-dev git@github.com:CGAL/cgal-public-dev.git my_cgal_folder  #If you are a CGAL student
 ```
 
@@ -141,11 +139,10 @@ You can add another remote like this:
   remotes/cgal-public-dev/hooks-on-server
   remotes/cgal-public-dev/gsoc2013-XXXX-student
  
-#Starting to work on such a branch works as for branches on "cgal-dev" - see the guidelines, and replace "cgal-dev" with "cgal-public-dev" - or add "cgal-public-dev" to pushes
-  git push cgal-public-dev gsoc2013-XXXX-student
+#Starting to work on such a branch works as for branches on "cgal-public-dev" - see the guidelines
+  git push cgal-public-dev gsoc2017-XXXX-student
  
-#If you want to push a branch from gsoc to the main repository, use
-  git push cgal-dev gsoc2013-XXXX-student
+
 ```
 
 ## Status
@@ -224,15 +221,15 @@ This refuses a push if the local and remote branchnames do not match
 want to add it to you global `.gitconfig` - can be done by adding
 `--global` option). Though this should now happen if she **initially
 pushes with** the `-u` flag. Jenny sends the branch onto the remote
-repository she cloned from ("cgal-dev"):
+repository she cloned from ("cgal-public-dev"):
 
 ``` {.bash}
- > git push -u cgal-dev Mesh_9-jenny 
+ > git push -u cgal-public-dev Mesh_9-jenny 
 ```
 
 Let's explain this in more detail: The `push` mirrors the local branch
-`Mesh_9-jenny` into the remote repository "cgal-dev". This way her
-branch becomes available to everybody with access to the "cgal-dev"
+`Mesh_9-jenny` into the remote repository "cgal-public-dev". This way her
+branch becomes available to everybody with access to the "cgal-public-dev"
 repository - and her commits get also backup'ed in the remote location.
 The `-u` option not only publishes the branch on the remote, but also
 sets it as a *tracking branch* of her local branch. Every future
@@ -241,7 +238,7 @@ sets it as a *tracking branch* of her local branch. Every future
  > git push 
 ```
 
-will publish her local changes onto *cgal-dev*.
+will publish her local changes onto *cgal-public-dev*.
 
 ## Switching branches
 
@@ -261,8 +258,8 @@ By using
 * Mesh_9-jenny
   master
   remotes/cgal/master
-  remotes/cgal-dev/Mesh_9-jenny
-  remotes/cgal-dev/Kernel-rewrite_functors-adam
+  remotes/cgal-public-dev/Mesh_9-jenny
+  remotes/cgal-public-dev/Kernel-rewrite_functors-adam
 ```
 
 can see a list of all local branches and all branches on the configured
@@ -271,16 +268,16 @@ can see a list of all local branches and all branches on the configured
 If Jenny wants to work on one of those remote branches she uses
 
 ``` {.bash}
-> git checkout -b Kernel-rewrite_functors-adam cgal-dev/Kernel-rewrite_functors-adam 
+> git checkout -b Kernel-rewrite_functors-adam cgal-public-dev/Kernel-rewrite_functors-adam 
 ```
 
 That command creates a *local* branch named
 `Kernel-rewrite_functors-adam` as a copy of the current state of the
-*remote* branch `cgal-dev/Kernel-rewrite_functors-adam`. Be careful that
-the branch name appears twice: after `-b`, and after `cgal-dev/`. The
+*remote* branch `cgal-public-dev/Kernel-rewrite_functors-adam`. Be careful that
+the branch name appears twice: after `-b`, and after `cgal-public-dev/`. The
 branch name after `-b` is actually a free name you can choose, where as
-`cgal-dev/some_name` refers to an existing referenced branch on the
-remote repository `cgal-dev`.
+`cgal-public-dev/some_name` refers to an existing referenced branch on the
+remote repository `cgal-public-dev`.
 
 Again she alters files:
 
@@ -300,14 +297,14 @@ push, Jenny adds this to her configuration
 ```
 
 If this is set (or the Git version is new enough) the following suffice
-to push changes to `cgal-dev`
+to push changes to `cgal-public-dev`
 
 ``` {.bash}
  > git push 
 ```
 
 Note that here the tracking of the upstream branch
-`cgal-dev/Kernel-rewrite_functors-adam` is correct, thus a `git push`
+`cgal-public-dev/Kernel-rewrite_functors-adam` is correct, thus a `git push`
 suffices.
 
 In order to update her branch from the remote repository, Jenny gets the
@@ -369,7 +366,7 @@ another, e.g. if all commits of a local branch have been pushed to the
 remote.
 
 ``` {.bash}
- > git log cgal-dev/my_branch..my_branch
+ > git log cgal-public-dev/my_branch..my_branch
  # if empty, everything is pushed 
 ```
 

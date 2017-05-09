@@ -180,7 +180,7 @@ your git clone:
 > git fetch mine
 ```
 
-If I want to merge a feature branch from *cgal-dev* or
+If I want to merge a feature branch from *cgal-public-dev* or
 *cgal-public-dev*, I need to push that branch into *mine*:
 
 ``` {.bash}
@@ -211,14 +211,12 @@ from the table "Proposed features" to the table "Accepted/Integrated
 into CGAL-x.y" below. This includes, in particular, mentioning the link
 to the pull request.
 
-If your feature branch was shared in `cgal-dev` or `cgal-public-dev`, do
+If your feature branch was shared in `cgal-public-dev`, do
 not forget to remove it from there once the pull request is accepted:
 
 ``` {.bash}
-> git push ''<repo>''--delete  AABB_tree-dimension_2-jenny
+> git push cgal-public-dev --delete  AABB_tree-dimension_2-jenny
 ```
-
-where *<repo>* is `cgal-dev` or `cgal-public-dev`.
 
 For more information about pull requests, refer to the official
 documentation: <https://help.github.com/articles/about-pull-requests/>
@@ -280,14 +278,6 @@ CGAL can be built from a branch directly, i.e., there is no need to
 create an internal release. The developer Jenny can build the CGAL
 libraries from the branch she is currently working on. The [branch build
 has its own wiki page](Branch-Build).
-
-### Post-commit mails
-
-After each pushed commit, an automatic mail is sent to the
-`cgal-dev-commits@inria.fr` mailing-list which records the log message
-as well as the URLs to the corresponding diffs. Maintainers and
-developers can subscribe to it in order to check what gets committed to
-their packages.
 
 ### Special files in or not in the repository
 

@@ -109,12 +109,12 @@ If she wants to share the new feature with others, or have a back-up,
 she can push the new commits to the remote repository:
 
 ``` {.bash}
- > git push -u cgal-dev Kinetic_arrangement_2-jenny 
+ > git push -u cgal-public-dev Kinetic_arrangement_2-jenny 
 ```
 
 Now her branch is visible to everyone with access to the remote
-*cgal-dev*. Once the first push of the branch has been done, the
-following ones no longer need the `-u cgal-dev` option, and are done
+*cgal-public-dev*. Once the first push of the branch has been done, the
+following ones no longer need the `-u cgal-public-dev` option, and are done
 simply with
 
 ``` {.bash}
@@ -164,8 +164,7 @@ of [our Git FAQ](Git-FAQ) to update her feature branch.
 Once Jenny got the feature accepted by CGAL's Editorial Board, she gains
 the right and obligation to test her feature on various platforms and to
 ensure the interoperability with other parts of the library. The
-[Testing](Testing) chapter explains how to test
-code.
+[Testing](Testing) chapter explains how to test code.
 
 Note that on Saturday nights, the internal releases are usually created
 from `master` only. That means that the Saturdays versions of the
@@ -198,8 +197,10 @@ uncommited changes to tracked files, you must commit your changes to a
 branch, or save them using the `git stash` command.
 
 The inclusion of her feature branch to the testsuite takes place in the
-`integration` branch (which she gets as any other branch with
-`git checkout -b integration cgal-dev/integration`), and needs a few
+`integration` branch that is on the cgal-dev repository (If not already done
+she needs to add a cgal-dev remote using `git remote add cgal-dev git@github.com:CGAL/cgal-dev.git`,
+then `git fetch cgal-dev`). She gets as any other branch with
+`git checkout -b integration cgal-dev/integration`, and needs a few
 steps:
 
 ``` {.bash}
@@ -317,14 +318,14 @@ has reached the end of its life-time with the merge into `master`.
 > git checkout master 
 # delete the local branch
 > git branch -d Kinetic_arrangement_2-jenny 
-# delete the branch on cgal-dev
-> git push cgal-dev --delete Kinetic_arrangement_2-jenny
+# delete the branch on cgal-public-dev
+> git push cgal-public-dev --delete Kinetic_arrangement_2-jenny
 ```
 
 Remarks:
 - If the last command does not work because your version of
 Git does not know `git push --delete`, then you can use the old syntax:
-"`git push cgal-dev :Kinetic_arrangement_2-jenny`".
+"`git push cgal-public-dev :Kinetic_arrangement_2-jenny`".
 - Removing the local branch is actually not a requirement. What happens in your own
 repository is your responsibility.
 - Once a branch is merged into
@@ -459,13 +460,13 @@ and
 (note that their `next` is our `integration` branch):
 
 ``` {.bash}
- # update the local copies of the remote branches cgal-dev/* &gt; git fetch cgal-dev 
+ # update the local copies of the remote branches cgal-public-dev/* &gt; git fetch cgal-public-dev 
 ```
 
 Use
 
 ``` {.bash}
- > git log --first-parent cgal-dev/integration 
+ > git log --first-parent cgal/master
 ```
 
 to find the merge-commit for Adam's feature. The commit message gives
@@ -528,8 +529,7 @@ following method is not recommended.
 
 ## Sharing your branches with the outside
 
-If Jenny wants to share a branch with a person who does not have access to
-`cgal-dev`, she has two solutions:
+If Jenny wants to share a branch with a person who does not have access to a private remote, she has two solutions:
 * The branch is not sensitive and
 can be made public: she can push it into her own `cgal` fork (`mine`).
 The procedure is the same as when she prepares a ["pull request"](Source-Code-Management-with-Git#pull-request).
@@ -555,5 +555,5 @@ Then pushing a branch `Pkg-modif-jenny` can be done using:
 > git push private-mine Pkg-modif-jenny # private option
 ```
 
-Note that if Adam or Jenny did a modification that (s)he pushed into cgal-dev, when
+Note that if Adam or Jenny did a modification that (s)he pushed into the private repository, when
 ready the other remotes can be updated by simply pushing the branch into them.

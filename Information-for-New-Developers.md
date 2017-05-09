@@ -49,9 +49,8 @@ UP CGAL IN EXACTLY THIS WAY:</span>**
   - on Arch Linux: `pacman -S cmake qt5 gmp mpfi mpfr boost zlib mesa glu eigen`, you can get `qglviewer` from AUR.
   - on Mac OS X, use brew (`brew install --only-dependencies cgal`) or macports.
   - on Windows, things are more [delicate](https://www.cgal.org/windows_installation.html). (TODO other link?)
-- Clone your repository (if you're CGAL *student* clone `cgal-public-dev`)
-  - cloning cgal-dev: ` git clone git@github.com:CGAL/cgal-dev.git`.
-  - or cloning cgal-public-dev: ` git clone git@github.com:CGAL/cgal-public-dev.git`.
+- Clone your repository
+  - cloning cgal-public-dev: ` git clone git@github.com:CGAL/cgal-public-dev.git`.
   - add read-only branches: ` git remote add cgal git@github.com:CGAL/cgal.git`.
 - Set `CGAL_DIR` persistently to a directory where you intend to build CGAL
   - UNIX environment: Add `export CGAL_DIR=path/to/cgal/build` to `~/.profile` or your shell configuration file. Refer to your systems documentation for more specific information.

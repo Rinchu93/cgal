@@ -12,7 +12,7 @@
 * [How to search for the commits of a certain author?](#how-to-search-for-the-commits-of-a-certain-author)
 * [My branch is really old. I would like to update it to get latest update from master.](#my-branch-is-really-old-i-would-like-to-update-it-to-get-latest-update-from-master)
   * [Simpler alternative if you have not shared your branch with others](#simpler-alternative-if-you-have-not-shared-your-branch-with-others)
-* [I want to rename a local branch, without renaming the upstream branch (in cgal-dev)](#i-want-to-rename-a-local-branch-without-renaming-the-upstream-branch-in-cgal-dev)
+* [I want to rename a local branch, without renaming the upstream branch (in cgal-public-dev)](#i-want-to-rename-a-local-branch-without-renaming-the-upstream-branch-in-cgal-public-dev)
 * [I see remote branches in my repository that have been removed on the server. How do I update my local clone?](#i-see-remote-branches-in-my-repository-that-have-been-removed-on-the-server-how-do-i-update-my-local-clone)
 
 <!--TOC-->
@@ -180,12 +180,10 @@ Assuming you are currently working on a branch called
 # Once you resolved everything, you can commit that merge:
 > git commit
  
-# Now you are ready to specify the -u cgal-dev option
+# Now you are ready to specify the -u cgal-public-dev option
 # which is needed because the branch, even if it has the same name as before, 
 # is a new branch that does not track any remote branch.
-# (If your branch is an old GSoC branch that you want to keep in the dedicated
-# cgal-public-dev.git repository, then replace "cgal-dev" by "cgal-public-dev", in the following command.)
-> git push -u cgal-dev my-ancient-feature
+> git push -u cgal-public-dev my-ancient-feature
 # That update is a regular fast-forward push, that other developers will be able
 # to pull without issues.
 # note -u is equivalent to --set-upstream
@@ -220,7 +218,7 @@ Be warned that if you use `git-rebase` while other developers also work
 on the same branch, their next `git-pull` will show *a lot* of
 conflicts!
 
-## I want to rename a local branch, without renaming the upstream branch (in cgal-dev)
+## I want to rename a local branch, without renaming the upstream branch (in cgal-public-dev)
 
 Just do:
 
