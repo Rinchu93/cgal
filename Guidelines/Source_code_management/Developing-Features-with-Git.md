@@ -2,7 +2,7 @@
 
 # Table of Contents
 * [Opening a feature branch](#opening-a-feature-branch)
-* [Coding](#coding)
+* [Coding](#coding)t
 * [Synchronizing the feature branch](#synchronizing-the-feature-branch)
 * [Integrating the feature branch and adding it to the testsuite](#integrating-the-feature-branch-and-adding-it-to-the-testsuite)
 * [Merging the feature branch to master](#merging-the-feature-branch-to-master)
@@ -126,13 +126,17 @@ Note: There are techniques (not explained here) to combine several small
 commits into one bigger.
 
 **To deprecate** something, she should make modifications in the code
-and in the documentation. \* In the .h code-file she wants to deprecate,
-she should add the following :
+and in the documentation.
+
+- In the .h code-file that she wishes to deprecate, she should add the following :
 ```
 #define CGAL_DEPRECATED_HEADER "<CGAL/old_header_file.h>"
 #define CGAL_REPLACEMENT_HEADER "<CGAL/new_header_file.h>"
+#define CGAL_DEPRECATED_MESSAGE_DETAILS "Additional information about the depreciation"
 #include <CGAL/internal/deprecation_warning.h>
 ```
+The inclusion of the header `deprecation_warning.h` will output a warning (or an error if the macro `CGAL_NO_DEPRECATED_CODE` is enabled) during compilation. Note that all three macros are optional; if they are defined, their values will be printed along with the warning/error.
+
 -   In the .h file that contains the documentation, in the description
     of the class she should add :
 
@@ -141,7 +145,7 @@ she should add the following :
 instead.
 ```
 
-**Once the package is ready** she submits the documentation of the
+**Once the package is ready**, she submits the documentation of the
 package to the editorial board. She gets some feedback and improves the
 package according to the review.
 
