@@ -21,10 +21,10 @@ have a look at the results **the following day**.
   Wednesday |  `integration`
   Thursday  |  `integration`
   Friday    |  `integration`
-  Saturday  |  `CGAL-4.9-branch`
+  Saturday  |  `CGAL-4.10-branch`
   Sunday    |  `master`
               
   -------------------------------
 
 **This page is unfortunately not always updated when the configuration
-of the test suite is changed. Last change:** **2016-09-08**
+of the test suite is changed. Last change:** **2017-06-09**
