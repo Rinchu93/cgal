@@ -17,7 +17,7 @@ and the [public developer manual](http://doc.cgal.org/latest/Manual/dev_manual.h
 3.  [ Package Directory-Structure](Directory-Structure-for-Packages)
 5.  [License Checking Mechanism](License)
 6.  [ Libraries](Libraries) (how to add or modify a CGAL library)
-7.  [ Shared-memory parallelism](Concurrency-in-CGAL)
+7.  [ Shared-memory parallelism / Concurrency](Concurrency-in-CGAL)
 8.  [ Package Documentation using Doxygen](Documentation-Guidelines)
     -   [ Writing Documentation](Writing-Documentation)
     -   [ Building the Documentation](Building-the-Documentation)
