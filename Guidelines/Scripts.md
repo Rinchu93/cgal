@@ -647,7 +647,7 @@ export VC_VERSION="9"
 export VC_VERSION_YEAR="2008"
 export ARCH="64"
 export PLATFORM_REFERENCE="/cygdrive/e/CGAL/reference_platforms"
-#export dependencies environment variables that are specific to this platform
+#export environment variables that are needed and specific to this platform
 source "${PLATFORM_REFERENCE}/setup_common"
 ```
 
