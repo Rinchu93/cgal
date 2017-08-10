@@ -640,8 +640,8 @@ export MAKE_CMD='nmake'
 > export > $REFERENCE_PLATFORMS_DIR/setup-VC9-64
 ```
 * one directory for each compiler, with the same name as the ones given in the `COMPILERS_xyz` variable, containing
-** a file `CMakeCache.txt` corresponding to the desired CMake setup for building CGAL
-** a file `setup` that contains the following
+  * a file `CMakeCache.txt` corresponding to the desired CMake setup for building CGAL
+  * a file `setup` that contains the following
 ```
 export VC_VERSION="9"
 export VC_VERSION_YEAR="2008"
