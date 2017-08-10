@@ -625,6 +625,32 @@ export PATH='/cygdrive/c/Program Files/Microsoft Visual Studio 9.0/Common7/
 '/cygdrive/c/Program Files/Microsoft Visual Studio 8/VC/PlatformSDK/bin':
 '/cygdrive/c/Program Files/Microsoft Visual Studio 8/SDK/v2.0/bin':$PATH
 ```
+
+Inside the directory `REFERENCE_PLATFORMS_DIR`, there should be
+* a file `setup_common`, that contains the following variables
+```
+source "setup_VC${VC_VERSION}-${ARCH}"
+export CMAKE_GENERATOR='-GNMake Makefiles'
+export MAKE_CMD='nmake'
+#export all the variables you need to configure CGAL and run what you need
+```
+* one file for each compiler (e.g. called `setup_VC9-64` in the above example). This file can be generated from the "Visual Studio Command Prompt with Native Tools (64 bits)", using the following commands
+```
+> bash
+> export > $REFERENCE_PLATFORMS_DIR/setup-VC9-64
+```
+* one directory for each compiler, with the same name as the ones given in the `COMPILERS_xyz` variable, containing
+** a file `CMakeCache.txt` corresponding to the desired CMake setup for building CGAL
+** a file `setup` that contains the following
+```
+export VC_VERSION="9"
+export VC_VERSION_YEAR="2008"
+export ARCH="64"
+export PLATFORM_REFERENCE="/cygdrive/e/CGAL/reference_platforms"
+#export dependencies environment variables that are specific to this platform
+source "${PLATFORM_REFERENCE}/setup_common"
+```
+
 ## `add_toc_to_github_wiki_page.py`
 This script can be used to generate or update the table of contents (TOC)
 of a wiki page in github. The script is compatible with `python` 2 and 3.
