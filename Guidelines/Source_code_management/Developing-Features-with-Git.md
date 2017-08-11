@@ -2,7 +2,7 @@
 
 # Table of Contents
 * [Opening a feature branch](#opening-a-feature-branch)
-* [Coding](#coding)t
+* [Coding](#coding)
 * [Synchronizing the feature branch](#synchronizing-the-feature-branch)
 * [Integrating the feature branch and adding it to the testsuite](#integrating-the-feature-branch-and-adding-it-to-the-testsuite)
 * [Merging the feature branch to master](#merging-the-feature-branch-to-master)
