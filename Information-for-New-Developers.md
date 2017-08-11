@@ -14,7 +14,7 @@ Once your mentor has introduced you on the [CGAL Editorial Board mailing list](M
 
 -   Visit <https://github.com/join> and choose **Free** as the
     personal plan (although you are free to pay if you want).
--   You should receive an email to *verify* that the email address
+-   You should receive an email to verify that the email address
     provided is valid.
 -   Add your first name and last name and complete your profile at
     <https://github.com/settings/profile>.
@@ -74,7 +74,7 @@ developer should read are:
 
 -   Please introduce yourself on your **user page** of the *internal* wiki (click on your user
     name at the top of every wiki page when logged in), and provide your
-    e-mail address there as well (remember that that wiki is not
+    e-mail address there as well (note that the internal wiki is not
     publicly accessible).
 -   Have a look at our [mailing lists](Mailing-Lists). The
     developers mainly communicate via *cgal-develop* (with restricted
