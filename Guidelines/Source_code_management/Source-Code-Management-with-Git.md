@@ -88,12 +88,9 @@ repository (remote or local) contains the following (types of) branches.
 We propose a layout that uses three different main branches for
 development (ordered by stability):
 
-master : This branch collects all features accepted and successfully integrated for the upcoming release. Changes to this branch are merges of tested, mature feature branches or merges of very small bug-fix branches.
-
-integration : The integration branch represents the current ongoing development in CGAL and the test-suite is run from this branch. If the work in a feature branch is completed it is [merged into this branch and tested](Developing-Features-with-Git#integrating-the-feature-branch-and-adding-it-to-the-testsuite)
-
-along with a separate branch for each feature and tags for specific
-releases..
+* The **master** branch collects all features accepted and successfully integrated for the upcoming release. Changes to this branch are merges of tested, mature feature branches or merges of very small bug-fix branches.
+* The **integration** branch represents the current ongoing development in CGAL and the test-suite is run from this branch. If the work in a feature branch is completed it is [merged into this branch and tested](Developing-Features-with-Git#integrating-the-feature-branch-and-adding-it-to-the-testsuite).
+* a separate branch for each feature, and tags for specific releases.
 
 #### Feature branches
 
@@ -108,7 +105,7 @@ integration and test period - in particular, after invitation of the
 Release Manager.
 
 Larger bug-fixes, demos, or examples have to be developed in branches
-and follow the same integration process even though those don't need to
+and follow the same integration process but do not need to
 follow the Guidelines for Features or Small Features and the approval
 process.
 
@@ -129,7 +126,7 @@ appropriate.
 Tags of the form `X.Y.Z` denote releases of CGAL. If a release has to be
 maintained even after new feature release (e.g. `3.9.1 -> 3.9.2`, while
 the current release is `4.0`) this is done in a branch with the name
-`maint-X.Y.(Z-1)`. Other tags are possible to be added; this is not
+`maint-X.Y.(Z-1)`. Other tags may be added but this is not
 expected to happen often.
 
 ## Working with Git
@@ -189,7 +186,7 @@ If I want to merge a feature branch from *cgal-public-dev* or
 
 Then go to your local fork (https://github.com/jenny/cgal), select the
 branch `AABB_tree-dimension_2-jenny` and click on the green button left
-to the branch selection box. You'll be asked to add a comment describing
+to the branch selection box. You will be asked to add a comment describing
 what your merge is about. This should contain:
 
 -   the reference of the (small) feature corresponding to the branch, if
@@ -201,7 +198,7 @@ what your merge is about. This should contain:
 **Note:** *please* use clickable links to the feature pages, and to the
 test result page, to ease the job of the Release Manager.
 
-If your pull request is accepted, you'll receive an email from github
+If your pull request is accepted, you will receive an email from github
 and the branch will be removed from your local fork.
 
 Finally, you can update the [features](https://cgal.geometryfactory.com/CGAL/Members/wiki/Features) or [small
@@ -223,9 +220,9 @@ documentation: <https://help.github.com/articles/about-pull-requests/>
 
 #### Update a pull-request
 
-If during the tests for integration, you need to update something in the
-branch, then the pull-request is updated as soon as you push your branch
-(with the modifications) in `mine` again:
+If, during the tests for integration, you need to update something in the
+branch then the pull-request is automatically updated as soon as you push your branch
+(with the modifications) in *mine* again:
 
 ``` {.bash}
 > git push mine AABB_tree-dimension_2-jenny
@@ -282,7 +279,7 @@ has its own wiki page](Branch-Build).
 ### Special files in or not in the repository
 
 -   Do not put automatically generated files into the repository.
--   Files and directories in the repository that you don't want to be
+-   Files and directories in the repository that you do not want
     included in releases (e.g., literate programming web files) can be
     listed with their names in a file called `dont_submit` (at the top
     of a package, see
