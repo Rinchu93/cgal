@@ -24,7 +24,7 @@
 
 ### Content
 
--   Our webpages are <http://www.cgal.org>
+-   Our webpages are <https://www.cgal.org>
 -   The Editorial Board is responsible for the content. The upload is
     done automatically as soon as the `master` or `upcoming` branches
     are updated. Developers in the team
@@ -43,22 +43,22 @@ up-to-date. If you can please do the necessary updates yourself, or
 notify the Editorial Board if you know about updates. This is relevant
 in particular for the following web pages:
 
--   The News section on <http://www.cgal.org>
--   People involved in the project <http://www.cgal.org/people.html>
+-   The News section on <https://www.cgal.org>
+-   People involved in the project <https://www.cgal.org/people.html>
     (also observe that the Board Manager, the Release Manager, and the
     Review Manager are subject to change from time to time).
 -   Updates for the work in progress page
-    (http://www.cgal.org/in\_progress.html): work that is finished and
+    (https://www.cgal.org/in\_progress.html): work that is finished and
     thus no longer in progress must be removed, and new work must be
     added.
 -   Publications related to CGAL appear at
-    <http://www.cgal.org/bibliography.html>, which is currently
+    <https://www.cgal.org/bibliography.html>, which is currently
     maintained by [@moniqueteillaud](https://www.github.com/moniqueteillaud)
--   Projects using CGAL <http://www.cgal.org/projects.html>
--   Events listed on <http://www.cgal.org/events.html>
+-   Projects using CGAL <https://www.cgal.org/projects.html>
+-   Events listed on <https://www.cgal.org/events.html>
 -   *(This item is not so clear, to be updated)* Demo programs to be
     included in the package overview
-    <http://www.cgal.org/Manual/latest/doc_html/cgal_manual/packages.html>.
+    <https://www.cgal.org/Manual/latest/doc_html/cgal_manual/packages.html>.
     See the Developers manual for how to submit these.
 
 
@@ -134,7 +134,7 @@ Once you're happy:
 The last commands updates the server again.
 
 If needed, usually to prepare a release, we have
-<http://upcoming.cgal.org>
+<https://upcoming.cgal.org>
 
 ``` {.bash}
 > git checkout -b upcoming cgal-web/upcoming
@@ -209,11 +209,11 @@ rake post title="My Title" [date="2014-02-24"]
         request to the \`master\` branch.
 
 After a few minutes (sometimes hours), you will see the content here:
-<http://www.cgal.org>
+<https://www.cgal.org>
 
 Another way to test the website online without perturbing cgal.org (if
 you cannot test it locally, for example) is to push to the \`gh-pages\`
-branch and watch the result here: <http://cgal.github.io/cgal-web/>
+branch and watch the result here: <https://cgal.github.io/cgal-web/>
 
 #### Notes from @bo0ts on cgal-develop, April 1st, 2015
 
@@ -247,8 +247,8 @@ now, with [@sloriot](https://github.com/sloriot) as backup.
 
 ### Access statistics
 
-CGAL Editors can access the statistics for <http://www.cgal.org/> and
-<http://doc.cgal.org/> at the following address:
+CGAL Editors can access the statistics for <https://www.cgal.org/> and
+<https://doc.cgal.org/> at the following address:
 <https://logs.ovh.net/cgal.org/>
 
 That page is protected by a login/password. The login is "editor", and
@@ -282,6 +282,6 @@ English).*
 ## Wiki
 
 The internal wiki is hosted at
-<http://cgal.geometryfactory.com/CGAL/Members/wiki/> .
+<https://cgal.geometryfactory.com/CGAL/Members/wiki/> .
 
 It is administrated at GF by [@lrineau](https://github.com/lrineau).

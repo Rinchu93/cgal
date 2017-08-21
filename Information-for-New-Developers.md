@@ -8,7 +8,7 @@
 
 <!--TOC-->
 
-Once your mentor has introduced you on the [CGAL Editorial Board mailing list](Mailing-Lists), and once the [CGAL Editorial Board](http://www.cgal.org/people.html) has approved your participation in the CGAL project as a [CGAL developer](http://www.cgal.org/project_rules.html#developers), you should follow these guidelines. 
+Once your mentor has introduced you on the [CGAL Editorial Board mailing list](Mailing-Lists), and once the [CGAL Editorial Board](https://www.cgal.org/people.html) has approved your participation in the CGAL project as a [CGAL developer](https://www.cgal.org/project_rules.html#developers), you should follow these guidelines. 
 
 ## Creating a GitHub account
 
@@ -62,8 +62,8 @@ UP CGAL IN EXACTLY THIS WAY:</span>**
 There is a lot of information in the wiki. Some pages that every
 developer should read are:
 
--   The [public Developers' Manual](http://doc.cgal.org/latest/Manual/dev_manual.html)
-    (especially the [*Getting Started* section](http://doc.cgal.org/latest/Manual/general_intro.html))
+-   The [public Developers' Manual](https://doc.cgal.org/latest/Manual/dev_manual.html)
+    (especially the [*Getting Started* section](https://doc.cgal.org/latest/Manual/general_intro.html))
 -   Our [Guidelines](Guidelines) and in particular
     - [Source Code Management](Source-Code-Management-with-Git) and
     its subpages 
@@ -78,7 +78,7 @@ developer should read are:
     publicly accessible).
 -   Have a look at our [mailing lists](Mailing-Lists). The
     developers mainly communicate via *cgal-develop* (with restricted
-    access only for [CGAL developers](http://www.cgal.org/project_rules.html#developers)), but you might want to also
+    access only for [CGAL developers](https://www.cgal.org/project_rules.html#developers)), but you might want to also
     subscribe to the public (high-traffic) *cgal-discuss* and/or
     (low-traffic) *cgal-announce*.
 -   We meet in person at *CGAL developer meetings*, which take place roughly each six

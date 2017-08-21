@@ -61,7 +61,7 @@ The **test suite helps** the developer(s) of a package to
 -   Recall that the CGAL checks, such as `CGAL_precondition` and
     `CGAL_postcondition` are disabled by the `CGAL_NDEBUG` macro, which
     is set when the flag '`-DNDEBUG`' appears on the compilation
-    command-line; see [CGAL Developer Manual](http://doc.cgal.org/latest/Manual/devman_checks.html). Thus,
+    command-line; see [CGAL Developer Manual](https://doc.cgal.org/latest/Manual/devman_checks.html). Thus,
     in the test-suite code itself you should use `assert` and not
     `CGAL_assertion` if you want the check to persist when your test is
     run in a mode where `CGAL_assertion` is disabled (but `assert` is
@@ -238,7 +238,7 @@ The testsuite will generate the following output files:
 
 The results of test suites run on the various supported or
 soon-to-be-supported platforms are posted on the
-[test suite results](http://cgal.geometryfactory.com/CGAL/Members/testsuite/) page.
+[test suite results](https://cgal.geometryfactory.com/CGAL/Members/testsuite/) page.
 
 The results of the tests are presented in a table (`y` = success, `w` =
 warning, `n` = failure, `r` = a requirement is not found).

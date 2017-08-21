@@ -29,7 +29,7 @@ interacts with them.
 
 **Requirements**:
 
--   Follow the [coding conventions](http://doc.cgal.org/latest/Manual/devman_code_format.html)
+-   Follow the [coding conventions](https://doc.cgal.org/latest/Manual/devman_code_format.html)
     (see the [section below](#coding-conventions) for a
     summary).
 -   Include all example and demo programs from the documentation in the
@@ -43,7 +43,7 @@ interacts with them.
 
 Remember that these programs are likely to be a user's first
 introduction to the library, so you should be careful to follow our
-[coding conventions](http://doc.cgal.org/latest/Manual/devman_code_format.html)
+[coding conventions](https://doc.cgal.org/latest/Manual/devman_code_format.html)
 and good programming practice in these programs. In particular:
 
 -   Do **not** use the statements
@@ -108,7 +108,7 @@ possible when writing the example and demo programs.
 -   Provide programs that truly exercise the data structure. Though you
     may have some canned programs that work on fixed data sets to
     illustrate specific things, you should also have one (or more)
-    programs that work on [randomly generated](http://doc.cgal.org/latest/Generator/)
+    programs that work on [randomly generated](https://doc.cgal.org/latest/Generator/)
     or user-generated data. This illustrates confidence in the software
     (and can also build confidence by highlighting bugs).
 -   Take some care to design a good interface to the program; the
@@ -187,11 +187,11 @@ this can overflow in the output.
 
 ## Demo programs on the web
 
-Demo programs for some packages are accessible from the [package overview](http://doc.cgal.org/latest/Manual/packages.html)
+Demo programs for some packages are accessible from the [package overview](https://doc.cgal.org/latest/Manual/packages.html)
 web page. For each demo on the page, we have a precompiled executable
 for the Windows platform.
 
-If a specific package has a demo that should be linked in the [package overview](http://doc.cgal.org/latest/Manual/packages.html)
+If a specific package has a demo that should be linked in the [package overview](https://doc.cgal.org/latest/Manual/packages.html)
 web page, then the header in `<package>/doc/<package>/PackageDescription.txt` should be updated to include a `\cgalPkgDemo{}` line.
 For details see [this page](Writing-Documentation#packagedescriptiontxt).
 

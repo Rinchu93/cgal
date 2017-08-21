@@ -226,7 +226,7 @@ if you intend to make public the documentation.
 
 -   The flag `CGAL_DOC_RELEASE` removes TODO-list, bug-list,...
 -   The path related to MathJax indicates the relative location from a
-    package directory (for example <http://doc.cgal.org/4.3/Kernel_23/>,
+    package directory (for example <https://doc.cgal.org/4.3/Kernel_23/>,
     or `doc_output/Manual` in your local build) to a local MathJax
     checkout on the server. This is required in particular when using
     `https`. Modern browsers protect users by disabling any `http` (like

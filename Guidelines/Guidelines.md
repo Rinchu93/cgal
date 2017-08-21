@@ -6,7 +6,7 @@ or maintaining or enhancing existing ones. They are organized roughly in
 the order in which a developer will need the information in order to
 produce a package for the library. New developers should also read 
 [Information for new developers](Information-for-New-Developers)
-and the [public developer manual](http://doc.cgal.org/latest/Manual/dev_manual.html).
+and the [public developer manual](https://doc.cgal.org/latest/Manual/dev_manual.html).
 
 1.  [ Source Code Management with Git](Source-Code-Management-with-Git)
     -   [ A Quick Start Guide to Git for CGAL](Quick-Start)

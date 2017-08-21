@@ -112,7 +112,7 @@ package-specific assertions, use the `create_assertions.sh` script.
 ## `create_assertions.sh`
 
 This shell script generates assertion header files, to be used for
-[invariant/pre-/post-condition checks on package level](http://doc.cgal.org/latest/Manual/devman_checks.html).
+[invariant/pre-/post-condition checks on package level](https://doc.cgal.org/latest/Manual/devman_checks.html).
 The command
 
 ```

@@ -20,7 +20,7 @@ forms of tarballs. They reflect the current status of the branch `integration`
 with all branches of candidate features merged into it; see
 [Testsuite](Developing-Features-with-Git#integrating-the-feature-branch-and-adding-it-to-the-testsuite)
 for details. You can obtain a public or an internal distribution of CGAL
-and build it using the [distribution build procedure](http://doc.cgal.org/latest/Manual/installation.html),
+and build it using the [distribution build procedure](https://doc.cgal.org/latest/Manual/installation.html),
 in particular if your goal is to build executables. However, as
 developer, building CGAL using the branch build presented here is
 recommended. It keeps the build-sources attached to the [Source Code Management](Source-Code-Management-with-Git). A
@@ -32,7 +32,7 @@ CGAL sources in sync with an SCM repository and in turn with other
 developers. This documentation mainly discusses how to generate Unix
 Makefiles with CMake; however other generators are supported by CMake,
 too. In general, it is also advised to be familiar with the
-[distribution build procedure](http://doc.cgal.org/latest/Manual/installation.html),
+[distribution build procedure](https://doc.cgal.org/latest/Manual/installation.html),
 as the branch-build only selects another path to the main
 `CMakeLists.txt` file (i.e., picks it "from a branch" instead of "from a
 distribution").
@@ -96,7 +96,7 @@ or any other option valid for `cmake`, e.g.
 ```
 
 All possible options and external libraries can be found in the
-[Installation manual](http://doc.cgal.org/latest/Manual/installation.html#title22).
+[Installation manual](https://doc.cgal.org/latest/Manual/installation.html#title22).
 So, assume next that Jenny knows the options according to her platform
 and liking when calling `cmake`. For simplicity, these options are not
 mentioned in the next examples.

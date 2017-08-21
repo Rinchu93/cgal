@@ -10,7 +10,7 @@
 ## Public lists
 
 
-See also [Public lists](http://www.cgal.org/mailing_list.html).
+See also [Public lists](https://www.cgal.org/mailing_list.html).
 
 -   [cgal-discuss@inria.fr](https://sympa.inria.fr/sympa/info/cgal-discuss)
     the cgal users discussion list.
@@ -26,7 +26,7 @@ See also [Public lists](http://www.cgal.org/mailing_list.html).
 admins: sebastien.loriot@cgal.org and monique.teillaud@cgal.org
 
 -   [cgal-develop@inria.fr](https://sympa.inria.fr/sympa/info/cgal-develop)
-    : discussion list for [CGAL developers](http://www.cgal.org/project_rules.html)
+    : discussion list for [CGAL developers](https://www.cgal.org/project_rules.html)
 
 -   [cgal-dev-commits](https://sympa.inria.fr/sympa/info/cgal-dev-commits):
     commits/push to the [cgal-dev](https://github.com/CGAL/cgal-dev)

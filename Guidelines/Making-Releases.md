@@ -3,7 +3,7 @@
 Internal releases are currently created daily from a script run at
 GeometryFactory. This script packages together the current versions of
 all packages into a tar file and publish a tarball at
-<http://cgal.geometryfactory.com/CGAL/Members/Releases/>. People
+<https://cgal.geometryfactory.com/CGAL/Members/Releases/>. People
 responsible for running the test suite can pick it up automatically
 using the [`autotest_cgal`](Scripts#autotest_cgal) script.
 

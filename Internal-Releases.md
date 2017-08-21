@@ -2,7 +2,7 @@ Every day, at 9pm, Paris local time, which is either CET (winter) or
 CEST (summer), a new internal release is created. The branch that is
 tested by the internal release is not always the same.
 The results of the test suites are posted on the
-[test suite results](http://cgal.geometryfactory.com/CGAL/Members/testsuite/) page.
+[test suite results](https://cgal.geometryfactory.com/CGAL/Members/testsuite/) page.
 
 **Note that most of the test results are published the following day.**
 
