@@ -183,8 +183,10 @@ package name.
     using the `create_cgal_test` script (see
     [here](Scripts#create_cgal_test_with_cmake)).
 -   `CMakeLists.txt`
-     is the CMake configuration file for the test programs. It is
-    created automatically, just like `cgal_test`.
+     is the CMake configuration file for the test programs.
+     Note that the project name used in `CMakeLists.txt` must be `PKG_Tests`.
+     For example, it is `project( Triangulation_2_Tests )` for the `Triangulation_2`
+     packages.
     Such a `CMakeLists.txt` can be created using the
     script `cgal_create_cmake_script` with the argument `-t` (see
     [here](Scripts#cgal_create_cmake_script-same-as-cgal_create_cmakelists)).
@@ -230,6 +232,10 @@ examples/<exampledir>/
 The file `README` should contain information about what the programs do
 and how to compile them. See the rules for a test directory for an
 explanation of the other files and subdirectories.
+
+Note that the project name used in `CMakeLists.txt` must be `PKG_Examples`.
+For example, it is `project( Triangulation_2_Examples )` for the `Triangulation_2`
+packages.
 
 ### `demo` subdirectory
 
@@ -290,7 +296,5 @@ Requirements:
 
 Recommendations:
 
--   Do not submit `CMakeLists.txt`s for example programs and test suite
-    programs.
 -   Do not submit the script `cgal_test` used to compile and test your
     test suite programs.
