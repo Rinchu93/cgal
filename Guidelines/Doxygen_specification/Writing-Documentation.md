@@ -940,7 +940,7 @@ All other defaults can be found in the file
 #### Adding citations
 
 All new citations need to be added in
-`Documentation/biblio/cgal_manual.bib`. Use the `\cgalCite` macro to
+`Documentation/doc/biblio/cgal_manual.bib`. Use the `\cgalCite` macro to
 link to them.
 
 #### Adding package in biblio (since 5d62213cf)
