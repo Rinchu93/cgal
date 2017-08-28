@@ -22,22 +22,23 @@
 ## Getting and Installing the Tools
 
 
-For building the CGAL documentation we use two tools. in the following
+To build the CGAL documentation, we use two tools. In the following
 documentation, we use `/path/to/branch` to refer to the path where you
 have a checkout of your git branch on your disk.
 
 ### doxygen
 
 `doxygen` generates documentation for individual CGAL packages.
-We currently added a few features and fixes to doxygen, which we
-communicate to the author to get them included upstream. The official
+We have added a few features and fixes to doxygen, which we
+communicate to its author to get them included upstream. The official
 documentation is built with this patched version while all the
-patches are not integrated in the official release. If you want you can
-try it, (but this is not needed to build a correct version of your
-documentation). See `https://github.com/CGAL/doxygen`. A windows
-executable is available [here](doxygen-1.8.4-patched.gz).
+patches are not integrated in the official release. You may try
+it if you wish (see `https://github.com/CGAL/doxygen`),
+but it is not required to build a correct version of your
+documentation. A windows executable is available
+[here](doxygen-1.8.4-patched.gz).
 
-- doxygen 1.8.13 works almost good. [This branch](https://github.com/CGAL/doxygen/tree/release_1_8_13_patched)
+- doxygen 1.8.13 works almost well. [This branch](https://github.com/CGAL/doxygen/tree/release_1_8_13_patched)
   contains the patch for having less output when `EXTRACT_ALL=ON`.
 
 - doxygen 1.8.11 (+1.8.12) generates an incomplete website: the treeview is missing.
@@ -53,7 +54,7 @@ files must be deleted to avoid many warnings.
 after some tag files exists (it will fill the memory before crashing).
 
 
-The only remaining extra patch correspond to this bug report: [`502d15f`](https://bugzilla.gnome.org/show_bug.cgi?id=684978) Bug 684978 - `EXTRACT_ALL` creates superfluous detail sections. See also this [PR](https://github.com/doxygen/doxygen/pull/452).
+The only remaining extra patch corresponds to this bug report: [`502d15f`](https://bugzilla.gnome.org/show_bug.cgi?id=684978) Bug 684978 - `EXTRACT_ALL` creates superfluous detail sections. See also this [PR](https://github.com/doxygen/doxygen/pull/452).
 
 There is also the current [bug report](https://bugzilla.gnome.org/show_bug.cgi?id=770973)
 about a blocking issue found in the 1.8.12 version.
@@ -78,7 +79,7 @@ without an internet connection.
 
 <b>Note:</b>
 
--   For alternative methods to get MathJax see
+-   For alternative methods to get MathJax, see
     [here](https://docs.mathjax.org/en/latest/installation.html).
 -   You have the possibility to disable MathJax and use fixed size
     bitmap by setting `USE_MATHJAX = NO` in the config file
@@ -96,7 +97,7 @@ make doc
 ```
 
 Alternatively, if your branch is fresh enough and contains commit [`96c64d48`](https://github.com/CGAL/cgal/commit/96c64d4866546c7a843a41485eb25e877f931bd6)
-(merge of PR [`#1444`](https://github.com/CGAL/cgal/pull/1444)), you can directly call cmake on the doc `CMakeLists.txt`
+(merge of PR [`#1444`](https://github.com/CGAL/cgal/pull/1444)), you can directly call cmake on the doc `CMakeLists.txt`,
 which will skip the `CGAL` configuration steps
 
 ``` {.bash}
@@ -110,7 +111,7 @@ make doc
 If `make` does not find target "doc", it is probably because your
 branch is too old. Try: `make Documentation_doc`.
 
-To build the documentation with Visual Studio build the `doc` target in
+To build the documentation with Visual Studio, build the `doc` target in
 Visual Studio.
 
 With a self-built Doxygen, or with Doxygen from MacPorts
@@ -165,8 +166,8 @@ some output cleaning in the html output of doxygen. This script:
 -   turns specific classes into concepts.
 -   performs some scrubbing of the documentation to remove duplicate
     files, small glitches and the like.
--   uses special icons in `Concept and class list` pages
--   numbers the figures using CGAL doxygen macros
+-   uses special icons in `Concept and class list` pages.
+-   numbers the figures using CGAL doxygen macros.
 
 This script requires at least Python 2 and the library
 [PyQuery](http://pypi.python.org/pypi/pyquery), and
@@ -179,7 +180,7 @@ to install python dependencies on machine you do not administrate.
 
 #### Getting it to work on Windows
 
-Getting the postprocessing working on Windows we didn't check with `pip`
+Getting the postprocessing working on Windows, we have not checked with `pip`
 yet, but we used `easy_install` instead.
 
 -   *The recommended way to install setuptools on Windows is to download
@@ -199,7 +200,7 @@ yet, but we used `easy_install` instead.
         latest version)
     -   run `easy_install pyquery` to install the pyquery package
 
-To check everything is fine, you can run in a `cmd`
+To check that everything is fine, you can run in a `cmd`
 
 ``` {.bash}
 > python
@@ -247,7 +248,7 @@ in progress.
 
 In case you want the PDF output of your package:
 
-1.  in `Documentation/BaseDoxyfile.in` set the option `GENERATE_LATEX`
+1.  in `Documentation/BaseDoxyfile.in`, set the option `GENERATE_LATEX`
     to `YES`
 2.  build targets as before
 3.  `cd doc_output/Package_name/latex`
