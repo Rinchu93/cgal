@@ -293,6 +293,7 @@ gathered elsewhere, so as not to bloat the SCM repository.
 Requirements:
 
 -   The directory structure outlined here must be followed exactly.
+-   After adding a new Package, the script CGAL/.travis/generate_travis.sh must be called from the CGAL root directory, in order for the new package to be correctly tested by Travis.
 
 Recommendations:
 
