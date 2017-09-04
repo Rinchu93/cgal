@@ -14,7 +14,7 @@
   * [Simpler alternative if you have not shared your branch with others](#simpler-alternative-if-you-have-not-shared-your-branch-with-others)
 * [I want to rename a local branch, without renaming the upstream branch (in cgal-public-dev)](#i-want-to-rename-a-local-branch-without-renaming-the-upstream-branch-in-cgal-public-dev)
 * [I see remote branches in my repository that have been removed on the server. How do I update my local clone?](#i-see-remote-branches-in-my-repository-that-have-been-removed-on-the-server-how-do-i-update-my-local-clone)
-
+* [SSH and Tortoise-Git on Windows](#ssh-and-tortoise-git-on-windows)
 <!--TOC-->
 
 We collect here questions already raised on the cgal-dev mailing list or
@@ -240,3 +240,11 @@ apply it to all of them.
 ``` {.bash}
 > git fetch --all -p 
 ```
+
+## SSH and Tortoise-Git on Windows
+
+When installing git for Windows from github.io
+* tick OpenSSH library
+* Set `GIT_SSH = TortoisePlink.exe`
+* No need for alias for ssh or scp, instead with cygwin setup install: ssh and ssh-pageant
+* No need for a directory .ssh as the keys are stored in pageant 
