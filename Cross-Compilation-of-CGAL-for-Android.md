@@ -64,7 +64,7 @@ In the MPFR sources dir, do the following:
 > make install
 ```
 
-##Building CGAL:
+## Building CGAL:
 Now that we have the dependencies built, we can configure CGAL.
 First we will create a toolchain.cmake file, containing the paths needed by CMake.
 Create this file at ${TOOLCHAIN_FILE_PATH}:
