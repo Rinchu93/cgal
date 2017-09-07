@@ -6,7 +6,7 @@
 - Android NDK
 - CGAL sources
 
-##Generating a Standalone Toolchain
+## Generating a Standalone Toolchain
 The first step for cross-compiling a library to Android is to create a toolchain from the NDK. 
 A python script is given to do so:
 ``` {.bash}
