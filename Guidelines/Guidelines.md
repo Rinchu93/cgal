@@ -27,6 +27,7 @@ and the [public developer manual](https://doc.cgal.org/latest/Manual/dev_manual.
 11.  [ Examples and Demo Programs](Examples-and-Demo-Programs)
 12. [ Submitting new features](Submission)
 13. [ The CGAL web site](Tools#website)
+14. [ Android Cross-Compilation](https://github.com/CGAL/cgal/wiki/Cross-Compilation-of-CGAL-for-Android)
 
 ## Technical background information
 
