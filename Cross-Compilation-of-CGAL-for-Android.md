@@ -71,7 +71,7 @@ set(CMAKE_CXX_COMPILER${TOOLCHAIN_PATH}/bin/aarch64-linux-android-clang++)
 ```
 
 Once we have this, we call cmake:
-```{.bash}
+```bash
 cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DBUILD_SHARED_LIBS=true -DWITH_CGAL_Core=false -DWITH_CGAL_Qt5=false -DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0
 -DCGAL_test_cpp_version_RUN_RES__TRYRUN_OUTPUT=0 -DGMP_INCLUDE_DIR=${GMP_PATH}/include -DGMP_LIBRARIES=${GMP_PATH}/lib/libgmp.so -DMPFR_INCLUDE_DIR=${MPFR_PATH}/include -DMPFR_LIBRARIES=${MPFR_PATH}/lib/libgmp.so -DBOOST_INCLUDE_DIR=${BOOST_INCLUDE_PATH} -DCGAL_HEADER_ONLY=true
 ```
@@ -85,5 +85,5 @@ NB: Some packages have more dependencies. If you wish to use them, you will have
 Since Android 5.0 (API level 21), an executable needs to be PIE (Position independant executable) to work. To make your executable PIE, you need to add -fPIE to the CXX flags, and -fPIE -pie to the linker flags
 
 ```bash
-> cmake -DCMAKE_CXX_FLAGS=-std=c++11 -fPIE -DCMAKE_EXE_LINKER_FLAGS=-fPIE -pie .
+> cmake -DCMAKE_CXX_FLAGS=-std=c++11 -fPIE -DCMAKE_EXE_LINKER_FLAGS="-fPIE -pie" .
 ```
