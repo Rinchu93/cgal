@@ -72,13 +72,11 @@ set(CMAKE_CXX_COMPILER${TOOLCHAIN_PATH}/bin/aarch64-linux-android-clang++)
 
 Once we have this, we call cmake:
 ```bash
-> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DBUILD_SHARED_LIBS=true -DWITH_CGAL_Core=FALSE  -DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0
--DGMP_INCLUDE_DIR=${GMP_PATH}/include -DGMP_LIBRARIES=${GMP_PATH}/lib/libgmp.so -DMPFR_INCLUDE_DIR=${MPFR_PATH}/include -DMPFR_LIBRARIES=${MPFR_PATH}/lib/libgmp.so -DBOOST_INCLUDE_DIR=${BOOST_INCLUDE_PATH} -DCGAL_HEADER_ONLY=true
+> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DWITH_CGAL_Core=FALSE  -DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0 -DGMP_INCLUDE_DIR=${GMP_PATH}/include -DGMP_LIBRARIES=${GMP_PATH}/lib/libgmp.so -DMPFR_INCLUDE_DIR=${MPFR_PATH}/include -DMPFR_LIBRARIES=${MPFR_PATH}/lib/libgmp.so -DBOOST_INCLUDE_DIR=${BOOST_INCLUDE_PATH} -DCGAL_HEADER_ONLY=true
 ```
-
 CGAL is now ready to be used with an Android Application. 
 
-NB: Some packages have more dependencies. If you wish to use them, you will have to cross-compile them too.
+Note: The options `-DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0` allow to use the C++11 standard. When CGAL is compiled with a C++11 compiler, the library Boost.Thread is no longer required, and Boost libraries can be used header-only. There is one exception: `CGAL_Core` still requires Boost.Thread. That is why we use the cmake option `-DWITH_CGAL_Core=FALSE`, to disable `CGAL_Core`. If you need `CGAL_Core`, then you will have to cross-compile Boost, and then set the appropriate CMake variables. Some packages have more dependencies. If you wish to use them, you will have to cross-compile them too.
 
 ## Build an example
 
