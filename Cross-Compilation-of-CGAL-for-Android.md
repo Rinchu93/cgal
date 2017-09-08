@@ -19,7 +19,7 @@
 ## Generating a Standalone Toolchain
 The first step for cross-compiling a library to Android is to create a toolchain from the NDK. 
 A python script is given to do so:
-``` {.bash}
+```bash
 > ${ANDROID-NDK}/build/tools/make_standalone_toolchain.py --arch ${ARCH} --install-dir ${TOOLCHAIN_PATH}
 ```
 - `${ANDROID-NDK}` is the root directory of your NDK.
@@ -32,7 +32,7 @@ This will generate all the files you need in `${TOOLCHAIN_PATH}`.
 ## Building GMP
 We will now build a version of GMP for Android, using the precedently generated toolchain.
 In the GMP sources dir, do the following:
-``` {.bash}
+```bash
 > export CC=${TOOLCHAIN_PATH}/bin/clang
 > export PATH="${TOOLCHAIN_PATH}:${PATH}"
 > ./configure --prefix=${GMP_PATH} --enable-shared --host=${TARGET_TRIPLET}
@@ -46,7 +46,7 @@ In the GMP sources dir, do the following:
 This is very similar to building GMP. 
 In the MPFR sources dir, do the following:
 
-``` {.bash}
+```bash
 > export CC=${TOOLCHAIN_PATH}/bin/clang
 > export PATH="${TOOLCHAIN_PATH}:${PATH}"
 > ./configure --prefix=${MPFR_PATH} --enable-shared--host=${TARGET_TRIPLET} --with-gmp=${GMP_PATH}
