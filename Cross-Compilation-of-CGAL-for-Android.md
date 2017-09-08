@@ -13,7 +13,7 @@ A python script is given to do so:
 > ${ANDROID-NDK}/build/tools/make_standalone_toolchain.py --arch ${ARCH} --install-dir ${TOOLCHAIN_PATH}
 ```
 ${ANDROID-NDK} is the root directory of your NDK.
-${ARCH} is the architecture you are targetting. For example: arm, arm64, ...
+${ARCH} is the architecture you are targeting. For example: arm, arm64, ...
 ${TOOLCHAIN_PATH} is the directory where the toolchain will be installed.
 
 
@@ -64,7 +64,7 @@ In the MPFR sources dir, do the following:
 > make install
 ```
 
-## Building CGAL:
+## Building CGAL
 Now that we have the dependencies built, we can configure CGAL.
 First we will create a toolchain.cmake file, containing the paths needed by CMake.
 Create this file at ${TOOLCHAIN_FILE_PATH}:
