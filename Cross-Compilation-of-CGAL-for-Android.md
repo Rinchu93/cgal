@@ -7,7 +7,7 @@
 - [CGAL] [sources][CGAL sources]
 
 [GMP]: https://gmplib.org/
-[MPFR]: http://www.mpfr.org/mpfr-current/#download
+[MPFR]: http://www.mpfr.org/
 [Boost]: http://www.boost.org/
 [Android NDK]: https://developer.android.com/ndk/downloads/index.html
 [CGAL]: https://www.cgal.org/
