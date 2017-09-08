@@ -12,12 +12,12 @@ A python script is given to do so:
 ``` {.bash}
 > ${ANDROID-NDK}/build/tools/make_standalone_toolchain.py --arch ${ARCH} --install-dir ${TOOLCHAIN_PATH}
 ```
-${ANDROID-NDK} is the root directory of your NDK.
-${ARCH} is the architecture you are targeting. For example: arm, arm64, ...
-${TOOLCHAIN_PATH} is the directory where the toolchain will be installed.
+- `${ANDROID-NDK}` is the root directory of your NDK.
+- `${ARCH}` is the architecture you are targeting. For example: arm, arm64, ...
+- `${TOOLCHAIN_PATH}` is the directory where the toolchain will be installed.
 
 
-This will generate all the files you need in ${TOOLCHAIN_PATH}.
+This will generate all the files you need in `${TOOLCHAIN_PATH}`.
 
 ## Building GMP
 We will now build a version of GMP for Android, using the precedently generated toolchain.
