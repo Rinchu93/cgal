@@ -55,7 +55,7 @@ In the MPFR sources dir, do the following:
 > make install
 ```
 
-## Building CGAL
+## Configuring CGAL
 Now that we have the dependencies built, we can configure CGAL.
 First we will create a toolchain.cmake file, containing the paths needed by CMake.
 Create this file at ${TOOLCHAIN_FILE_PATH}:
@@ -79,3 +79,11 @@ cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DBUILD_SHARED_LIBS=true -DW
 CGAL is now ready to be used with an Android Application. 
 
 NB: Some packages have more dependencies. If you wish to use them, you will have to cross-compile them too.
+
+## Build an example
+
+Since Android 5.0 (API level 21), an executable needs to be PIE (Position independant executable) to work. To make your executable PIE, you need to add -fPIE to the CXX flags, and -fPIE -pie to the linker flags
+
+```cmake
+> cmake -DCMAKE_CXX_FLAGS=-std=c++11 -fPIE -DCMAKE_EXE_LINKER_FLAGS=-fPIE -pie .
+```
