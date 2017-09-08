@@ -1,10 +1,20 @@
 ## Requirements
 
-- GMP sources
-- MPFR sources
-- Boost headers
-- Android NDK
-- CGAL sources
+- [GMP] [sources][GMP sources]
+- [MPFR] [sources][MPFR sources]
+- [Boost] headers
+- [Android NDK]
+- [CGAL] [sources][CGAL sources]
+
+[GMP]: https://gmplib.org/
+[MPFR]: http://www.mpfr.org/mpfr-current/#download
+[Boost]: http://www.boost.org/
+[Android NDK]: https://developer.android.com/ndk/downloads/index.html
+[CGAL]: https://www.cgal.org/
+
+[GMP sources]: https://gmplib.org/#DOWNLOAD
+[MPFR sources]: http://www.mpfr.org/mpfr-current/#download
+[CGAL sources]: https://www.cgal.org/download
 
 ## Generating a Standalone Toolchain
 The first step for cross-compiling a library to Android is to create a toolchain from the NDK. 
