@@ -34,26 +34,13 @@ We will now build a version of GMP for Android, using the precedently generated 
 In the GMP sources dir, do the following:
 ``` {.bash}
 > export CC=${TOOLCHAIN_PATH}/bin/clang
-> export CXX=${TOOLCHAIN_PATH}/bin/clang++
 > export PATH="${TOOLCHAIN_PATH}:${PATH}"
-> export LIBGMP_LDFLAGS='-avoid-version'
-> export LIBGMPXX_LDFLAGS='-avoid-version'
-> export BASE_CFLAGS='-O2'
-> export LDFLAGS=' -Wl,-z,now'
-> export CFLAGS="${BASE_CFLAGS} -fstack-protector-strong"
-> ./configure --prefix=${GMP_PATH} --enable-shared --disable-static --enable-cxx -- build=${LOCAL_TRIPLET} --host=${TARGET_TRIPLET} MPN_PATH="${ARCH} generic"
+> ./configure --prefix=${GMP_PATH} --enable-shared --host=${TARGET_TRIPLET}
 
 > make
-> make check TESTS=''
 > make install
 ```
-- `${LOCAL_TRIPLET}` represents the machine you are building on.  It is of the form cpu-company-system. For example, `x86_64-pc-linux-gnu` for a 64bit Desktop Linux.
-- `${TARGET_TRIPLET}` represents the machine you are targeting. For example, `aarch64-linux-android` for a 64bit arm Android device.
-
-```{.bash}
-> make check TESTS=''
-```
-allows to build GMP tests without running them. As we are cross-compiling, tests cannot be performed, but not building them will keep us from configuring MPFR.
+- `${TARGET_TRIPLET}` represents the machine you are targeting. It is of the form cpu-company-system. For example, `aarch64-linux-android` for a 64bit arm Android device.
 
 ## Building MPFR
 This is very similar to building GMP. 
@@ -61,14 +48,8 @@ In the MPFR sources dir, do the following:
 
 ``` {.bash}
 > export CC=${TOOLCHAIN_PATH}/bin/clang
-> export CXX=${TOOLCHAIN_PATH}/bin/clang++
 > export PATH="${TOOLCHAIN_PATH}:${PATH}"
-> export LIBGMP_LDFLAGS='-avoid-version'
-> export LIBGMPXX_LDFLAGS='-avoid-version'
-> export BASE_CFLAGS='-O2'
-> export LDFLAGS=' -Wl,-z,now'
-> export CFLAGS="${BASE_CFLAGS} -fstack-protector-strong"
-> ./configure --prefix=${MPFR_PATH} --enable-shared --disable-static  --build=${LOCAL_TRIPLET} --host=${TARGET_TRIPLET} MPN_PATH="${ARCH} generic" --with-gmp=${GMP_PATH}
+> ./configure --prefix=${MPFR_PATH} --enable-shared--host=${TARGET_TRIPLET} --with-gmp=${GMP_PATH}
 
 > make
 > make install
@@ -82,7 +63,7 @@ Create this file at ${TOOLCHAIN_FILE_PATH}:
 #Target system
 set(CMAKE_SYSTEM_NAME  Android)
 
-set(CMAKE_SYSTEM_VERSION 1)
+set(CMAKE_SYSTEM_VERSION 21)
 
 # Compiler to build for the target
 set(CMAKE_C_COMPILER ${TOOLCHAIN_PATH}/bin/aarch64-linux-android-clang)
