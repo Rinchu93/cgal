@@ -14,7 +14,7 @@
 
 [GMP sources]: https://gmplib.org/#DOWNLOAD
 [MPFR sources]: http://www.mpfr.org/mpfr-current/#download
-[CGAL sources]: https://www.cgal.org/download
+[CGAL sources]: https://www.cgal.org/download/last
 
 ## Generating a Standalone Toolchain
 The first step for cross-compiling a library to Android is to create a toolchain from the NDK. 
