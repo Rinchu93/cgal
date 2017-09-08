@@ -47,8 +47,8 @@ In the GMP sources dir, do the following:
 > make check TESTS=''
 > make install
 ```
-${LOCAL_TRIPLET} represents the machine you are building on.  It is of the form cpu-company-system. For example, x86_64-pc-linux-gnu for a 64bit Desktop Linux.
-${TARGET_TRIPLET} represents the machine you are targeting. For example, aarch64-linux-android for a 64bit arm Android device.
+- `${LOCAL_TRIPLET}` represents the machine you are building on.  It is of the form cpu-company-system. For example, `x86_64-pc-linux-gnu` for a 64bit Desktop Linux.
+- `${TARGET_TRIPLET}` represents the machine you are targeting. For example, `aarch64-linux-android` for a 64bit arm Android device.
 
 ```{.bash}
 > make check TESTS=''
