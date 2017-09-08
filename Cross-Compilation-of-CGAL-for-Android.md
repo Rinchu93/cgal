@@ -84,6 +84,6 @@ NB: Some packages have more dependencies. If you wish to use them, you will have
 
 Since Android 5.0 (API level 21), an executable needs to be PIE (Position independant executable) to work. To make your executable PIE, you need to add -fPIE to the CXX flags, and -fPIE -pie to the linker flags
 
-```cmake
+```bash
 > cmake -DCMAKE_CXX_FLAGS=-std=c++11 -fPIE -DCMAKE_EXE_LINKER_FLAGS=-fPIE -pie .
 ```
