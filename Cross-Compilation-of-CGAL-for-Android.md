@@ -80,7 +80,7 @@ Notes:
 - The options `-DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0` allow to use the C++11 standard. When CGAL is compiled with a C++11 compiler, the library Boost.Thread is no longer required, and Boost libraries can be used header-only. There is one exception: `CGAL_Core` still requires Boost.Thread. That is why we use the cmake option `-DWITH_CGAL_Core=FALSE`, to disable `CGAL_Core`. If you need `CGAL_Core`, then you will have to cross-compile Boost, and then set the appropriate CMake variables. Some packages have more dependencies. If you wish to use them, you will have to cross-compile them too.
 - With the option `-DCGAL_HEADER_ONLY=TRUE`, CGAL is used header-only.
 
-## Build an example
+## Build an Example
 
 Since Android 5.0 (API level 21), an executable needs to be PIE (Position independant executable) to work. To make your executable PIE, you need to add `-fPIE` to the CXX flags, and `-fPIE -pie` to the linker flags
 
