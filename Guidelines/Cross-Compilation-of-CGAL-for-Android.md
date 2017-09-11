@@ -1,3 +1,15 @@
+<!--TOC-->
+
+# Table of Contents
+* [Requirements](#requirements)
+* [Generating a Standalone Toolchain](#generating-a-standalone-toolchain)
+* [Building GMP](#building-gmp)
+* [Building MPFR](#building-mpfr)
+* [Configuring CGAL](#configuring-cgal)
+* [Build an Example](#build-an-example)
+
+<!--TOC-->
+
 ## Requirements
 
 - [GMP] [sources][GMP sources]
