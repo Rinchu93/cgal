@@ -32,9 +32,9 @@
 The first step for cross-compiling a library to Android is to create a toolchain from the NDK. 
 A python script is given to do so:
 ```bash
-> ${ANDROID-NDK}/build/tools/make_standalone_toolchain.py --arch ${ARCH} --install-dir ${TOOLCHAIN_PATH}
+> ${ANDROID_NDK}/build/tools/make_standalone_toolchain.py --arch ${ARCH} --install-dir ${TOOLCHAIN_PATH}
 ```
-- `${ANDROID-NDK}` is the root directory of your NDK.
+- `${ANDROID_NDK}` is the root directory of your NDK.
 - `${ARCH}` is the architecture you are targeting. For example: arm, arm64, ...
 - `${TOOLCHAIN_PATH}` is the directory where the toolchain will be installed.
 
