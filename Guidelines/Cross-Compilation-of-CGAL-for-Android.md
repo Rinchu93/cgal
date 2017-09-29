@@ -91,6 +91,8 @@ Once we have this, we call cmake:
 ```bash
 > cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DWITH_CGAL_Core=FALSE   -DCGAL_test_cpp_version_RUN_RES=0 -DCGAL_HEADER_ONLY=TRUE -DWITH_CGAL_Qt5=FALSE -DCGAL_HEADER_ONLY=TRUE -DBUILD_SHARED_LIBS=FALSE
 ```
+On Windows, we add the option `-G Unix Makefiles`. 
+
 CGAL is now ready to be used with an Android Application. 
 
 Notes:
