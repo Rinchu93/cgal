@@ -17,7 +17,7 @@
 - [Boost] headers
 - [Android NDK]
 - [CGAL] [sources][CGAL sources]
-- For Windows, [MSYS2] with `gcc` and `make`
+- For Windows, [MSYS2] with `gcc` and `make` (installed with the command `pacman -S gcc`)
 
 [GMP]: https://gmplib.org/
 [MPFR]: http://www.mpfr.org/
