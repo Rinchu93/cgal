@@ -74,17 +74,22 @@ Create this file at ${TOOLCHAIN_FILE_PATH}:
 ```cmake
 #Target system
 set(CMAKE_SYSTEM_NAME  Android)
-
 set(CMAKE_SYSTEM_VERSION 21)
+set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
+set(CMAKE_ANDROID_NDK /home/gimeno/Android/android-ndk-r15c)
+set(GMP_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/gmp-arm64/include)
+set(GMP_LIBRARIES /home/gimeno/Android/3rdPartyLibs/gmp-arm64/lib/libgmp.so)
 
-# Compiler to build for the target
-set(CMAKE_C_COMPILER ${TOOLCHAIN_PATH}/bin/aarch64-linux-android-clang)
-set(CMAKE_CXX_COMPILER${TOOLCHAIN_PATH}/bin/aarch64-linux-android-clang++)
+set(MPFR_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/mpfr-arm64/include)
+set(MPFR_LIBRARIES /home/gimeno/Android/3rdPartyLibs/mpfr-arm64/lib/libmpfr.so)
+set(Boost_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/boost/include)
+
 ```
+This is an example and you obviously have to use the right paths instead of those.
 
 Once we have this, we call cmake:
 ```bash
-> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DWITH_CGAL_Core=FALSE  -DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0 -DGMP_INCLUDE_DIR=${GMP_PATH}/include -DGMP_LIBRARIES=${GMP_PATH}/lib/libgmp.so -DMPFR_INCLUDE_DIR=${MPFR_PATH}/include -DMPFR_LIBRARIES=${MPFR_PATH}/lib/libgmp.so -DBOOST_INCLUDE_DIR=${BOOST_INCLUDE_PATH} -DCGAL_HEADER_ONLY=TRUE
+> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DWITH_CGAL_Core=FALSE   -DCGAL_test_cpp_version_RUN_RES=0 -DCGAL_HEADER_ONLY=TRUE -DWITH_CGAL_Qt5=FALSE -DCGAL_HEADER_ONLY=TRUE -DBUILD_SHARED_LIBS=FALSE
 ```
 CGAL is now ready to be used with an Android Application. 
 
