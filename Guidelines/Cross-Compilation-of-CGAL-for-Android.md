@@ -17,7 +17,10 @@
 - [Boost] headers
 - [Android NDK]
 - [CGAL] [sources][CGAL sources]
-- For Windows, [MSYS2] with `gcc`, `make`, `autoconf` and `automake` (installed with the command `pacman -S gcc make autoconf automake`)
+- For Windows, [MSYS2] with `gcc`, `make`, `autoconf` and `automake`, installed with the command
+```bash
+> pacman -S gcc make autoconf automake
+```
 
 [GMP]: https://gmplib.org/
 [MPFR]: http://www.mpfr.org/
