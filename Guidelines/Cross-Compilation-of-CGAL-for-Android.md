@@ -68,7 +68,7 @@ In the MPFR sources dir, do the following:
 ```bash
 > export CC=${TOOLCHAIN_PATH}/bin/clang
 > export PATH="${TOOLCHAIN_PATH}:${PATH}"
-> ./configure --prefix=${MPFR_PATH} --enable-shared--host=${TARGET_TRIPLET} --with-gmp=${GMP_PATH}
+> ./configure --prefix=${MPFR_PATH} --enable-shared --host=${TARGET_TRIPLET} --with-gmp=${GMP_PATH}
 
 > make
 > make install
