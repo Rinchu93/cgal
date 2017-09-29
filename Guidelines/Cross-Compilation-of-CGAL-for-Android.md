@@ -17,12 +17,14 @@
 - [Boost] headers
 - [Android NDK]
 - [CGAL] [sources][CGAL sources]
+- For Windows, [MSYS2] with `gcc` and `make`
 
 [GMP]: https://gmplib.org/
 [MPFR]: http://www.mpfr.org/
 [Boost]: http://www.boost.org/
 [Android NDK]: https://developer.android.com/ndk/downloads/index.html
 [CGAL]: https://www.cgal.org/
+[MSYS2]: http://www.msys2.org/
 
 [GMP sources]: https://gmplib.org/#DOWNLOAD
 [MPFR sources]: http://www.mpfr.org/mpfr-current/#download
