@@ -82,27 +82,29 @@ Create this file at ${TOOLCHAIN_FILE_PATH}:
 #Target system
 set(CMAKE_SYSTEM_NAME  Android)
 set(CMAKE_SYSTEM_VERSION 21)
-set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
+set(CMAKE_ANDROID_ARCH_ABI arm64-v8a) # Change arm64-v8a to armeabi-v7a for 32bit phones
 set(CMAKE_ANDROID_NDK /home/gimeno/Android/android-ndk-r15c)
+set(CMAKE_ANDROID_NDK_TOOLCHAIN_VERSION clang)
+
 set(GMP_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/gmp-arm64/include)
 set(GMP_LIBRARIES /home/gimeno/Android/3rdPartyLibs/gmp-arm64/lib/libgmp.so)
 
 set(MPFR_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/mpfr-arm64/include)
 set(MPFR_LIBRARIES /home/gimeno/Android/3rdPartyLibs/mpfr-arm64/lib/libmpfr.so)
-set(Boost_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/boost/include)
 
+set(Boost_INCLUDE_DIR /home/gimeno/Android/3rdPartyLibs/boost/include)
 ```
 This is an example and you obviously have to use the right paths instead of those.
 
 Once we have this, we call cmake:
 ```bash
-> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DWITH_CGAL_Core=FALSE -DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0 -DCGAL_HEADER_ONLY=TRUE -DWITH_CGAL_Qt5=FALSE -DBUILD_SHARED_LIBS=FALSE
+> cmake -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE_PATH} -DWITH_CGAL_Core=FALSE -DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0 -DCGAL_HEADER_ONLY=TRUE -DWITH_CGAL_Qt5=FALSE /path/to/cgal/sources
 ```
-On Windows, we add the option `-G Unix Makefiles`. 
-
 CGAL is now ready to be used with an Android Application. 
 
 Notes:
+- You have to run cmake twice, because of a bug of CGAL CMake scripts in case of a cross-compilation.
+- On Windows, we add the option `-G "Unix Makefiles"`. 
 - The options `-DCMAKE_CXX_FLAGS=-std=c++11 -DCGAL_test_cpp_version_RUN_RES=0` allow to use the C++11 standard. When CGAL is compiled with a C++11 compiler, the library Boost.Thread is no longer required, and Boost libraries can be used header-only. There is one exception: `CGAL_Core` still requires Boost.Thread. That is why we use the cmake option `-DWITH_CGAL_Core=FALSE`, to disable `CGAL_Core`. If you need `CGAL_Core`, then you will have to cross-compile Boost, and then set the appropriate CMake variables. Some packages have more dependencies. If you wish to use them, you will have to cross-compile them too.
 - With the option `-DCGAL_HEADER_ONLY=TRUE`, CGAL is used header-only.
 
@@ -111,5 +113,5 @@ Notes:
 Since Android 5.0 (API level 21), an executable needs to be PIE (Position independant executable) to work. To make your executable PIE, you need to add `-fPIE` to the CXX flags, and `-fPIE -pie` to the linker flags
 
 ```bash
-> cmake -DCMAKE_CXX_FLAGS=-std=c++11 -fPIE -DCMAKE_EXE_LINKER_FLAGS="-fPIE -pie" .
+> cmake -DCMAKE_CXX_FLAGS="-std=c++11 -fPIE" -DCMAKE_EXE_LINKER_FLAGS="-fPIE -pie" .
 ```
