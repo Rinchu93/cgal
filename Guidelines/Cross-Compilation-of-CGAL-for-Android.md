@@ -57,7 +57,7 @@ In the GMP sources dir, do the following:
 > make
 > make install
 ```
-- `${TARGET_TRIPLET}` represents the machine you are targeting. It is of the form cpu-company-system. For example, `aarch64-linux-android` for a 64bit arm Android device, or `arm-linux-androideabi` for a 32bit arm Android device.
+- `${TARGET_TRIPLET}` represents the machine you are targeting. It is of the form cpu-company-system. For example, `aarch64-linux-android` for a 64bit arm Android device, or `arm-linux-androideabihf` for a 32bit arm Android device (ARMv7 or later, with a hard floating-points unit).
 
 ## Building MPFR
 This is very similar to building GMP. 
