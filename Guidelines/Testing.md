@@ -19,6 +19,8 @@
 * [Using the CGAL Docker images](#using-the-cgal-docker-images)
 * [Using CTest](#using-ctest)
   * [Run only specific tests](#run-only-specific-tests)
+  * [Verbose output](#verbose-output)
+  * [Dry-run of CTest](#dry-run-of-ctest)
 
 <!--TOC-->
 
