@@ -506,18 +506,18 @@ actual tests. There are dependencies that ensure the binaries are built
 before they are tested.
 
 If you want to test the whole thing:
-```
+```shell
 [~/CGAL/build/test/] > ctest -j4
 ```
 *Note: the `-j4` option of `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
 ### Run only specific tests
 If you want run only one test, or a selection of them, you can use the `-R` option of CTest:
-```
+```shell
 ctest -R <pattern>
 ```
 will run all tests matching the regular expression `<pattern>`
-```
+
 The option `-R <pattern>` can be used several times in the same CTest run.
 
 ### Verbose output
