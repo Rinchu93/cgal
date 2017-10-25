@@ -16,8 +16,9 @@
 * [Custom test script](#custom-test-script)
 * [Using the code coverage tool gcov](#using-the-code-coverage-tool-gcov)
   * [CMake](#cmake)
-* [Using the CGAL Dockers](#using-the-cgal-dockers)
+* [Using the CGAL Docker images](#using-the-cgal-docker-images)
 * [Using CTest](#using-ctest)
+  * [Run only specific tests](#run-only-specific-tests)
 
 <!--TOC-->
 
@@ -451,7 +452,7 @@ gcov <executable>.cpp -o CMakeFiles/<executable>.dir/<executable>.cpp.gcno
 Within CGAL, it is often useful to pass the additional `-p` option to
 gcov to preserve the source files' full paths.
 
-## Using the CGAL Dockers
+## Using the CGAL Docker images
 
 Many platforms used to run the daily test suite are now stored on different Docker images. The CGAL project provides many images where all the CGAL dependencies are provides (see https://hub.docker.com/r/cgal/testsuite-docker/tags/ for the list of images).
 
@@ -474,7 +475,7 @@ CTest is a testing tool shipped with CMake. Compared to the testsuite infrastruc
 
 You can use ctest to test a specific example/test directory or the whole thing.
 First, you need a CGAL build with examples and tests.
-```
+```shell
 cd CGAL
 mkdir build
 cd build
@@ -491,17 +492,24 @@ cmake -DBUILD_TESTING=ON -DWITH_examples=ON -DWITH_tests=ON ../..
 but you can also set those options using the CMake GUI.
 
 If you want to test a particular directory, do:
-```
+```shell
 cd test/Kernel_23
-make -j4 
-ctest -j4 # if you do not compile first, nothing will be tested
+
+# Note that it is a sub-directory of your build-directory,
+# not the sources.
+
+ctest -j4
 ```
+
+There are test lines that build the executable, and other that execute the
+actual tests. There are dependencies that ensure the binaries are built
+before they are tested.
+
 If you want to test the whole thing:
 ```
-[~/CGAL/build/test/] > make examples tests -j4
 [~/CGAL/build/test/] > ctest -j4
 ```
-*Note: the `-j4` option of both `make` and `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
+*Note: the `-j4` option of `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
 ### Run only specific tests
 If you want run only one test, or a selection of them, you can use the `-R` option of CTest:
