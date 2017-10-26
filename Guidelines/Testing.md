@@ -21,7 +21,7 @@
   * [Run only specific tests](#run-only-specific-tests)
   * [Verbose output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
-  * [Example](#Example)
+  * [Example](#example)
 
 <!--TOC-->
 
