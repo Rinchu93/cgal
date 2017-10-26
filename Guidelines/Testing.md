@@ -603,4 +603,4 @@ test 714
 1/1 Test #714: Mesh_3_Examples_CleanupFixture ...   Passed    0.01 sec
 [...]
 ```
-Automatic dependencies ensures that the a "compilation" entry is run before the corresponding "execution" entry, that the "SetupFixture" is run before the first test, and "CleanupFixture" is run after all the tests have been completed.
+Automatic dependencies ensures that a "compilation" entry is run before the corresponding "execution" entry, that the "SetupFixture" is run before the first test, and that "CleanupFixture" is run after all the tests have been completed.
