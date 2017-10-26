@@ -21,6 +21,7 @@
   * [Run only specific tests](#run-only-specific-tests)
   * [Verbose output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
+  * [Example](#Example)
 
 <!--TOC-->
 
@@ -527,3 +528,79 @@ If you pass the option `-V` (or `--verbose`), you will see the command lines use
 
 ### Dry-run of CTest
 If you pass `-N` to the ctest command line, CTest will make a dry-run: it will *display* the list of all tests that it will launch, instead of launching them. You can pass both the options `-N -V` to see at the same time the command lines CTest will use.
+
+### Example
+Here is an example of a partial test of Mesh_3 (a fix of all tests and examples having `features` in their names), that is run at the root of the build directory `$HOME/Git/cgal/build`. The options used at:
+- `-j3` to run three jobs in parallel,
+- `-L Mesh_3` to run only tests with the *label* `Mesh_3`
+- `-R features` to restrict further the list of test cases to those having `features` in their names
+
+That run was done with a pre-version of CGAL-4.12, without header-only.
+
+```shellsession
+$ ctest -j3 -L Mesh_3 -R feature                                                                                      
+Test project /home/lrineau/Git/cgal/build
+      Start 2793: compilation_of__test_meshing_polyhedron_with_features
+      Start 747: compilation_of__mesh_3D_image_with_features
+      Start 725: compilation_of__mesh_cubes_intersection_with_features
+ 1/18 Test #747: compilation_of__mesh_3D_image_with_features ............................   Passed  344.91 sec
+ 2/18 Test #725: compilation_of__mesh_cubes_intersection_with_features ..................   Passed  344.91 sec
+      Start 2805: compilation_of__test_mesh_polyhedral_domain_with_features_deprecated
+      Start 737: compilation_of__mesh_polyhedral_domain_with_features
+ 3/18 Test #2793: compilation_of__test_meshing_polyhedron_with_features ..................   Passed  382.26 sec
+      Start 2765: compilation_of__test_c3t3_with_features
+ 4/18 Test #2765: compilation_of__test_c3t3_with_features ................................   Passed    3.61 sec
+      Start 2769: compilation_of__test_domain_with_polyline_features
+ 5/18 Test #2769: compilation_of__test_domain_with_polyline_features .....................   Passed    4.51 sec
+      Start 2751: Mesh_3_Tests_SetupFixture
+ 6/18 Test #2751: Mesh_3_Tests_SetupFixture ..............................................   Passed    2.40 sec
+      Start 713: Mesh_3_Examples_SetupFixture
+ 7/18 Test #713: Mesh_3_Examples_SetupFixture ...........................................   Passed    2.71 sec
+      Start 2794: execution___of__test_meshing_polyhedron_with_features
+ 8/18 Test #2794: execution___of__test_meshing_polyhedron_with_features ..................   Passed   24.94 sec
+      Start 748: execution___of__mesh_3D_image_with_features
+ 9/18 Test #748: execution___of__mesh_3D_image_with_features ............................   Passed    0.90 sec
+      Start 726: execution___of__mesh_cubes_intersection_with_features
+10/18 Test #726: execution___of__mesh_cubes_intersection_with_features ..................   Passed    0.30 sec
+      Start 2766: execution___of__test_c3t3_with_features
+11/18 Test #2766: execution___of__test_c3t3_with_features ................................   Passed    0.03 sec
+      Start 2770: execution___of__test_domain_with_polyline_features
+12/18 Test #2770: execution___of__test_domain_with_polyline_features .....................   Passed    0.30 sec
+13/18 Test #2805: compilation_of__test_mesh_polyhedral_domain_with_features_deprecated ...   Passed  149.06 sec
+14/18 Test #737: compilation_of__mesh_polyhedral_domain_with_features ...................   Passed  148.50 sec
+      Start 738: execution___of__mesh_polyhedral_domain_with_features
+      Start 2806: execution___of__test_mesh_polyhedral_domain_with_features_deprecated
+15/18 Test #2806: execution___of__test_mesh_polyhedral_domain_with_features_deprecated ...   Passed    0.20 sec
+      Start 2752: Mesh_3_Tests_CleanupFixture
+16/18 Test #2752: Mesh_3_Tests_CleanupFixture ............................................   Passed    0.10 sec
+17/18 Test #738: execution___of__mesh_polyhedral_domain_with_features ...................   Passed    1.42 sec
+      Start 714: Mesh_3_Examples_CleanupFixture
+18/18 Test #714: Mesh_3_Examples_CleanupFixture .........................................   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 18
+
+Label Time Summary:
+Mesh_3_Examples    = 843.66 sec (8 tests)
+Mesh_3_Tests       = 567.41 sec (10 tests)
+
+Total Test time (real) = 496.78 sec
+```
+
+The result of CTest is composed of a list of lines `Start`/`Passed`, for each test, running in parallel, and a summary at the end.
+- The test entries `compilation_of__*` are the compilation of the binaries of tests.
+- The test entries `executation___of__*` are the actual runs of tests.
+- The two lines `*_SetupFixture` and `*_CleanupFixture` are special test entries that prepare and clean the execution directory of the tests.
+
+The following run shows that the execution directory of tests is `/home/lrineau/Git/cgal/build/examples/Mesh_3/__exec_test_dir`.
+```shellsession
+$ ctest -V -R Mesh_3_Examples_CleanupFixture
+[...]
+test 714
+    Start 714: Mesh_3_Examples_CleanupFixture
+
+714: Test command: /usr/bin/cmake "-E" "remove_directory" "/home/lrineau/Git/cgal/build/examples/Mesh_3/__exec_test_dir"
+714: Test timeout computed to be: 1500
+1/1 Test #714: Mesh_3_Examples_CleanupFixture ...   Passed    0.01 sec
+[...]
+```
+Automatic dependencies ensures that the a "compilation" entry is run before the corresponding "execution" entry, that the "SetupFixture" is run before the first test, and "CleanupFixture" is run after all the tests have been completed.
