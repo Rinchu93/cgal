@@ -22,7 +22,7 @@
   * [Verbose output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
-
+  * [Example of a Test Failure](#example-of-a-test-failure)
 <!--TOC-->
 
 ## Introduction
@@ -530,7 +530,7 @@ If you pass the option `-V` (or `--verbose`), you will see the command lines use
 If you pass `-N` to the ctest command line, CTest will make a dry-run: it will *display* the list of all tests that it will launch, instead of launching them. You can pass both the options `-N -V` to see at the same time the command lines CTest will use.
 
 ### Example
-Here is an example of a partial test of Mesh_3 (a fix of all tests and examples having `features` in their names), that is run at the root of the build directory `$HOME/Git/cgal/build`. The options used at:
+Here is an example of a partial test of Mesh_3 (a fix of all tests and examples having `features` in their names), that is run at the root of the build directory `$HOME/Git/cgal/build`. The options used are:
 - `-j3` to run three jobs in parallel,
 - `-L Mesh_3` to run only tests with the *label* `Mesh_3`
 - `-R features` to restrict further the list of test cases to those having `features` in their names
@@ -604,3 +604,56 @@ test 714
 [...]
 ```
 Automatic dependencies ensures that a _compilation_ entry is run before the corresponding _execution_ entry, that the _SetupFixture_ is run before the first test, and that the _CleanupFixture_ is run after all the tests have been completed.
+
+### Example of a Test Failure
+This is an example of a ctest run with a test failure.
+
+The options used are:
+- `-j7` to run seven jobs in parallel,
+- `-L Triangulation_2` to run only tests with the *label* `Triangulation_2`
+- `-output-on-failure` to see the output of test that fail (use `-V` instead too see _all_ the outputs)
+```shellsession
+$ ctest --output-on-failure -L Triangulation_2_Examples -j7                                                   
+Test project /home/lrineau/Git/cgal/build
+[...]
+38/40 Test #1667: compilation_of__voronoi ....................................***Failed   17.41 sec
+Scanning dependencies of target CGAL
+Building CXX object Installation/src/CGAL/CMakeFiles/CGAL.dir/all_files.cpp.o
+Linking CXX shared library ../../../lib/libCGAL.so
+Built target CGAL
+Scanning dependencies of target voronoi
+Building CXX object examples/Triangulation_2/CMakeFiles/voronoi.dir/voronoi.cpp.o
+/home/lrineau/Git/cgal/Triangulation_2/examples/Triangulation_2/voronoi.cpp: In function ‘int main()’:
+/home/lrineau/Git/cgal/Triangulation_2/examples/Triangulation_2/voronoi.cpp:22:24: error: ‘Triangulation {aka class CGAL::Delaunay_triangulation_2<CGAL::Epick>}’ has no member named ‘edge_begin’; did you mean ‘edges_begin’?
+   Edge_iterator eit =T.edge_begin();
+                        ^~~~~~~~~~
+                        edges_begin
+gmake[3]: *** [examples/Triangulation_2/CMakeFiles/voronoi.dir/build.make:63: examples/Triangulation_2/CMakeFiles/voronoi.dir/voronoi.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29539: examples/Triangulation_2/CMakeFiles/voronoi.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29546: examples/Triangulation_2/CMakeFiles/voronoi.dir/rule] Error 2
+gmake: *** [Makefile:9925: voronoi] Error 2
+
+MEM: 529760     TIME: 17.41     /usr/bin/cmake --build /home/lrineau/Git/cgal/build --target voronoi
+
+      Start 1668: execution___of__voronoi
+Failed test dependencies: compilation_of__voronoi
+39/40 Test #1668: execution___of__voronoi ....................................***Not Run   0.00 sec
+      Start 1632: Triangulation_2_Examples_CleanupFixture
+40/40 Test #1632: Triangulation_2_Examples_CleanupFixture ....................   Passed    0.01 sec
+
+95% tests passed, 2 tests failed out of 40
+
+Label Time Summary:
+Triangulation_2_Examples    = 106.51 sec (40 tests)
+
+Total Test time (real) =  17.71 sec
+
+The following tests FAILED:
+        1667 - compilation_of__voronoi (Failed)
+        1668 - execution___of__voronoi (Not Run)
+Errors while running CTest
+```
+
+We can see that:
+- the test entry `compilation_of__voronoi` has failed (because of a compilation error), and that
+- the test entry `execution___of__voronoi` was not run, because it depends on `compilation_of__voronoi`.
