@@ -667,3 +667,7 @@ We can see that:
 ### Know Issues
 
 For the moment, the tests in `test/Snap_rounding_2/` and `test/Sweep_line_2/` are not yet supported by CTest, because they currently use a custom `cgal_test` shell script, that has not yet been ported to the CMake/CTest syntax. The tests of `test/Arrangement_on_surface_2/` do have been ported.
+
+See [issue #2547] for the tracking of that task.
+
+[issue #2547]: https://github.com/CGAL/cgal/pull/2547
