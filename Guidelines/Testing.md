@@ -23,6 +23,8 @@
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
   * [Example of a Test Failure](#example-of-a-test-failure)
+  * [Know Issues](#know-issues)
+
 <!--TOC-->
 
 ## Introduction
@@ -661,3 +663,7 @@ We can see that:
 - the test entry `execution___of__voronoi` was not run, because it depends on `compilation_of__voronoi`.
 
 [CTest]: https://cmake.org/cmake/help/v3.4/manual/ctest.1.html
+
+### Know Issues
+
+For the moment, the tests in `test/Snap_rounding_2/` and `test/Sweep_line_2/` are not yet supported by CTest, because they currently use a custom `cgal_test` shell script, that has not yet been ported to the CMake/CTest syntax. The tests of `test/Arrangement_on_surface_2/` do have been ported.
