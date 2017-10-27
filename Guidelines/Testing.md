@@ -255,7 +255,7 @@ The regular expression is
 
 ## Running the testsuite locally on a single package
 
-Before merging into integration it is good style to run the testsuite of
+Before merging into integration it is good practice to run the testsuite of
 the package you worked on. Here is what you need:
 
 -   A shell such as bash (install Cygwin, when you are on Windows)
@@ -664,9 +664,9 @@ We can see that:
 
 [CTest]: https://cmake.org/cmake/help/v3.4/manual/ctest.1.html
 
-### Know Issues
+### Known Issues
 
-For the moment, the tests in `test/Snap_rounding_2/` and `test/Sweep_line_2/` are not yet supported by CTest, because they currently use a custom `cgal_test` shell script, that has not yet been ported to the CMake/CTest syntax. The tests of `test/Arrangement_on_surface_2/` do have been ported.
+For the moment, the tests in `test/Snap_rounding_2/` and `test/Sweep_line_2/` are not yet supported by CTest, because they currently use a custom `cgal_test` shell script that has not yet been ported to the CMake/CTest syntax. The tests of `test/Arrangement_on_surface_2/` do have been ported.
 
 See [issue #2547] for the tracking of that task.
 
