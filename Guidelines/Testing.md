@@ -610,16 +610,13 @@ This is an example of a ctest run with a test failure.
 
 The options used are:
 - `-j7` to run seven jobs in parallel,
-- `-L Triangulation_2` to run only tests with the *label* `Triangulation_2`
+- `-L 'Triangulation_2|Mesh_2'` to run only tests with the *labels* matching the regular expression `Triangulation_2|Mesh_2`, and that means the tests and examples of `Triangulation_2` and `Mesh_2`,
 - `-output-on-failure` to see the output of test that fail (use `-V` instead too see _all_ the outputs)
 ```shellsession
-$ ctest --output-on-failure -L Triangulation_2_Examples -j7                                                   
+$ ctest --output-on-failure -L 'Mesh_2|Triangulation_2' -j7
 Test project /home/lrineau/Git/cgal/build
 [...]
-38/40 Test #1667: compilation_of__voronoi ....................................***Failed   17.41 sec
-Scanning dependencies of target CGAL
-Building CXX object Installation/src/CGAL/CMakeFiles/CGAL.dir/all_files.cpp.o
-Linking CXX shared library ../../../lib/libCGAL.so
+ 43/110 Test #1667: compilation_of__voronoi .......................................***Failed   16.09 sec
 Built target CGAL
 Scanning dependencies of target voronoi
 Building CXX object examples/Triangulation_2/CMakeFiles/voronoi.dir/voronoi.cpp.o
@@ -633,20 +630,25 @@ gmake[2]: *** [CMakeFiles/Makefile2:29539: examples/Triangulation_2/CMakeFiles/v
 gmake[1]: *** [CMakeFiles/Makefile2:29546: examples/Triangulation_2/CMakeFiles/voronoi.dir/rule] Error 2
 gmake: *** [Makefile:9925: voronoi] Error 2
 
-MEM: 529760     TIME: 17.41     /usr/bin/cmake --build /home/lrineau/Git/cgal/build --target voronoi
+MEM: 529812     TIME: 15.99     /usr/bin/cmake --build /home/lrineau/Git/cgal/build --target voronoi
 
-      Start 1668: execution___of__voronoi
+[...]
+        Start 1668: execution___of__voronoi
 Failed test dependencies: compilation_of__voronoi
-39/40 Test #1668: execution___of__voronoi ....................................***Not Run   0.00 sec
-      Start 1632: Triangulation_2_Examples_CleanupFixture
-40/40 Test #1632: Triangulation_2_Examples_CleanupFixture ....................   Passed    0.01 sec
+ 86/110 Test #1668: execution___of__voronoi .......................................***Not Run   0.00 sec
+[...]
+        Start 3696: Triangulation_2_Tests_CleanupFixture
+110/110 Test #3696: Triangulation_2_Tests_CleanupFixture ..........................   Passed    0.01 sec
 
-95% tests passed, 2 tests failed out of 40
+98% tests passed, 2 tests failed out of 110
 
 Label Time Summary:
-Triangulation_2_Examples    = 106.51 sec (40 tests)
+Mesh_2_Examples             =  20.40 sec (12 tests)
+Mesh_2_Tests                =  43.83 sec (24 tests)
+Triangulation_2_Examples    =  84.17 sec (40 tests)
+Triangulation_2_Tests       =  63.40 sec (34 tests)
 
-Total Test time (real) =  17.71 sec
+Total Test time (real) =  32.53 sec
 
 The following tests FAILED:
         1667 - compilation_of__voronoi (Failed)
@@ -655,5 +657,5 @@ Errors while running CTest
 ```
 
 We can see that:
-- the test entry `compilation_of__voronoi` has failed (because of a compilation error), and that
+- the test entry `compilation_of__voronoi` has failed (because of a compilation error that was inserted on purpose for this tutorial), and that
 - the test entry `execution___of__voronoi` was not run, because it depends on `compilation_of__voronoi`.
