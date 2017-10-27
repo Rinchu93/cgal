@@ -474,9 +474,9 @@ Then you can navigate in this directory and compile and run the different CGAL p
 When finishing, use `Ctrl+D` to leave the interactive shell and go back to your local system.
 
 ## Using CTest
-CTest is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel. For the moment, our nightly test suites still use the old shell scripts, but in the future we plan to use CTest. CTest is already supported in CGAL, in the `master` branch.
+[CTest] is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel. For the moment, our nightly test suites still use the old shell scripts, but in the future we plan to use CTest. CTest is already supported in CGAL, in the `master` branch.
 
-You can use ctest to test a specific example/test directory or the whole thing.
+You can use CTest to test a specific example/test directory or the whole thing.
 First, you need a CGAL build with examples and tests.
 ```shell
 cd CGAL
@@ -490,7 +490,7 @@ Then run CMake with the options:
 - to enable the building of examples and tests in the same build directory: `WITH_examples` and `WITH_tests` set to `ON`.
 With the command line tool `cmake`, you can run the following command:
 ```
-cmake -DBUILD_TESTING=ON -DWITH_examples=ON -DWITH_tests=ON ../..
+cmake -DBUILD_TESTING=ON -DWITH_examples=ON -DWITH_tests=ON ..
 ```
 but you can also set those options using the CMake GUI.
 
@@ -515,7 +515,7 @@ If you want to test the whole thing:
 *Note: the `-j4` option of `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
 ### Run only specific tests
-If you want run only one test, or a selection of them, you can use the `-R` option of CTest:
+If you want run only one test, or a selection of them, you can use the `-R` option of [CTest]:
 ```shell
 ctest -R <pattern>
 ```
@@ -527,10 +527,10 @@ The option `-R <pattern>` can be used several times in the same CTest run.
 If you pass the option `-V` (or `--verbose`), you will see the command lines used to run the tests, and the output of the tests. Otherwise, the output is only in the file `Testing/Temporary/LastTest.log` of your current build directory.
 
 ### Dry-run of CTest
-If you pass `-N` to the ctest command line, CTest will make a dry-run: it will *display* the list of all tests that it will launch, instead of launching them. You can pass both the options `-N -V` to see at the same time the command lines CTest will use.
+If you pass `-N` to the ctest command line, [CTest] will make a dry-run: it will *display* the list of all tests that it will launch, instead of launching them. You can pass both the options `-N -V` to see at the same time the command lines [CTest] will use.
 
 ### Example
-Here is an example of a partial test of Mesh_3 (a fix of all tests and examples having `features` in their names), that is run at the root of the build directory `$HOME/Git/cgal/build`. The options used are:
+Here is an example of a partial test of Mesh_3 (a fix of all tests and examples having `features` in their names), that is run at the root of the build directory `$HOME/Git/cgal/build`. The [CTest] options used in that run are:
 - `-j3` to run three jobs in parallel,
 - `-L Mesh_3` to run only tests with the *label* `Mesh_3`
 - `-R features` to restrict further the list of test cases to those having `features` in their names
@@ -606,9 +606,9 @@ test 714
 Automatic dependencies ensures that a _compilation_ entry is run before the corresponding _execution_ entry, that the _SetupFixture_ is run before the first test, and that the _CleanupFixture_ is run after all the tests have been completed.
 
 ### Example of a Test Failure
-This is an example of a ctest run with a test failure.
+This is an example of a [CTest] run with a test failure.
 
-The options used are:
+The [CTest] options used in that run are:
 - `-j7` to run seven jobs in parallel,
 - `-L 'Triangulation_2|Mesh_2'` to run only tests with the *labels* matching the regular expression `Triangulation_2|Mesh_2`, and that means the tests and examples of `Triangulation_2` and `Mesh_2`,
 - `-output-on-failure` to see the output of test that fail (use `-V` instead too see _all_ the outputs)
@@ -659,3 +659,5 @@ Errors while running CTest
 We can see that:
 - the test entry `compilation_of__voronoi` has failed (because of a compilation error that was inserted on purpose for this tutorial), and that
 - the test entry `execution___of__voronoi` was not run, because it depends on `compilation_of__voronoi`.
+
+[CTest]: https://cmake.org/cmake/help/v3.4/manual/ctest.1.html
