@@ -19,10 +19,10 @@
 * [Using the CGAL Docker images](#using-the-cgal-docker-images)
 * [Using CTest](#using-ctest)
   * [Run Tests of all CGAL](#run-tests-of-all-cgal)
-  * [Run only specific tests](#run-only-specific-tests)
-    * [With the `-R` option](#with-the--r-option)
-    * [With Labels and the `L` option](#with-labels-and-the-l-option)
-  * [Verbose output](#verbose-output)
+  * [Run only Specific Tests](#run-only-specific-tests)
+    * [With the `-R` Option](#with-the--r-option)
+    * [With Labels and the `L` Option](#with-labels-and-the-l-option)
+  * [Verbose Output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
   * [Example of a Test Failure](#example-of-a-test-failure)
@@ -522,9 +522,9 @@ build directory:
 ```
 *Note: the `-j4` option of `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
-### Run only specific tests
+### Run only Specific Tests
 
-#### With the `-R` option
+#### With the `-R` Option
 If you want run only one test, or a selection of them, you can use the `-R` option of [CTest]:
 ```shell
 ctest -R <pattern>
@@ -533,7 +533,7 @@ will run all tests matching the regular expression `<pattern>`
 
 The option `-R <pattern>` can be used several times in the same CTest run.
 
-#### With Labels and the `L` option
+#### With Labels and the `L` Option
 Alternatively, you can use _labels_. All CGAL tests have been assigned
 labels. All tests in a sub-directory have a label related to the name of
 the directory. For example, tests in `test/Triangulation_2` have the label
@@ -572,7 +572,7 @@ test/Triangulation_3
 ```
 
 
-### Verbose output
+### Verbose Output
 If you pass the option `-V` (or `--verbose`), you will see the command lines used to run the tests, and the output of the tests. Otherwise, the output is only in the file `Testing/Temporary/LastTest.log` of your current build directory.
 
 ### Dry-run of CTest
