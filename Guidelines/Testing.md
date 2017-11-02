@@ -521,6 +521,8 @@ build directory:
 *Note: the `-j4` option of `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
 ### Run only specific tests
+
+#### With the `-R` option
 If you want run only one test, or a selection of them, you can use the `-R` option of [CTest]:
 ```shell
 ctest -R <pattern>
@@ -528,6 +530,45 @@ ctest -R <pattern>
 will run all tests matching the regular expression `<pattern>`
 
 The option `-R <pattern>` can be used several times in the same CTest run.
+
+#### With Labels and the `L` option
+Alternatively, you can use _labels_. All CGAL tests have been assigned
+labels. All tests in a sub-directory have a label related to the name of
+the directory. For example, tests in `test/Triangulation_2` have the label
+`Triangulation_2_Tests`, and tests in `examples/Triangulation_2` have the
+label `Triangulation_2_Examples`.
+
+With the `-L` option, you can run tests having a label matching a regular
+expression. For example:
+```shell
+ctest -L Mesh_2_Tests
+```
+will test all of `test/Mesh_2/`. Another example:
+```shell
+ctest -L Sweep
+```
+will run all examples *and* tests of the `Sweep_line_2`package. Last
+example, with a more complex regular expression:
+```shell
+ctest -L 'Tr|Mesh_'
+
+```
+will run all tests from the following directories:
+```
+examples/Mesh_2
+examples/Mesh_3
+examples/RangeSegmentTrees
+examples/Triangulation
+examples/Triangulation_2
+examples/Triangulation_3
+test/Mesh_2
+test/Mesh_3
+test/RangeSegmentTrees
+test/Triangulation
+test/Triangulation_2
+test/Triangulation_3
+```
+
 
 ### Verbose output
 If you pass the option `-V` (or `--verbose`), you will see the command lines used to run the tests, and the output of the tests. Otherwise, the output is only in the file `Testing/Temporary/LastTest.log` of your current build directory.
