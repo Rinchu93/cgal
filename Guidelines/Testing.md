@@ -20,6 +20,8 @@
 * [Using CTest](#using-ctest)
   * [Run Tests of all CGAL](#run-tests-of-all-cgal)
   * [Run only specific tests](#run-only-specific-tests)
+    * [With the `-R` option](#with-the--r-option)
+    * [With Labels and the `L` option](#with-labels-and-the-l-option)
   * [Verbose output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
