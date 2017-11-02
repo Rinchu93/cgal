@@ -18,12 +18,13 @@
   * [CMake](#cmake)
 * [Using the CGAL Docker images](#using-the-cgal-docker-images)
 * [Using CTest](#using-ctest)
+  * [Run Tests of all CGAL](#run-tests-of-all-cgal)
   * [Run only specific tests](#run-only-specific-tests)
   * [Verbose output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
   * [Example of a Test Failure](#example-of-a-test-failure)
-  * [Know Issues](#know-issues)
+  * [Known Issues](#known-issues)
 
 <!--TOC-->
 
@@ -509,6 +510,8 @@ ctest -j4
 There are test lines that build the executable, and other that execute the
 actual tests. There are dependencies that ensure the binaries are built
 before they are tested.
+
+### Run Tests of all CGAL
 
 If you want to test the whole CGAL, just run `ctest` at the root of your
 build directory:
