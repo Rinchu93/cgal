@@ -510,9 +510,10 @@ There are test lines that build the executable, and other that execute the
 actual tests. There are dependencies that ensure the binaries are built
 before they are tested.
 
-If you want to test the whole thing:
+If you want to test the whole CGAL, just run `ctest` at the root of your
+build directory:
 ```shell
-[~/CGAL/build/test/] > ctest -j4
+[~/CGAL/build/] > ctest -j4
 ```
 *Note: the `-j4` option of `ctest` sets the maximal number of jobs to run in parallel. Set it according to your number of CPU cores.*
 
