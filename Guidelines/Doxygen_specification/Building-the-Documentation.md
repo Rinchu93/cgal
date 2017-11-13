@@ -180,6 +180,13 @@ to install python dependencies on machine you do not administrate.
 
 #### Getting it to work on Windows
 
+Using PIP
+- Install python
+- pip install libxml 
+- install bibtex via eg miktex
+- install perl from http://strawberryperl.com/
+
+
 Getting the postprocessing working on Windows, we have not checked with `pip`
 yet, but we used `easy_install` instead.
 
