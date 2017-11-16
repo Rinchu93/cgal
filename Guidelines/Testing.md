@@ -21,7 +21,7 @@
   * [Run Tests of all CGAL](#run-tests-of-all-cgal)
   * [Run only Specific Tests](#run-only-specific-tests)
     * [With the `-R` Option](#with-the--r-option)
-    * [With Labels and the `L` Option](#with-labels-and-the-l-option)
+    * [With Labels and the `-L` Option](#with-labels-and-the-l-option)
   * [Verbose Output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
@@ -533,7 +533,7 @@ will run all tests matching the regular expression `<pattern>`
 
 The option `-R <pattern>` can be used several times in the same CTest run.
 
-#### With Labels and the `L` Option
+#### With Labels and the `-L` Option
 Alternatively, you can use _labels_. All CGAL tests have been assigned
 labels. All tests in a sub-directory have a label related to the name of
 the directory. For example, tests in `test/Triangulation_2` have the label
@@ -660,7 +660,7 @@ This is an example of a [CTest] run with a test failure.
 The [CTest] options used in that run are:
 - `-j7` to run seven jobs in parallel,
 - `-L 'Triangulation_2|Mesh_2'` to run only tests with the *labels* matching the regular expression `Triangulation_2|Mesh_2`, and that means the tests and examples of `Triangulation_2` and `Mesh_2`,
-- `--output-on-failure` to see the output of test that fail (use `-V` instead too see _all_ the outputs)
+- `--output-on-failure` to see the output of test that fail (use `-V` instead to see _all_ the outputs)
 ```shellsession
 $ ctest --output-on-failure -L 'Mesh_2|Triangulation_2' -j7
 Test project /home/lrineau/Git/cgal/build
