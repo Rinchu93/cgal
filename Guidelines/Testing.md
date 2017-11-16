@@ -21,7 +21,7 @@
   * [Run Tests of all CGAL](#run-tests-of-all-cgal)
   * [Run only Specific Tests](#run-only-specific-tests)
     * [With the `-R` Option](#with-the--r-option)
-    * [With Labels and the `-L` Option](#with-labels-and-the-l-option)
+    * [With Labels and the `-L` Option](#with-labels-and-the--l-option)
   * [Verbose Output](#verbose-output)
   * [Dry-run of CTest](#dry-run-of-ctest)
   * [Example](#example)
