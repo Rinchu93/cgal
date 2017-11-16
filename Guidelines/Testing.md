@@ -660,7 +660,7 @@ This is an example of a [CTest] run with a test failure.
 The [CTest] options used in that run are:
 - `-j7` to run seven jobs in parallel,
 - `-L 'Triangulation_2|Mesh_2'` to run only tests with the *labels* matching the regular expression `Triangulation_2|Mesh_2`, and that means the tests and examples of `Triangulation_2` and `Mesh_2`,
-- `-output-on-failure` to see the output of test that fail (use `-V` instead too see _all_ the outputs)
+- `--output-on-failure` to see the output of test that fail (use `-V` instead too see _all_ the outputs)
 ```shellsession
 $ ctest --output-on-failure -L 'Mesh_2|Triangulation_2' -j7
 Test project /home/lrineau/Git/cgal/build
