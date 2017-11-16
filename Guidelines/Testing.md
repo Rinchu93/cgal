@@ -194,8 +194,7 @@ If you want to test a particular directory, do:
 ```shell
 cd test/Kernel_23
 
-# Note that it is a sub-directory of your build-directory,
-# not the sources.
+# Note that it is a sub-directory of your build-directory, not the sources.
 
 ctest -j4
 ```
@@ -216,7 +215,7 @@ build directory:
 ### Run only Specific Tests
 
 #### With the `-R` Option
-If you want run only one test, or a selection of them, you can use the `-R` option of [CTest]:
+If you want to run only one test, or a selection of them, you can use the `-R` option of [CTest]:
 ```shell
 ctest -R <pattern>
 ```
