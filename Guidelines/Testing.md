@@ -172,6 +172,8 @@ The test suite will then execute the program using the command
 ## Using CTest
 [CTest] is a testing tool shipped with CMake. Compared to the testsuite infrastructure of CGAL (the shell script `cgal_test`), its major benefit is the possibility to run tests in parallel. For the moment, our nightly test suites still use the old shell scripts, but in the future we plan to use CTest. CTest is already supported in CGAL, in the `master` branch.
 
+**Note that CMake version 3.4 is required to use CTest with CGAL.**
+
 You can use CTest to test a specific example/test directory or the whole thing.
 First, you need a CGAL build with examples and tests.
 ```shell
