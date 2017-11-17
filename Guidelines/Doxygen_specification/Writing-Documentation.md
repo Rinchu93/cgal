@@ -694,11 +694,7 @@ with their namespace for `\cgalHasModel`.
 If you have some functions that are public but you do not want them to
 appear in the reference manual, the way [recommended by
 doxygen](http://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdcond)
-to ignore parts of a file is to use the `\cond` and `\endcond` commands.
-An alternative to hide details to users but not to developers is to use
-the
-[`\internal`](http://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdinternal)
-command.
+to ignore parts of a file is to surround the a bloc with `/// \cond SKIP_IN_MANUAL` and `/// \endcond`.
 
 If you want to expose a different portion of the code to doxygen (to
 hide an implementation detail for example), for convenience the macro
