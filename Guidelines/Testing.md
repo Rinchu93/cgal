@@ -201,7 +201,7 @@ cd test/Kernel_23
 ctest -j4
 ```
 
-There are test lines that build the executable, and other that execute the
+There are test lines that build the executable, and others that execute the
 actual tests. There are dependencies that ensure the binaries are built
 before they are tested.
 
