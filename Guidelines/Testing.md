@@ -601,14 +601,14 @@ object files and executables (usually by using the command
 ## Automated testing
 
 Additionally to local testing, the compilation and the execution of CGAL
-programs is also tested automatically, when a pull request is opened using
-[Travis](https://travis-ci.org/), and every night with a nightly build.
+programs is also independently and automatically tested when a pull request
+is opened using [Travis](https://travis-ci.org/), and every night with nightly builds.
 
 ### Travis
 Travis is a quick way to check the sanity of a pull request: all examples,
-tests, and demos CGAL are compiled (but not executed).
+tests, and demos of CGAL are compiled (but not executed).
 
-Note that if the pull request is adding a new package to CGAL, the travis
+Note that if a pull request is adding a new package to CGAL, the Travis
 configuration must also be updated: see 
 [this wiki page](Directory-Structure-for-Packages#requirements-and-recommendations)
 for more information.
