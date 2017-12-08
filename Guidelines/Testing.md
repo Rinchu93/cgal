@@ -601,8 +601,9 @@ object files and executables (usually by using the command
 ## Automated testing
 
 Additionally to local testing, the compilation and the execution of CGAL
-programs is also independently and automatically tested when a pull request
-is opened using [Travis](https://travis-ci.org/), and every night with nightly builds.
+programs are also independently and automatically tested
+- when a pull request is opened, using [Travis](https://travis-ci.org/);
+- every day, using nightly builds.
 
 ### Travis
 Travis is a quick way to check the sanity of a pull request: all examples,
