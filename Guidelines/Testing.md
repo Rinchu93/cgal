@@ -24,6 +24,7 @@
   * [Running the testsuite locally on a single package](#running-the-testsuite-locally-on-a-single-package)
   * [Running the test suite on a branch](#running-the-test-suite-on-a-branch)
   * [Custom test script](#custom-test-script)
+* [Automated Testing](#automated-testing)
 * [Using the code coverage tool gcov](#using-the-code-coverage-tool-gcov)
   * [CMake](#cmake)
 * [Using the CGAL Docker images](#using-the-cgal-docker-images)
@@ -596,6 +597,29 @@ this file. Running the script `cgal_test_with_cmake` must not require
 any user interaction and the script cleans up after itself by removing
 object files and executables (usually by using the command
 `make clean`).
+
+## Automated testing
+
+Additionally to local testing, the compilation and the execution of CGAL
+programs is also tested automatically, when a pull request is opened using
+[Travis](https://travis-ci.org/), and every night with a nightly build.
+
+### Travis
+Travis is a quick way to check the sanity of a pull request: all examples,
+tests, and demos CGAL are compiled (but not executed).
+
+Note that if the pull request is adding a new package to CGAL, the travis
+configuration must also be updated: see 
+[this wiki page](Directory-Structure-for-Packages#requirements-and-recommendations)
+for more information.
+
+### Nightly test suite
+Every day, at 9pm, Paris local time, which is either CET (winter) or
+CEST (summer), a new internal release is created. The branch that is
+tested by the internal release is not always the same. See
+also [this wiki page](Internal-Releases) for more information. 
+The results of the test suites are available on the
+[test suite results](https://cgal.geometryfactory.com/CGAL/Members/testsuite/) page.
 
 ## Using the code coverage tool gcov
 
