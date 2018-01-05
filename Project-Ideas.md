@@ -64,11 +64,11 @@ There used to be a demo based on an old version of Qt that demonstrated a limite
 **Project description:**
 The goal of this project is to generalize the CGAL package [Point Set Shape Detection](https://doc.cgal.org/latest/Point_set_shape_detection_3/index.html#Chapter_Point_Set_Shape_Detection). The student needs to make several changes to the package, for example, generalize 3D Ransac and Region Growing algorithms and make them work both in 2D and 3D (now they are available only in 3D); make these algorithms work with other than points input elements, e.g. region growing can grow regions using connected polygons or segments as an input; make region growing detect other than lines and planes primitive shapes; any other ideas are also welcome. 
 
-As a starting point for the student, I already have the 2D working and quite well-tested versions of the region growing on points and triangles (though they must be adapted). 
+_To begin with:_ As a starting point for the student, I already have the 2D working and quite well-tested versions of the region growing on points and triangles (though they must be adapted). 
 
-Concerning me as a mentor, I have some experience with applying both ransac and region growing to real use cases and I implemented the 2D versions of the algorithms above. 
+_Help:_ Concerning me as a mentor, I have some experience with applying both ransac and region growing to real use cases and I implemented the 2D versions of the algorithms above. 
 
-By implementing this change, the student will make a great impact onto current geometry processing pipelines and, in particular, it will be very useful in the urban reconstruction topic.
+_Impact:_ By implementing this change, the student will make a great impact onto current geometry processing pipelines and, in particular, it will be very useful in the urban reconstruction topic.
 
 **Required Skills:** C++, generic programming, basic geometry
 
@@ -80,11 +80,11 @@ By implementing this change, the student will make a great impact onto current g
 **Project description:**
 The goal of this project is to extend the CGAL package [2D Generalized Barycentric Coordinates](https://doc.cgal.org/latest/Barycentric_coordinates_2/index.html#Chapter_2D_Generalized_Barycentric_Coordinates). Now the package has Discrete Harmonic (work well on convex polygons, but can be negative), Wachspress (work well and positive on strictly convex polygons), and Mean Value (work well on any simple polygon, but can be negative) coordinates. All coordinates have simple analytic formulations. I suggest adding to this package Harmonic and Maximum Entropy coordinates (both work well and positive on any simple polygon). Harmonic coordinates need discretezation of the domain and can be computed by solving a sparse linear system, while maximum entropy coordinates can be computed at any point by the Newton's method. I also have a few ideas on how to improve the API of the package. 
 
-As a starting point for the student, I already have well-implemented and tested versions of both harmonic and maximum entropy coordinates (though they must be adapted). 
+_To begin with:_ As a starting point for the student, I already have well-implemented and tested versions of both harmonic and maximum entropy coordinates (though they must be adapted). 
 
-Concerning me as a mentor, I am one of the authors of the original package and so I know exactly how it works. In addition, I have very good understanding of barycentric coordinates. 
+_Help:_ Concerning me as a mentor, I am one of the authors of the original package and so I know exactly how it works. In addition, I have very good understanding of barycentric coordinates. 
 
-By implementing this change, the package with 2D generalized barycentric coordinates will be able to handle the largest part of all real use cases for these coordinates, while now it is less complete.
+_Impact:_ By implementing this change, the package with 2D generalized barycentric coordinates will be able to handle the largest part of all real use cases for these coordinates, while now it is less complete.
 
 **Required Skills:** C++, generic programming, basic calculus, linear algebra, and probability
 
