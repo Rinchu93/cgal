@@ -17,6 +17,46 @@ The goal of this project is to rewrite all the intersection predicates (`do_inte
 
 **Contact:** sebastien.loriot@cgal.org
 
+### Enhancing the 2D Arrangement Demo (1) ### 
+
+**Mentor(s)**: Efi Fogel (Tel Aviv University)
+
+**Project description:**
+Currently the demo supports (linear) segments, polylines, conic arcs, linear curves, circular arcs, and algebraic curves to some extent. The goal of this project is to enhance the 2D arrangement demo to support additional types of curves, namely, Bezier curves and algebraic curves.
+
+This is a perfect project for GSoC. A developer that commits to pursue the goals of this project will learn to use the 2D arrangement package, other components of CGAL, and other libraries, such as QT. The purpose of the CGAL demos is to demonstrate the potential of the various components of CGAL using visual effects. The excitement and satisfaction, a developer of an application experience, are always enhances when visual effects are exploited. Demo programs of CGAL show the capabilities of the library and help the community evaluating it. A potential user can quickly determine whether a specific component of CGAL can be used to solve a problem she or he may have and how to go about it.
+
+**Required Skills:** C++, generic programming, geometry
+
+**Contact:** efifogel@gmail.com
+
+### Enhancing the 2D Arrangement Demo (2) ###
+
+**Mentor(s):** Efi Fogel (Tel Aviv University)
+
+**Project description:**
+Currently the demo supports only arrangements in the plane. The goal of this project is to enhance the 2D arrangement demo to support 2D arrangements not only embedded in the plane, but also embedded in certain surfaces in space, e.g., arrangements of arcs of great circles embedded in the sphere. This is an upcoming feature of the "2D Arrangements" package.
+
+Like the project above, this is also a perfect project for GSoC. A developer that commits to pursue the goals of this project will learn to use a significant upcoming feature of the "2D Arrangements" package that supports 2D arrangements on 3D surfaces. Similar to the project above, the developer will learn to use other components of CGAL, and other libraries, such as QT. The purpose of the CGAL demos is to demonstrate the potential of the various components of CGAL using visual effects---an enjoyable side effect of developing such applications especially when 3D graphics is involved. Demo programs of CGAL show the capabilities of the library and help the community evaluating it. A potential user can quickly determine whether a specific component of CGAL can be used to solve a problem she or he may have and perhaps how to go about it.
+
+**Required Skills:** C++, generic programming, basic geometry, basic 3D graphics
+
+**Contact:** efifogel@gmail.com
+
+### Develop the 2D Regularized Boolean Set Operations Demo (2) ###
+
+**Mentor(s):** Efi Fogel (Tel Aviv University)
+
+**Project description:**
+The 2D Regulazied Boolean Set Operations consists of the implementation of Boolean set-operations on point sets bounded by x-monotone curves in 2-dimensional Euclidean space. In particular, it contains the implementation of regularized Boolean set-operations, intersection predicates, and point containment predicates. The demo program should demonstrates all operations of this package and later on of the 2D Minkowski sum package as well.
+
+This project is of large scale and requires complete dedication and also a bit more background and experience than other projects. It is an excellent project for a brilliant student who wishes to gain experience with developing applications from scratch using CGAL, Boost, and Qt5 (among the other).
+
+There used to be a demo based on an old version of Qt that demonstrated a limited number of features of the 2D Regularized Boolean Operation package. However, the basic design of this old demo is outdated, and so there is hardly nothing should be carried over.
+
+**Required Skills:** C++, generic programming, geometry
+
+**Contact:** efifogel@gmail.com
 
 ## Information Candidates Should Supply
 The application process has several steps. Before contacting anybody verify that you are eligible, that is
