@@ -103,6 +103,22 @@ The implementation must be generic and must use the generalization of the [BGL A
 
 **Contact:** sebastien.loriot@cgal.org
 
+### Create a bridge between the available Github "webhooks", and the usual Git hook scripts ###
+
+**Mentor(s)**: Laurent Rineau
+
+**Project description:**
+The CGAL project has moved from a dedicated Git repository to the Github
+service. One issue is that Github no-longer support the server Git hooks,
+but only its own instance named "webhook". The student will implement a
+bridge between Github webhooks and usual Git hook scripts, so that one can
+for example use [`git-multimail`](https://github.com/mhagger/git-multimail)
+with Github.
+
+**Required Skills:** shell programming, web services
+
+**Contact:** laurent.rineau@geometryfactory.com
+
 ## Information Candidates Should Supply
 The application process has several steps. Before contacting anybody verify that you are eligible, that is
 that you are enrolled as student, don't get a tuition fee, etc. The next step is to contact the mentor
