@@ -1,10 +1,3 @@
-Hi,
-
-I have been a CGAL developer for a while (15 years now), and there has been a frustrating scenario that occures a lot, while debugging a CGAL program... I have found a trick that improves the debugging technics, and I write this mail both:
-  - to share the trick,
-  - and ask for feedback.
-
-
 Let's say you have an assertion in the code, and one day you have a test case that triggers it. For example, like in https://github.com/CGAL/cgal/issues/2284 :
 ```
 terminate called after throwing an instance of 'CGAL::Assertion_exception'
