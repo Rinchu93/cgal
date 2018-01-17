@@ -103,6 +103,20 @@ The implementation must be generic and must use the generalization of the [BGL A
 
 **Contact:** sebastien.loriot@cgal.org
 
+### Smooth Surface Reconstruction
+
+**Mentor(s)**: Pierre Alliez (Inria), Gael Guennebaud (Inria) and Simon Giraudot (GeometryFactory)
+
+**Project description**:
+CGAL offers an implicit approach for smooth surface reconstruction from unorganized point sets with oriented normals: http://doc.cgal.org/latest/Manual/packages.html#PkgPoissonSurfaceReconstructionSummary 
+The key idea is to solve for a scalar function, such that the gradient of the functions approaches the oriented normals at the input points. On smoothness of the output surfaces, the current issue is that the current implicit surface is piecewise linear, hence only C0-continuous, as computed on a piecewise linear 3D function. The first objective of the project is to implement a smooth C1-continuous interpolation approach that yields smooth surfaces at all scales. The second objective is to generate smooth curves as boundaries, using graph cut optimization and local mesh refinement. 
+
+**Required Skills**: C++, geometric data structures, applied maths.
+
+**Contact**: pierre.alliez@inria.fr
+
+
+
 ### Create a bridge between the available Github "webhooks", and the usual Git hook scripts ###
 
 **Mentor(s)**: Laurent Rineau
