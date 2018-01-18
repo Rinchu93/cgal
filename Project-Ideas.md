@@ -91,7 +91,7 @@ _Impact:_ By implementing this change, the package with 2D generalized barycentr
 **Contact:** dmitry.anisimov@inria.fr
 
 ### Removal of Almost Degenerate Triangles in Surface Meshes
-**Mentor(s)**: Sebastien Loriot
+**Mentor(s)**: Jane Tournois and Sebastien Loriot
 
 **Project description:**
 The goal of this project is to provide an implementation of a research article about a surface mesh cleaning algorithm. Almost degenerate triangles are present in many 3D surface models and eliminating them is a required preprocessing step of many algorithms and is also useful to improve the robustness and stability of some computation methods. The algorithm we propose the student to implement is described in this article:
