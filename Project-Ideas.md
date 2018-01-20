@@ -115,6 +115,19 @@ The key idea is to solve for a scalar function, such that the gradient of the fu
 
 **Contact**: pierre.alliez@inria.fr
 
+### Spectral Surface Reconstruction
+
+**Mentor(s)**: Pierre Alliez, David Cohen-Steiner (Inria) and Simon Giraudot (GeometryFactory)
+
+**Project description**:
+CGAL already offers an implicit approach for surface reconstruction from unorganized point sets with oriented normals: http://doc.cgal.org/latest/Manual/packages.html#PkgPoissonSurfaceReconstructionSummary 
+In several cases however the orientation of normals is not given as input, and is very difficult to estimate. 
+The following article introduced an approach that requires only unoriented normals, given in the form of 3x3 tensors:
+ftp://ftp-sop.inria.fr/prisme/dcohen/Papers/ACTD07.pdf
+The key idea is to solve for a scalar function, such that the gradient of the function best aligns to the principal component of the tensors. The objective of the project is to implement this approach using the eigen library, combined with spectra, a recent lightweight library for computing eigenvalues and eigenvectors. 
+
+**Required Skills**: C++, geometric data structures, applied maths.
+**Contact**: pierre.alliez@inria.fr
 
 
 ### Create a bridge between the available Github "webhooks", and the usual Git hook scripts ###
