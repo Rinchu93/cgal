@@ -177,7 +177,7 @@ A Combinatorial map is a combinatorial object modeling topological structures wi
 
 The goal of this project is to improve this mechanism by adding the possibility to o dynamically associate some information to a given Combinatorial map. We will use for that boost property_map (as in several other CGAL packages) and provide functions allowing to create/destroy a dynamic property map.
 
-*Required Skills:** C++, generic programming
+**Required Skills:** C++, generic programming
 
 **Contact:** guillaume.damiand@liris.cnrs.fr
 
