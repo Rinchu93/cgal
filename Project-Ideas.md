@@ -2,7 +2,7 @@
 
 # Table of Contents
 * [Projects](#projects)
-  * [Approximate Convex Decomposition of Triangle Meshes](#approximate-convex-decomposition-of-triangle-meshes)
+  * [Approximate Convex Decomposition of Volumes Bounded by Triangle Meshes](#approximate-convex-decomposition-of-volumes-bounded-by-triangle-meshes)
   * [Enhancing the 2D Arrangement Demo (1)](#enhancing-the-2d-arrangement-demo-1)
   * [Enhancing the 2D Arrangement Demo (2)](#enhancing-the-2d-arrangement-demo-2)
   * [Develop the 2D Regularized Boolean Set Operations Demo](#develop-the-2d-regularized-boolean-set-operations-demo)
@@ -24,7 +24,7 @@ GSoC applicants are welcome to propose other ideas and check if a mentor is inte
 proposals, contact us at [gsoc-cgal@inria.fr](mailto:gsoc-cgal@inria.fr).
 
 ## Projects
-### Approximate Convex Decomposition of Triangle Meshes
+### Approximate Convex Decomposition of Volumes Bounded by Triangle Meshes
 **Mentor(s)**: Sebastien Loriot
 
 **Project description:**
