@@ -1,5 +1,22 @@
-# CGAL Projects Page for the Google Summer of Code 2018
+<!--TOC-->
 
+# Table of Contents
+* [Projects](#projects)
+  * [Approximate Convex Decomposition of Triangle Meshes](#approximate-convex-decomposition-of-triangle-meshes)
+  * [Enhancing the 2D Arrangement Demo (1)](#enhancing-the-2d-arrangement-demo-1)
+  * [Enhancing the 2D Arrangement Demo (2)](#enhancing-the-2d-arrangement-demo-2)
+  * [Develop the 2D Regularized Boolean Set Operations Demo](#develop-the-2d-regularized-boolean-set-operations-demo)
+  * [Generalized Shape Detection](#generalized-shape-detection)
+  * [Extending 2D Generalized Barycentric Coordinates](#extending-2d-generalized-barycentric-coordinates)
+  * [Removal of Almost Degenerate Triangles in Surface Meshes](#removal-of-almost-degenerate-triangles-in-surface-meshes)
+  * [Smooth Surface Reconstruction](#smooth-surface-reconstruction)
+  * [Spectral Surface Reconstruction](#spectral-surface-reconstruction)
+  * [Create a Bridge between the Available Github webhooks, and the Usual Git Hook Scripts](#create-a-bridge-between-the-available-github-webhooks-and-the-usual-git-hook-scripts)
+  * [Combinatorial Maps Dynamic Properties](#combinatorial-maps-dynamic-properties)
+* [Information Candidates Should Supply](#information-candidates-should-supply)
+* [Previous year project ideas pages](#previous-year-project-ideas-pages)
+
+<!--TOC-->
 
 The CGAL Project is applying as a mentoring organization of the [Google Summer of Code](https://summerofcode.withgoogle.com) 2018.
 On this page we present some project ideas as well the [information](#information-candidates-should-supply) applicants have to provide us.
@@ -7,17 +24,22 @@ GSoC applicants are welcome to propose other ideas and check if a mentor is inte
 proposals, contact us at [gsoc-cgal@inria.fr](mailto:gsoc-cgal@inria.fr).
 
 ## Projects
-### Reworking Intersection Functions
+### Approximate Convex Decomposition of Triangle Meshes
 **Mentor(s)**: Sebastien Loriot
 
 **Project description:**
-The goal of this project is to rewrite all the intersection predicates (`do_intersect_2/3`) to provide more information, but at the same time staying backward compatible. For example, say you want to know whether two segments intersect but also where lies the intersection, in the interior or at an endpoint of each segment. If the student is fast enough, an extension of the project is to rewrite intersection computation functions to take into account the result of the do-intersect predicate to speed up the computation.
+Convex decomposition of volumes bounded by triangles meshes is a particularly interesting tool to speed up some algorithm that are expensive or that requires to give an answer very quickly (like real time collision detection for example). Exact convex decomposition is in practice too costly and generate too many small convex pieces. Mamou and Ghorbel has proposed an algorithm to compute an approximate convex decomposition:
 
-**Required Skills:** C++, generic programming, basic geometry
+ - [Mamou, K., & Ghorbel, F. (2009, November). A simple and efficient approach for 3D mesh approximate convex decomposition. In Image Processing (ICIP), 2009 16th IEEE International Conference on (pp. 3501-3504). IEEE.
+](https://pdfs.semanticscholar.org/6542/47f3aa425c6b455c953b45b110d009832626.pdf)
+
+The goal of this project is to provide a CGAL implementation of this algorithm based on the generic [Boost Graph Library concepts](https://doc.cgal.org/latest/BGL/index.html) extended by CGAL.
+
+**Required Skills:** C++, generic programming, geometry processing
 
 **Contact:** sebastien.loriot@cgal.org
 
-### Enhancing the 2D Arrangement Demo (1) ###
+### Enhancing the 2D Arrangement Demo (1)
 
 **Mentor(s)**: Efi Fogel (Tel Aviv University)
 
@@ -30,7 +52,7 @@ This is a perfect project for GSoC. A developer that commits to pursue the goals
 
 **Contact:** efifogel@gmail.com
 
-### Enhancing the 2D Arrangement Demo (2) ###
+### Enhancing the 2D Arrangement Demo (2)
 
 **Mentor(s):** Efi Fogel (Tel Aviv University)
 
@@ -43,7 +65,7 @@ Like the project above, this is also a perfect project for GSoC. A developer tha
 
 **Contact:** efifogel@gmail.com
 
-### Develop the 2D Regularized Boolean Set Operations Demo (2) ###
+### Develop the 2D Regularized Boolean Set Operations Demo
 
 **Mentor(s):** Efi Fogel (Tel Aviv University)
 
@@ -108,8 +130,8 @@ The implementation must be generic and must use the generalization of the [BGL A
 **Mentor(s)**: Pierre Alliez (Inria), Gael Guennebaud (Inria) and Simon Giraudot (GeometryFactory)
 
 **Project description**:
-CGAL offers an implicit approach for smooth surface reconstruction from unorganized point sets with oriented normals: http://doc.cgal.org/latest/Manual/packages.html#PkgPoissonSurfaceReconstructionSummary 
-The key idea is to solve for a scalar function, such that the gradient of the functions approaches the oriented normals at the input points. On smoothness of the output surfaces, the current issue is that the current implicit surface is piecewise linear, hence only C0-continuous, as computed on a piecewise linear 3D function. The first objective of the project is to implement a smooth C1-continuous interpolation approach that yields smooth surfaces at all scales. The second objective is to generate smooth curves as boundaries, using graph cut optimization and local mesh refinement. 
+CGAL offers an implicit approach for smooth surface reconstruction from unorganized point sets with oriented normals: http://doc.cgal.org/latest/Manual/packages.html#PkgPoissonSurfaceReconstructionSummary
+The key idea is to solve for a scalar function, such that the gradient of the functions approaches the oriented normals at the input points. On smoothness of the output surfaces, the current issue is that the current implicit surface is piecewise linear, hence only C0-continuous, as computed on a piecewise linear 3D function. The first objective of the project is to implement a smooth C1-continuous interpolation approach that yields smooth surfaces at all scales. The second objective is to generate smooth curves as boundaries, using graph cut optimization and local mesh refinement.
 
 **Required Skills**: C++, geometric data structures, applied maths.
 
@@ -120,17 +142,17 @@ The key idea is to solve for a scalar function, such that the gradient of the fu
 **Mentor(s)**: Pierre Alliez, David Cohen-Steiner (Inria) and Simon Giraudot (GeometryFactory)
 
 **Project description**:
-CGAL already offers an implicit approach for surface reconstruction from unorganized point sets with oriented normals: http://doc.cgal.org/latest/Manual/packages.html#PkgPoissonSurfaceReconstructionSummary 
-In several cases however the orientation of normals is not given as input, and is very difficult to estimate. 
+CGAL already offers an implicit approach for surface reconstruction from unorganized point sets with oriented normals: http://doc.cgal.org/latest/Manual/packages.html#PkgPoissonSurfaceReconstructionSummary
+In several cases however the orientation of normals is not given as input, and is very difficult to estimate.
 The following article introduced an approach that requires only unoriented normals, given in the form of 3x3 tensors:
 ftp://ftp-sop.inria.fr/prisme/dcohen/Papers/ACTD07.pdf
-The key idea is to solve for a scalar function, such that the gradient of the function best aligns to the principal component of the tensors. The objective of the project is to implement this approach using the eigen library, combined with spectra, a recent lightweight library for computing eigenvalues and eigenvectors. 
+The key idea is to solve for a scalar function, such that the gradient of the function best aligns to the principal component of the tensors. The objective of the project is to implement this approach using the eigen library, combined with spectra, a recent lightweight library for computing eigenvalues and eigenvectors.
 
 **Required Skills**: C++, geometric data structures, applied maths.
 **Contact**: pierre.alliez@inria.fr
 
 
-### Create a bridge between the available Github "webhooks", and the usual Git hook scripts ###
+### Create a Bridge between the Available Github webhooks, and the Usual Git Hook Scripts
 
 **Mentor(s)**: Laurent Rineau
 
@@ -146,7 +168,7 @@ with Github.
 
 **Contact:** laurent.rineau@geometryfactory.com
 
-### Combinatorial maps dynamic properties
+### Combinatorial Maps Dynamic Properties
 
 **Mentor(s)**: Guillaume Damiand (CNRS/LIRIS/Lyon university)
 
