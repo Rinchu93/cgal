@@ -14,7 +14,7 @@
   * [Create a Bridge between the Available Github webhooks, and the Usual Git Hook Scripts](#create-a-bridge-between-the-available-github-webhooks-and-the-usual-git-hook-scripts)
   * [Combinatorial Maps Dynamic Properties](#combinatorial-maps-dynamic-properties)
 * [Information Candidates Should Supply](#information-candidates-should-supply)
-* [Previous year project ideas pages](#previous-year-project-ideas-pages)
+* [Previous Year Project Ideas Pages](#previous-year-project-ideas-pages)
 
 <!--TOC-->
 
@@ -209,7 +209,7 @@ the following information by email to [gsoc-cgal@inria.fr](mailto:gsoc-cgal@inri
   * Are you more interested in the theory/scientific aspect of CGAL, or do you feel more like a hacker?
   * What are your long-term wishes in terms of job?
 
-## Previous year project ideas pages
+## Previous Year Project Ideas Pages
 * [2017](https://www.cgal.org/gsoc/2017.html)
 * [2016](https://www.cgal.org/gsoc/2016.html) (not accepted)
 * [2015](https://www.cgal.org/gsoc/2015.html) (not accepted)
