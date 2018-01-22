@@ -13,7 +13,7 @@
   * [Spectral Surface Reconstruction](#spectral-surface-reconstruction)
   * [Create a Bridge between the Available Github webhooks, and the Usual Git Hook Scripts](#create-a-bridge-between-the-available-github-webhooks-and-the-usual-git-hook-scripts)
   * [Combinatorial Maps Dynamic Properties](#combinatorial-maps-dynamic-properties)
-  * [The Heat Method](#the-heat-method-for-distance-computation)
+  * [The Heat Method for Distance Computation](#the-heat-method-for-distance-computation)
 * [Information Candidates Should Supply](#information-candidates-should-supply)
 * [Previous Year Project Ideas Pages](#previous-year-project-ideas-pages)
 
