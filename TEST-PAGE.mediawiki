@@ -1,1 +1,3 @@
+__TOC__
+
 Test [https://github.com/CGAL/cgal/wiki CGAL wiki].{{macros}}
