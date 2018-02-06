@@ -1,6 +1,6 @@
 __TOC__
 
-Test [https://github.com/CGAL/cgal/wiki CGAL wiki]. {{TEST PAGE macro}}
+Test [https://github.com/CGAL/cgal/wiki CGAL wiki]. {{TEST-PAGE-macro}}
 
 = Title 1 =
 == Title 1a ==
