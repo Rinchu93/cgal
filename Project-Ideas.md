@@ -19,7 +19,7 @@
 
 <!--TOC-->
 
-The CGAL Project is applying as a mentoring organization of the [Google Summer of Code](https://summerofcode.withgoogle.com) 2018.
+The CGAL Project is a mentoring organization of the [Google Summer of Code](https://summerofcode.withgoogle.com) 2018.
 On this page we present some project ideas as well the [information](#information-candidates-should-supply) applicants have to provide us.
 GSoC applicants are welcome to propose other ideas and check if a mentor is interested in supervising it. For new project
 proposals, contact us at [gsoc-cgal@inria.fr](mailto:gsoc-cgal@inria.fr).
