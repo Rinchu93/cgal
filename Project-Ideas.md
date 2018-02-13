@@ -169,14 +169,14 @@ with Github.
 
 **Contact:** laurent.rineau@geometryfactory.com
 
-### Combinatorial Maps Dynamic Properties
+### Combinatorial Maps and Dynamic Properties
 
 **Mentor(s)**: Guillaume Damiand (CNRS/LIRIS/Lyon university)
 
 **Project description**:
-A Combinatorial map is a combinatorial object modeling topological structures with subdivided objects. Combinatorial maps are used as efficient data structures in image representation and processing, in geometrical modeling. The current implementation of Combinatorial map ad Linear Cell Complex package supports only static properties, i.e. users must define all the attributes they want to use at compile time.
+A Combinatorial map is a combinatorial object modeling topological structures with subdivided objects. Combinatorial maps are used as efficient data structures in image representation and processing, in geometrical modeling. The current implementation of Combinatorial map and Linear Cell Complex package supports only static properties, that is users must define all the attributes they want to use at compile time.
 
-The goal of this project is to improve this mechanism by adding the possibility to o dynamically associate some information to a given Combinatorial map. We will use for that boost property_map (as in several other CGAL packages) and provide functions allowing to create/destroy a dynamic property map.
+The goal of this project is to improve this mechanism by adding the possibility to dynamically associate some information to a given Combinatorial map. We will use for that boost property_map (as in several other CGAL packages) and provide functions allowing to create/destroy a dynamic property map.
 
 **Required Skills:** C++, generic programming
 
