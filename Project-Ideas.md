@@ -189,12 +189,12 @@ The goal of this project is to improve this mechanism by adding the possibility 
 
 **Project description**:
 
-The objective of this project is to offer the [Heat Method](http://www.cs.cmu.edu/~kmcrane/Projects/HeatMethod/index.html) as a CGAL package. The code has not to be written from scratch as it already exists, but it must be adapted to the CGAL design ideas (notion of FaceGraph, usage of property maps,..).  The goal is to have the submission of a completed package at the end of summer, that is the student has to take care of proper handling of additional dependencies (cmake), of writing a the documentation (doxygen), providing a test suite, examples, and to integrate it in the 3D demo.
+The objective of this project is to offer the [Heat Method](http://www.cs.cmu.edu/~kmcrane/Projects/HeatMethod/index.html) as a CGAL package. The code has not to be written from scratch as it already exists, but it must be adapted to the CGAL design ideas (notion of FaceGraph, usage of property maps,..).  The goal is to have the submission of a completed package at the end of summer, that is besides understanding the algorithm in order to make it conform to the CGAL API you have to take care of proper handling of additional dependencies (cmake), of writing a the documentation (doxygen), of providing a test suite, examples, and you have to integrate it in the 3D demo.
 
 This project is co-mentored by Keenan Crane who covers the algorithm as such, and by Andreas Fabri who covers the CGAL development process, and the software design. 
 
 **Required Skills**: C++, geometry processing, first user experience with CGAL.
-**Contact**: andreas.fabri@geometryfactory.com
+**Contact**: andreas.fabri@geometryfactory.com kmcrane@cs.cmu.edu
 
 
 ## Information Candidates Should Supply
