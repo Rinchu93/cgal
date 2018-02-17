@@ -187,11 +187,11 @@ The goal of this project is to improve this mechanism by adding the possibility 
 
 **Mentor(s)**: Andreas Fabri (GeometryFactory) and Keenan Crane (CMU)
 
-**Project description**:
+**Project description**: 
+The [Heat Method](http://www.cs.cmu.edu/~kmcrane/Projects/HeatMethod/index.html) is a fast, modern algorithm for computing distance transforms on general unstructured meshes.  Given a subset of the domain (such as a single point, or the domain boundary), it computes the shortest distance to every other point along curved paths through the domain.  The ability to efficiently compute this so-called geodesic distance is needed by wide variety of algorithms, ranging from physical simulation to digital manufacturing to computational anatomy.  The objective of this project is to build a package that provides a state-of-the-art implementation of the heat method to CGAL users.  The starting point is an open source implementation of the core algorithm, which will be adapted to take advantage of the CGAL design paradigms (such as the FaceGraph, and usage of property maps).  The primary goal is to submit a completed package by the end of the summer.  The final package should conform to the CGAL API and Cmake build system, include well-written documentation (doxygen), provide a test suite, and examples that can be integrated into the 3D CGAL demo.  Secondary goals (if additional time is available) may include integrating the solver with CGAL's conforming Delaunay remeshing (to improve robustness and accuracy), or extending the implementation to other CGAL data structures (such as tetrahedral meshes).
 
-The objective of this project is to offer the [Heat Method](http://www.cs.cmu.edu/~kmcrane/Projects/HeatMethod/index.html) as a CGAL package. The code has not to be written from scratch as it already exists, but it must be adapted to the CGAL design ideas (notion of FaceGraph, usage of property maps,..).  The goal is to have the submission of a completed package at the end of summer, that is besides understanding the algorithm in order to make it conform to the CGAL API you have to take care of proper handling of additional dependencies (cmake), of writing a the documentation (doxygen), of providing a test suite, examples, and you have to integrate it in the 3D demo.
+This project is co-mentored by Keenan Crane who will provide guidance on algorithmic aspects, and by Andreas Fabri who covers the CGAL development process and software design.
 
-This project is co-mentored by Keenan Crane who covers the algorithm as such, and by Andreas Fabri who covers the CGAL development process, and the software design. 
 
 **Required Skills**: C++, geometry processing, first user experience with CGAL.
 **Contact**: andreas.fabri@geometryfactory.com kmcrane@cs.cmu.edu
