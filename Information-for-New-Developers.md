@@ -55,7 +55,7 @@ UP CGAL IN EXACTLY THIS WAY:</span>**
 - Set `CGAL_DIR` persistently to a directory where you intend to build CGAL
   - UNIX environment: Add `export CGAL_DIR=path/to/cgal/build` to `~/.profile` or your shell configuration file. Refer to your systems documentation for more specific information.
 - [Build CGAL from the repository](Branch-Build#using-a-single-version-of-cgal)
-
+- You should consider setting the CMake [[CGAL_DEV_MODE]] option, while developing CGAL.
 ## Important Resources
 
 
