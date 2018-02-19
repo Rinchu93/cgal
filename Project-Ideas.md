@@ -163,9 +163,13 @@ service. One issue is that Github no-longer support the server Git hooks,
 but only its own instance named "webhook". The student will implement a
 bridge between Github webhooks and usual Git hook scripts, so that one can
 for example use [`git-multimail`](https://github.com/mhagger/git-multimail)
-with Github.
+with Github. A prerequisite of the task will be an overview of existing
+libraries (in scripting languages like Python, node.js, or the shell) that
+can be used to interact efficiently with Github webhooks.
 
-**Required Skills:** shell programming, web services
+**Required Skills:** scripting language (like Python, node.js, or the POSIX
+shell), web services, and the knowing the use of Docker containers would be
+an advantage for the end of the project.
 
 **Contact:** laurent.rineau@geometryfactory.com
 
