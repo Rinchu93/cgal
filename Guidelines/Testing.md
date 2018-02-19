@@ -84,6 +84,7 @@ The **test suite helps** the developer(s) of a package to
     section](#Custom_makefile).
 -   Not contain the script `cgal_test_with_cmake`. In the special case
     it has to, see [this section](#custom-test-script).
+-   Set the CMake option [[CGAL_DEV_MODE]], while developing CGAL.
 
 ## Test suite directory
 
