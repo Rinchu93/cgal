@@ -2,6 +2,7 @@
 
 # Table of Contents
 * [Introduction](#introduction)
+  * [Copyright and License Notices](#copyright-and-license-notices)
 * [Package License Headers](#package-license-headers)
 * [Including License Headers in Package Header Files](#including-license-headers-in-package-header-files)
 * [Using the License Checking Mechanism](#using-the-license-checking-mechanism)
