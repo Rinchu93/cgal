@@ -15,6 +15,12 @@ to make sure that the header used follow what was intended, a license checking
 mechanism has been implemented in CGAL. This page describes how it is working, and
 what a new header file in an existing or new package must contain.
 
+### Copyright and License Notices
+
+Note that this wiki page does not describe the license and copyright notices that every CGAL source files should include as well. See the section [File header] in the CGAL developers manual.
+
+[File header]: https://cgal.geometryfactory.com/CGAL/doc/master/Manual/devman_code_format.html#secfile_header
+
 ## Package License Headers
 For each package under GPL-3+, a license file is available in 
 `Installation/include/CGAL/license/`. These files are automatically generated
