@@ -13,6 +13,7 @@
   * [Pull request](#pull-request)
     * [Update a pull-request](#update-a-pull-request)
     * [Bug-fix branch](#bug-fix-branch)
+    * [Rebase an existing bug-fix branch](#rebase-an-existing-bug-fix-branch)
   * [Commit Messages](#commit-messages)
   * [Branch-build](#branch-build)
   * [Post-commit mails](#post-commit-mails)
@@ -259,6 +260,50 @@ for example:
 > git push mine AABB_tree-bug_fix-jenny
 # and then create the pull-request in the web interface
 ```
+
+#### Rebase an existing bug-fix branch
+
+If your bug-fix branch was accidentally created based on `master`, but
+fixes bugs that were already in a release branch, you can *rebase* your
+branch *onto* the release branch. The command is similar to `git rebase
+cgal/master`, but adds an option:
+
+```{.bash}
+# But sure your current branch is the one you want to rebase
+> git checkout AABB_tree-bug_fix-jenny
+# Then rebase:
+> git rebase  --onto cgal/releases/CGAL-4.11-branch cgal/master
+```
+
+That command will replay all commits of your branch that were not in
+`master` but, instead of replaying them on top of `master`, they are
+applied instead to a copy of `cgal/releases/CGAL-4.11-branch`.
+
+After the command has terminated, and maybe after you have resolved
+conflicts, the history of your local branch `AABB_tree-bug_fix-jenny` will
+be the history of `cgal/releases/CGAL-4.11-branch` *plus* the few commits
+of your branch, reapplied.
+
+If you have difficulties resolving the conflicts, you can abort the
+rebasing at any time with:
+```{.bash}
+> git rebase --abort
+```
+That abort will restore the previous version your branch, untouched.
+
+If the rebasing is correctly done, you can push your local branch, either
+to update the pull-request, or (preferably) before creating it:
+
+```{.bash}
+> git push --force mine AABB_tree-bug_fix-jenny
+```
+
+The `--force` option is necessary because the rebasing has transformed the
+history of your branch, and it is no longer compatible with the history of
+the remote branch `mine/AABB_tree-bug_fix-jenny` that you may have pushed
+previously. A normal push adds new commits to an existing branch, but a
+push after a push after a rebase adds new commits (the replayed versions of
+the commits), but also destroy the old commits.
 
 ### Commit Messages
 
