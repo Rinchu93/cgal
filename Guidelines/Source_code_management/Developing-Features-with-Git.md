@@ -72,7 +72,7 @@ Jenny creates her own feature branch (based on the master branch).
 Following the [naming recommendations](Naming-Recommendations),
 Jenny calls the branch `Kinetic_arrangement_2-jenny`.
 
-``` {.bash}
+``` shellsession
  git checkout -b Kinetic_arrangement_2-jenny --no-track cgal/master 
 ```
 
@@ -92,7 +92,7 @@ obsolete.
 Now, Jenny can implement the package. She is iterating the following
 commands until the package is implemented.
 
-``` {.bash}
+``` shellsession
 > mkdir Kinetic_arrangement_2
 # [hack boom bang]
 # Rebuild CGAL with branch-build to include the package in the build system
@@ -108,7 +108,7 @@ for Git repositories.
 If she wants to share the new feature with others, or have a back-up,
 she can push the new commits to the remote repository:
 
-``` {.bash}
+``` shellsession
  > git push -u cgal-public-dev Kinetic_arrangement_2-jenny 
 ```
 
@@ -117,7 +117,7 @@ Now her branch is visible to everyone with access to the remote
 following ones no longer need the `-u cgal-public-dev` option, and are done
 simply with
 
-``` {.bash}
+``` shellsession
  > git push 
 ```
 
@@ -178,7 +178,7 @@ Before merging her branch to `integration`, Jenny has to shortly
 describe the changes she is making to CGAL in the file
 `Installation/changes.html` and commit it.
 
-``` {.bash}
+``` shellsession
  # be sure to have a checkout of the right branch 
  > git checkout Kinetic_arrangement_2-jenny # commit changes.html
  > git commit 
@@ -190,7 +190,7 @@ describe the changes she is making to CGAL in the file
 directory, all *non-committed* modifications to files tracked by Git.
 The following command:
 
-``` {.bash}
+``` shellsession
  > git status 
 ```
 
@@ -207,7 +207,7 @@ then `git fetch cgal-dev`). She gets as any other branch with
 `git checkout -b integration cgal-dev/integration`, and needs a few
 steps:
 
-``` {.bash}
+``` shellsession
 # update the local copies of the remote branches cgal-dev/*
 > git fetch cgal-dev
  
@@ -247,7 +247,7 @@ Note that they use `next` while we name this branch `integration`)
 Then, she commits locally and pushes the integration onto the remote
 location:
 
-``` {.bash}
+``` shellsession
 > git commit
 # the commit message is already filled with the merge message.
 
@@ -260,7 +260,7 @@ means that another developer has pushed to the same branch between the
 `git reset --hard` and the push. That situation can be fixed with a pull
 of the remote updates, and then a new push attempt:
 
-``` {.bash}
+``` shellsession
 > git pull
 > git push 
 ```
@@ -317,7 +317,7 @@ then Jenny can ask her branch to be merged into master by opening a
 At the end of the reintegration Jenny removes her feature branch, which
 has reached the end of its life-time with the merge into `master`.
 
-``` {.bash}
+``` shellsession
 # change to the master-branch
 > git checkout master 
 # delete the local branch
@@ -349,7 +349,7 @@ created before those fixes, it might happen that you need to modify the
 re-encoded files. In order to avoid a problem while merging your branch
 to master, it is advised to do the following:
 
-``` {.bash}
+``` shellsession
 # stash current work
 > git stash
 # update the .gitattributes
@@ -384,7 +384,7 @@ are, she either commits them to her local repository (see above) or
 To checkout her feature branch `Convex_hull_2-make_it_faster-jenny` she
 uses the following command:
 
-``` {.bash}
+``` shellsession
  > git checkout Convex_hull_2-make_it_faster-jenny 
 ```
 
@@ -408,7 +408,7 @@ she may frequently checkout various branches. If at any point Jenny is
 uncertain which feature branch is currently checked out she can issue
 the following command:
 
-``` {.bash}
+``` shellsession
  > git branch Kinetic_arrangement_2-jenny 
 ```
 
@@ -463,13 +463,13 @@ and
 [9](http://public.kitware.com/Wiki/Git/Workflow/Topic/Conflicts#Resolution_Topic)
 (note that their `next` is our `integration` branch):
 
-``` {.bash}
+``` shellsession
  # update the local copies of the remote branches cgal-public-dev/* &gt; git fetch cgal-public-dev 
 ```
 
 Use
 
-``` {.bash}
+``` shellsession
  > git log --first-parent cgal/master
 ```
 
@@ -478,13 +478,13 @@ you the name of Adam's branch. The second parent of the commit (see the
 message) is the end of Adam's feature branch, say 0a398e5. Next Jenny
 creates a branch from this commit
 
-``` {.bash}
+``` shellsession
  > git branch STL_extension-new_iterator-adam 0a398e5 
 ```
 
 Now Jenny can merge that branch into her feature branch
 
-``` {.bash}
+``` shellsession
 > git checkout Convex_hull_2-make_it_faster-jenny
 > git merge STL_extension-new_iterator-adam
 # resolved conflicts!
