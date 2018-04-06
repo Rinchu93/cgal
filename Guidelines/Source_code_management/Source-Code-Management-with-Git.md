@@ -173,7 +173,7 @@ to <https://github.com> and log in. Then go to
 upper right part of the page. You need to add another remote (*mine*) in
 your git clone:
 
-``` {.bash}
+``` bash session
 > git remote add mine git@github.com:jenny/cgal.git  #assuming your GitHub ID is jenny
 > git fetch mine
 ```
@@ -181,7 +181,7 @@ your git clone:
 If I want to merge a feature branch from *cgal-public-dev* or
 *cgal-public-dev*, I need to push that branch into *mine*:
 
-``` {.bash}
+``` bash session
 > git push mine AABB_tree-dimension_2-jenny
 ```
 
@@ -212,7 +212,7 @@ to the pull request.
 If your feature branch was shared in `cgal-public-dev`, do
 not forget to remove it from there once the pull request is accepted:
 
-``` {.bash}
+``` bash session
 > git push cgal-public-dev --delete  AABB_tree-dimension_2-jenny
 ```
 
@@ -225,7 +225,7 @@ If, during the tests for integration, you need to update something in the
 branch then the pull-request is automatically updated as soon as you push your branch
 (with the modifications) in *mine* again:
 
-``` {.bash}
+``` bash session
 > git push mine AABB_tree-dimension_2-jenny
 ```
 
@@ -239,7 +239,7 @@ adds commits to the release branch, and not to `master`. We say the branch
 If the bug was only in `master` and not in a release branch, create a new
 branch *based on* `master`:
 
-``` {.bash}
+``` bash session
 # Update your local copies of the remove branches in the CGAL/cgal repo:
 > git fetch cgal
 # Create the branch:
@@ -253,7 +253,7 @@ If however the bug was already in a published release (and thus in a
 release branch), create a your new branch *based on* the release branch,
 for example:
 
-``` {.bash}
+``` bash session
 > git fetch cgal
 > git checkout -b AABB_tree-bug_fix-jenny --no-track cgal/releases/CGAL-4.11-branch
 # edit files, use git-add and git-commit to create a commit with the modifications, then:
@@ -268,7 +268,7 @@ fixes bugs that were already in a release branch, you can *rebase* your
 branch *onto* the release branch. The command is similar to `git rebase
 cgal/master`, but adds an option:
 
-```{.bash}
+```bash session
 # But sure your current branch is the one you want to rebase
 > git checkout AABB_tree-bug_fix-jenny
 # Then rebase:
@@ -286,7 +286,7 @@ of your branch, reapplied.
 
 If you have difficulties resolving the conflicts, you can abort the
 rebasing at any time with:
-```{.bash}
+```bash session
 > git rebase --abort
 ```
 That abort will restore the previous version your branch, untouched.
@@ -294,7 +294,7 @@ That abort will restore the previous version your branch, untouched.
 If the rebasing is correctly done, you can push your local branch, either
 to update the pull-request, or (preferably) before creating it:
 
-```{.bash}
+```bash session
 > git push --force mine AABB_tree-bug_fix-jenny
 ```
 
