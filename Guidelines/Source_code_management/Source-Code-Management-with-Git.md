@@ -231,10 +231,13 @@ branch then the pull-request is automatically updated as soon as you push your b
 
 #### Bug-fix branch
 
-If your branch is a bug-fix, probably the bug was already in a release
-branch, say `releases/CGAL-4.11-branch`. In that case, your branch must
-adds commits to the release branch, and not to `master`. We say the branch
-*is based on* `releases/CGAL-4.11-branch`.
+If your branch is a bug-fix, this bug might have been introduced in an older
+release. There exists a corresponding branch for the most recent releases,
+for example `cgal/releases/CGAL-4.11-branch` for `CGAL 4.11`.
+These branches might still be used to publish bug-fix releases, for example `CGAL 4.11.1`.
+A bug must be fixed in the oldest release branch available where it appears
+and your branch must thus add commits to this release branch, and not to `master`.
+We say that the bug-fix branch *is based on* the release branch.
 
 If the bug was only in `master` and not in a release branch, create a new
 branch *based on* `master`:
@@ -269,7 +272,7 @@ branch *onto* the release branch. The command is similar to `git rebase
 cgal/master`, but adds an option:
 
 ```bash session
-# But sure your current branch is the one you want to rebase
+# Make sure that your current branch is the one you want to rebase
 > git checkout AABB_tree-bug_fix-jenny
 # Then rebase:
 > git rebase  --onto cgal/releases/CGAL-4.11-branch cgal/master
@@ -302,7 +305,7 @@ The `--force` option is necessary because the rebasing has transformed the
 history of your branch, and it is no longer compatible with the history of
 the remote branch `mine/AABB_tree-bug_fix-jenny` that you may have pushed
 previously. A normal push adds new commits to an existing branch, but a
-push after a push after a rebase adds new commits (the replayed versions of
+push after a rebase adds new commits (the replayed versions of
 the commits), but also destroy the old commits.
 
 ### Commit Messages
