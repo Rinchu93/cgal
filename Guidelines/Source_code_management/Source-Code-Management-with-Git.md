@@ -230,13 +230,31 @@ branch then the pull-request is automatically updated as soon as you push your b
 
 #### Bug-fix branch
 
-If you want to create a short term bug-fix branch, it is sufficient to
-create it locally, push it in your *mine* remote, do a pull request and
-then forget about it. The Release Manager will deal with the
-pull-request and then remove the branch from your *mine* remote.
+If your branch is a bug-fix, probably the bug was already in a release
+branch, say `releases/CGAL-4.11-branch`. In that case, your branch must
+adds commits to the release branch, and not to `master`. We say the branch
+*is based on* `releases/CGAL-4.11-branch`.
+
+If the bug was only in `master` and not in a release branch, create a new
+branch *based on* `master`:
 
 ``` {.bash}
+# Update your local copies of the remove branches in the CGAL/cgal repo:
+> git fetch cgal
+# Create the branch:
 > git checkout -b AABB_tree-bug_fix-jenny --no-track cgal/master
+# edit files, use git-add and git-commit to create a commit with the modifications, then:
+> git push mine AABB_tree-bug_fix-jenny
+# and then create the pull-request in the web interface
+```
+
+If however the bug was already in a published release (and thus in a
+release branch), create a your new branch *based on* the release branch,
+for example:
+
+``` {.bash}
+> git fetch cgal
+> git checkout -b AABB_tree-bug_fix-jenny --no-track cgal/releases/CGAL-4.11-branch
 # edit files, use git-add and git-commit to create a commit with the modifications, then:
 > git push mine AABB_tree-bug_fix-jenny
 # and then create the pull-request in the web interface
